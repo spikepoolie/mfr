@@ -326,85 +326,8 @@ class NewLogin: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
                 }
             })
             
-        } 
+        }
        
-//        if let url = URL(string: "http://up2speedtraining.com/mobile/php/up2speed_create_account.php"){
-//            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//            let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: "watingtoload") as UIViewController
-//            self.present(vc,animated:true,completion: nil)
-//            let request = NSMutableURLRequest(url:url)
-//            request.httpMethod = "POST";
-//            let param = [
-//                "email"     : myUsername,
-//                "password"  : myPassword,
-//                "fullname"  : myName,
-//                "cellphone" : myCell
-//                ] as [String : Any]
-//
-//            let boundary = generateBoundaryString()
-//
-//            request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
-//            let myPicture = myUserImage.image
-//            let myUserImageProfile = myPicture?.resized(img: myPicture!, size: CGSize(width: 200, height: 200))
-//            let imageData = myUserImageProfile!.pngData()
-//
-//            if(imageData==nil)  { return; }
-//
-//            request.httpBody = createBodyWithParameters(parameters: (param as! [String : String]), filePathKey: "file", imageDataKey: imageData! as NSData, boundary: boundary) as Data
-//
-//            let task = URLSession.shared.dataTask(with:request as URLRequest){
-//                data, response, error in
-//
-//                if error != nil{
-//                    print(error as Any)
-//                }
-//                do {
-//                    if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? NSArray {
-//                        if convertedJsonIntoDict.count > 0{
-//                            print(convertedJsonIntoDict)
-//                            let emailValue = (convertedJsonIntoDict[0] as! NSDictionary)["email"] as? String
-//                            let myuserid = (convertedJsonIntoDict[0] as! NSDictionary)["userid"] as? Int
-//                            UserDefaults.standard.set(myuserid, forKey: "myuserid")
-//
-//                            // UserDefaults.standard.set("mypfrofileimage_\(myuserid)", forKey: "myprofilepicture")
-//                            if emailValue != nil{
-//
-//                                DispatchQueue.global().async {
-//                                    DispatchQueue.main.async {
-//
-//                                        // self.UploadImage(email:emailValue!)
-//                                    }
-//                                }
-//                                self.dismiss(animated: true, completion: nil)
-//                                UserDefaults.standard.set(self.myUsername, forKey: "username")
-//
-//                                UserDefaults.standard.set(1, forKey: "hasaccount")
-//                                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//                                let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: "myprofile") as UIViewController
-//
-//                                self.present(vc,animated:true,completion: nil)
-//
-//                            }
-//                            else{
-//                                self.btnLogin.isEnabled=true
-//                            }
-//                        }
-//                        else{
-//                            self.btnLogin.isEnabled=true
-//                            self.SendErrorInfo()
-//                        }
-//                    }
-//                    else{
-//                        self.btnLogin.isEnabled=true
-//                    }
-//                }
-//                catch let error as NSError {
-//                    print(error as Any)
-//                }
-//            }
-//            task.resume()
-//        }
-        // to be removed later
     }
     
     func ShowErrorMessage(){
