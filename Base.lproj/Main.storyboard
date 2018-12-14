@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QqV-GI-ycf">
+    <device id="retina6_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--New Login-->
+        <scene sceneID="PLs-Ct-bB9">
+            <objects>
+                <viewController storyboardIdentifier="newloginscreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QqV-GI-ycf" customClass="NewLogin" customModule="MuscleFLossingRoller" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DYv-XI-wOW"/>
+                        <viewControllerLayoutGuide type="bottom" id="DIt-6g-qXA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="R65-59-aIZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_full_720x1280.png" translatesAutoresizingMaskIntoConstraints="NO" id="aJ8-Nl-rHf">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="dd8-cu-Xgr">
+                                <rect key="frame" x="51" y="38" width="311" height="104"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Online Trainer and Fitness Advisor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uHw-Pc-cXw">
+                                <rect key="frame" x="0.0" y="154" width="414" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3g-Rf-Fa3" customClass="CustomButton" customModule="MuscleFLossingRoller" customModuleProvider="target">
+                                <rect key="frame" x="169" y="236" width="92" height="92"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="PickMyUserImage:" destination="QqV-GI-ycf" eventType="touchUpInside" id="x46-gF-ya2"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="userButtom.png" translatesAutoresizingMaskIntoConstraints="NO" id="ibQ-hb-P1g">
+                                <rect key="frame" x="169" y="236" width="92" height="92"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Full Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="QuW-XL-1IT" userLabel="FullName" customClass="TextFieldWithImage" customModule="MuscleFLossingRoller" customModuleProvider="target">
+                                <rect key="frame" x="34" y="482" width="345" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="user_create_account.png"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Pal-Pr-bjM" userLabel="Password" customClass="TextFieldWithImage" customModule="MuscleFLossingRoller" customModuleProvider="target">
+                                <rect key="frame" x="34" y="408" width="345" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="openlock.png"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Cell Phone" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HR2-Kl-bKf" customClass="TextFieldWithImage" customModule="MuscleFLossingRoller" customModuleProvider="target">
+                                <rect key="frame" x="34" y="555" width="345" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="phone.png"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Email address" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="niC-5C-aLj" customClass="TextFieldWithImage" customModule="MuscleFLossingRoller" customModuleProvider="target">
+                                <rect key="frame" x="34" y="339" width="345" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="myEmail.png"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ressetPlayer.png" translatesAutoresizingMaskIntoConstraints="NO" id="u4K-D7-Uug">
+                                <rect key="frame" x="243" y="811" width="28" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYH-vu-KQm" userLabel="btnLogin1">
+                                <rect key="frame" x="64" y="807" width="30" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="btnLogin1:" destination="QqV-GI-ycf" eventType="touchUpInside" id="Gcj-rp-oDY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPc-D6-8zA" customClass="CustomButton" customModule="MuscleFLossingRoller" customModuleProvider="target">
+                                <rect key="frame" x="35" y="795" width="174" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="19"/>
+                                <state key="normal" title="        Submit">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="submitForm:" destination="QqV-GI-ycf" eventType="touchUpInside" id="2Dj-Co-Iat"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="blK-5L-6pb" customClass="CustomButton" customModule="MuscleFLossingRoller" customModuleProvider="target">
+                                <rect key="frame" x="205" y="795" width="175" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="19"/>
+                                <state key="normal" title="          Reset">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnReset:" destination="QqV-GI-ycf" eventType="touchUpInside" id="6Nl-q8-hsh"/>
+                                    <action selector="resetForm:" destination="QqV-GI-ycf" eventType="touchUpInside" id="iJ5-6Y-lbp"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="signup.png" translatesAutoresizingMaskIntoConstraints="NO" id="Aej-QZ-q6f">
+                                <rect key="frame" x="64" y="807" width="33" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="refresh.png" translatesAutoresizingMaskIntoConstraints="NO" id="eB5-rE-Vre">
+                                <rect key="frame" x="244" y="810" width="31" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="I am 18 years old or older" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGs-um-Rnd">
+                                <rect key="frame" x="33" y="654" width="270" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XCk-AN-bbo">
+                                <rect key="frame" x="330" y="655" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="onTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="switchEighteen:" destination="QqV-GI-ycf" eventType="valueChanged" id="EZg-HS-H3i"/>
+                                </connections>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aJ8-Nl-rHf" firstAttribute="top" secondItem="R65-59-aIZ" secondAttribute="top" id="6s3-M1-tN3"/>
+                            <constraint firstAttribute="trailing" secondItem="aJ8-Nl-rHf" secondAttribute="trailing" id="FZf-oo-zg7"/>
+                            <constraint firstItem="aJ8-Nl-rHf" firstAttribute="leading" secondItem="R65-59-aIZ" secondAttribute="leading" id="M9Z-Xb-q0a"/>
+                            <constraint firstItem="DIt-6g-qXA" firstAttribute="top" secondItem="aJ8-Nl-rHf" secondAttribute="bottom" id="Pb8-3I-6in"/>
+                            <constraint firstItem="DIt-6g-qXA" firstAttribute="top" secondItem="aJ8-Nl-rHf" secondAttribute="bottom" id="cxx-Ss-quo"/>
+                            <constraint firstAttribute="trailing" secondItem="aJ8-Nl-rHf" secondAttribute="trailing" id="jtr-Gt-m4b"/>
+                            <constraint firstItem="aJ8-Nl-rHf" firstAttribute="top" secondItem="R65-59-aIZ" secondAttribute="top" id="m6s-Dk-Xw1"/>
+                            <constraint firstItem="aJ8-Nl-rHf" firstAttribute="leading" secondItem="R65-59-aIZ" secondAttribute="leading" id="w2C-Ph-hxa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bba-bB-ncx"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnLogin" destination="UPc-D6-8zA" id="1Gf-kf-kuA"/>
+                        <outlet property="cellphone" destination="HR2-Kl-bKf" id="lux-8B-eAF"/>
+                        <outlet property="eighteenLbl" destination="gGs-um-Rnd" id="1qk-Rl-dTA"/>
+                        <outlet property="fullname" destination="QuW-XL-1IT" id="28N-HE-CyY"/>
+                        <outlet property="myUserImage" destination="ibQ-hb-P1g" id="VmD-eY-f3k"/>
+                        <outlet property="password" destination="Pal-Pr-bjM" id="Qbf-hc-jZs"/>
+                        <outlet property="switchEighteen" destination="XCk-AN-bbo" id="A3U-5g-lmq"/>
+                        <outlet property="userImageButton" destination="Y3g-Rf-Fa3" id="8wt-O5-Tdd"/>
+                        <outlet property="username" destination="niC-5C-aLj" id="0G1-Lf-wxk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yrz-iz-gxS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2788" y="-2667.6161919040483"/>
+        </scene>
+        <!--Waiting To Load-->
+        <scene sceneID="oZ0-s0-UPw">
+            <objects>
+                <viewController storyboardIdentifier="watingtoload" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Bnc-cE-gUa" customClass="WaitingToLoad" customModule="MuscleFLossingRoller" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cW6-lV-UGT"/>
+                        <viewControllerLayoutGuide type="bottom" id="FtG-Ov-4uI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mvW-4F-Hf0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nCm-mb-ksI">
+                                <rect key="frame" x="116" y="353" width="211" height="205"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="s1p-0N-hwZ">
+                                        <rect key="frame" x="87" y="18" width="37" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Creating your account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJh-oc-CNV">
+                                        <rect key="frame" x="0.0" y="48" width="211" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.76470588240000004" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="0.37846057049999998" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="nCm-mb-ksI" secondAttribute="trailing" constant="67" id="Eir-R4-9CZ"/>
+                            <constraint firstItem="nCm-mb-ksI" firstAttribute="top" secondItem="cW6-lV-UGT" secondAttribute="bottom" constant="309" id="cFN-kF-wsk"/>
+                            <constraint firstItem="FtG-Ov-4uI" firstAttribute="top" secondItem="nCm-mb-ksI" secondAttribute="bottom" constant="304" id="gZa-6t-rBL"/>
+                            <constraint firstItem="nCm-mb-ksI" firstAttribute="leading" secondItem="mvW-4F-Hf0" secondAttribute="leadingMargin" constant="96" id="n2Z-1d-Gpg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="74X-Dr-Mqf"/>
+                    </view>
+                    <connections>
+                        <outlet property="myView" destination="nCm-mb-ksI" id="cWY-4B-9Qx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v4K-q1-2Mo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3516" y="-2668"/>
+        </scene>
+        <!--Login Alert-->
+        <scene sceneID="bBW-KZ-mRo">
+            <objects>
+                <viewController storyboardIdentifier="alertview" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mfC-Ff-0QO" customClass="LoginAlert" customModule="MuscleFLossingRoller" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Ft-cP-0iF"/>
+                        <viewControllerLayoutGuide type="bottom" id="ggd-by-HwH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rUG-rD-zZE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s1e-eo-fv1">
+                                <rect key="frame" x="71" y="320" width="273" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="All fields are required" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xgt-eE-mDk">
+                                        <rect key="frame" x="8" y="31" width="256" height="57"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BkV-5B-gE3">
+                                        <rect key="frame" x="234" y="89" width="33" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                        <state key="normal" backgroundImage="closebuton.gif"/>
+                                        <connections>
+                                            <action selector="closePanel:" destination="mfC-Ff-0QO" eventType="touchUpInside" id="IDi-nh-MJF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <viewLayoutGuide key="safeArea" id="0aO-kn-lTm"/>
+                    </view>
+                    <connections>
+                        <outlet property="lblMessage" destination="Xgt-eE-mDk" id="F3B-Vg-8M5"/>
+                        <outlet property="loginAlert" destination="s1e-eo-fv1" id="sHN-bT-0aO"/>
+                        <outlet property="redview" destination="s1e-eo-fv1" id="mOh-hG-sf8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mpZ-FD-MJI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2083" y="-2669"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bg_full_720x1280.png" width="720" height="1280"/>
+        <image name="closebuton.gif" width="512" height="512"/>
+        <image name="logo.png" width="362" height="111"/>
+        <image name="myEmail.png" width="128" height="128"/>
+        <image name="openlock.png" width="128" height="128"/>
+        <image name="phone.png" width="128" height="128"/>
+        <image name="refresh.png" width="128" height="128"/>
+        <image name="ressetPlayer.png" width="128" height="128"/>
+        <image name="signup.png" width="1200" height="1200"/>
+        <image name="userButtom.png" width="128" height="128"/>
+        <image name="user_create_account.png" width="128" height="128"/>
+    </resources>
+</document>
