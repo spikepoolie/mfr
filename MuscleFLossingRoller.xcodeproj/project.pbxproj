@@ -12,9 +12,144 @@
 		7C0EA6A721C06FC300F3A4A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6A521C06FC300F3A4A5 /* Main.storyboard */; };
 		7C0EA6A921C06FC400F3A4A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6A821C06FC400F3A4A5 /* Assets.xcassets */; };
 		7C0EA6AC21C06FC400F3A4A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6AA21C06FC400F3A4A5 /* LaunchScreen.storyboard */; };
+		7C0EA6B421C06FE100F3A4A5 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0EA6B321C06FE100F3A4A5 /* CustomButton.swift */; };
+		7C0EA73621C071F300F3A4A5 /* straching.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6B621C071F300F3A4A5 /* straching.png */; };
+		7C0EA73721C071F300F3A4A5 /* LeftForeArm.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6B721C071F300F3A4A5 /* LeftForeArm.png */; };
+		7C0EA73821C071F300F3A4A5 /* RightLatBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6B821C071F300F3A4A5 /* RightLatBack.png */; };
+		7C0EA73921C071F300F3A4A5 /* RightBackShoulder.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6B921C071F300F3A4A5 /* RightBackShoulder.png */; };
+		7C0EA73A21C071F300F3A4A5 /* lefthamstring.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6BA21C071F300F3A4A5 /* lefthamstring.jpg */; };
+		7C0EA73B21C071F300F3A4A5 /* LeftBackWrist.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6BB21C071F300F3A4A5 /* LeftBackWrist.png */; };
+		7C0EA73C21C071F300F3A4A5 /* LeftHamString.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6BC21C071F300F3A4A5 /* LeftHamString.png */; };
+		7C0EA73D21C071F300F3A4A5 /* LeftThigh.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6BD21C071F300F3A4A5 /* LeftThigh.png */; };
+		7C0EA73E21C071F300F3A4A5 /* box_verticle.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6BE21C071F300F3A4A5 /* box_verticle.png */; };
+		7C0EA73F21C071F300F3A4A5 /* right_calf.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6BF21C071F300F3A4A5 /* right_calf.png */; };
+		7C0EA74021C071F300F3A4A5 /* left_calf.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6C021C071F300F3A4A5 /* left_calf.png */; };
+		7C0EA74121C071F300F3A4A5 /* RightThigh.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6C121C071F300F3A4A5 /* RightThigh.png */; };
+		7C0EA74221C071F300F3A4A5 /* rightbackwritst.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6C221C071F300F3A4A5 /* rightbackwritst.jpg */; };
+		7C0EA74321C071F300F3A4A5 /* mfricon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6C321C071F300F3A4A5 /* mfricon.png */; };
+		7C0EA74421C071F300F3A4A5 /* ios_more.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6C421C071F300F3A4A5 /* ios_more.png */; };
+		7C0EA74521C071F300F3A4A5 /* mysessions.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6C521C071F300F3A4A5 /* mysessions.png */; };
+		7C0EA74621C071F300F3A4A5 /* RightKnee.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6C621C071F300F3A4A5 /* RightKnee.png */; };
+		7C0EA74721C071F300F3A4A5 /* ios_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6C721C071F300F3A4A5 /* ios_back.png */; };
+		7C0EA74821C071F300F3A4A5 /* closebuton.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6C821C071F300F3A4A5 /* closebuton.gif */; };
+		7C0EA74921C071F300F3A4A5 /* right_thigh.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6C921C071F300F3A4A5 /* right_thigh.png */; };
+		7C0EA74A21C071F300F3A4A5 /* left_chest.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6CA21C071F300F3A4A5 /* left_chest.png */; };
+		7C0EA74B21C071F300F3A4A5 /* threesides.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6CB21C071F300F3A4A5 /* threesides.png */; };
+		7C0EA74C21C071F300F3A4A5 /* LeftKnee.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6CC21C071F300F3A4A5 /* LeftKnee.png */; };
+		7C0EA74D21C071F300F3A4A5 /* question.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6CD21C071F300F3A4A5 /* question.png */; };
+		7C0EA74E21C071F300F3A4A5 /* LeftCalf.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6CE21C071F300F3A4A5 /* LeftCalf.png */; };
+		7C0EA74F21C071F300F3A4A5 /* my_sessions.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6CF21C071F300F3A4A5 /* my_sessions.png */; };
+		7C0EA75021C071F300F3A4A5 /* rightbackshoulder .jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6D021C071F300F3A4A5 /* rightbackshoulder .jpg */; };
+		7C0EA75121C071F300F3A4A5 /* LeftInnerThigh.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6D121C071F300F3A4A5 /* LeftInnerThigh.png */; };
+		7C0EA75221C071F300F3A4A5 /* right_chest.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6D221C071F300F3A4A5 /* right_chest.png */; };
+		7C0EA75321C071F300F3A4A5 /* backview.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6D321C071F300F3A4A5 /* backview.jpg */; };
+		7C0EA75421C071F300F3A4A5 /* left_thigh.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6D421C071F300F3A4A5 /* left_thigh.png */; };
+		7C0EA75521C071F300F3A4A5 /* backview.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6D521C071F300F3A4A5 /* backview.png */; };
+		7C0EA75621C071F300F3A4A5 /* ios_startup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6D621C071F300F3A4A5 /* ios_startup@2x.png */; };
+		7C0EA75721C071F300F3A4A5 /* bg_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6D721C071F300F3A4A5 /* bg_full.png */; };
+		7C0EA75821C071F300F3A4A5 /* messageBoard.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6D821C071F300F3A4A5 /* messageBoard.png */; };
+		7C0EA75921C071F300F3A4A5 /* RightTrapezius.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6D921C071F300F3A4A5 /* RightTrapezius.png */; };
+		7C0EA75A21C071F300F3A4A5 /* RightCalf.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6DA21C071F300F3A4A5 /* RightCalf.png */; };
+		7C0EA75B21C071F300F3A4A5 /* box-HR_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6DB21C071F300F3A4A5 /* box-HR_right.png */; };
+		7C0EA75C21C071F300F3A4A5 /* ressetPlayer.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6DC21C071F300F3A4A5 /* ressetPlayer.png */; };
+		7C0EA75D21C071F300F3A4A5 /* myRoller.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6DD21C071F300F3A4A5 /* myRoller.png */; };
+		7C0EA75E21C071F300F3A4A5 /* RightForeArm.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6DE21C071F300F3A4A5 /* RightForeArm.png */; };
+		7C0EA75F21C071F300F3A4A5 /* shop.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6DF21C071F300F3A4A5 /* shop.png */; };
+		7C0EA76021C071F300F3A4A5 /* RightChest.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6E021C071F300F3A4A5 /* RightChest.png */; };
+		7C0EA76121C071F300F3A4A5 /* LeftLatBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6E121C071F300F3A4A5 /* LeftLatBack.png */; };
+		7C0EA76221C071F300F3A4A5 /* pausePlayer.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6E221C071F300F3A4A5 /* pausePlayer.png */; };
+		7C0EA76321C071F300F3A4A5 /* Left Chest .jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6E321C071F300F3A4A5 /* Left Chest .jpg */; };
+		7C0EA76421C071F300F3A4A5 /* LeftElbow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6E421C071F300F3A4A5 /* LeftElbow.png */; };
+		7C0EA76521C071F300F3A4A5 /* right_lat_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6E521C071F300F3A4A5 /* right_lat_back.png */; };
+		7C0EA76621C071F300F3A4A5 /* eStore.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6E621C071F300F3A4A5 /* eStore.png */; };
+		7C0EA76721C071F300F3A4A5 /* RightAbs.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6E721C071F300F3A4A5 /* RightAbs.png */; };
+		7C0EA76821C071F300F3A4A5 /* right_knee.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6E821C071F300F3A4A5 /* right_knee.png */; };
+		7C0EA76921C071F300F3A4A5 /* left_fore_arm.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6E921C071F300F3A4A5 /* left_fore_arm.png */; };
+		7C0EA76A21C071F300F3A4A5 /* LeftChest.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6EA21C071F300F3A4A5 /* LeftChest.png */; };
+		7C0EA76B21C071F300F3A4A5 /* myEmail.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6EB21C071F300F3A4A5 /* myEmail.png */; };
+		7C0EA76C21C071F300F3A4A5 /* RightElbow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6EC21C071F300F3A4A5 /* RightElbow.png */; };
+		7C0EA76D21C071F300F3A4A5 /* rightelbow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6ED21C071F300F3A4A5 /* rightelbow.jpg */; };
+		7C0EA76E21C071F300F3A4A5 /* left_mid_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6EE21C071F300F3A4A5 /* left_mid_back.png */; };
+		7C0EA76F21C071F300F3A4A5 /* leftbackshoulder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6EF21C071F300F3A4A5 /* leftbackshoulder.jpg */; };
+		7C0EA77021C071F300F3A4A5 /* user_icon_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6F021C071F300F3A4A5 /* user_icon_login.png */; };
+		7C0EA77121C071F300F3A4A5 /* LeftBackShoulder.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6F121C071F300F3A4A5 /* LeftBackShoulder.png */; };
+		7C0EA77221C071F300F3A4A5 /* Power_.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6F221C071F300F3A4A5 /* Power_.png */; };
+		7C0EA77321C071F300F3A4A5 /* ios_more_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6F321C071F300F3A4A5 /* ios_more_1.png */; };
+		7C0EA77421C071F300F3A4A5 /* myPassword.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6F421C071F300F3A4A5 /* myPassword.png */; };
+		7C0EA77521C071F300F3A4A5 /* LeftWrist.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6F521C071F300F3A4A5 /* LeftWrist.png */; };
+		7C0EA77621C071F300F3A4A5 /* fitlabblurry.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6F621C071F300F3A4A5 /* fitlabblurry.png */; };
+		7C0EA77721C071F300F3A4A5 /* leftthigh.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6F721C071F300F3A4A5 /* leftthigh.gif */; };
+		7C0EA77821C071F300F3A4A5 /* stopPlayer.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6F821C071F300F3A4A5 /* stopPlayer.png */; };
+		7C0EA77921C071F300F3A4A5 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6F921C071F300F3A4A5 /* splash.png */; };
+		7C0EA77A21C071F300F3A4A5 /* RightWrist.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6FA21C071F300F3A4A5 /* RightWrist.png */; };
+		7C0EA77B21C071F300F3A4A5 /* box_horizontal.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6FB21C071F300F3A4A5 /* box_horizontal.png */; };
+		7C0EA77C21C071F300F3A4A5 /* bodyfront.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6FC21C071F300F3A4A5 /* bodyfront.png */; };
+		7C0EA77D21C071F300F3A4A5 /* left_abs.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6FD21C071F300F3A4A5 /* left_abs.png */; };
+		7C0EA77E21C071F300F3A4A5 /* bydate.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6FE21C071F300F3A4A5 /* bydate.png */; };
+		7C0EA77F21C071F300F3A4A5 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA6FF21C071F300F3A4A5 /* logo.png */; };
+		7C0EA78021C071F300F3A4A5 /* Exercise_video.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA70021C071F300F3A4A5 /* Exercise_video.png */; };
+		7C0EA78121C071F300F3A4A5 /* last3workouts.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA70121C071F300F3A4A5 /* last3workouts.png */; };
+		7C0EA78221C071F300F3A4A5 /* frontback.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA70221C071F300F3A4A5 /* frontback.png */; };
+		7C0EA78321C071F300F3A4A5 /* setfavorite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA70321C071F300F3A4A5 /* setfavorite.png */; };
+		7C0EA78421C071F300F3A4A5 /* LeftBiceps.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA70421C071F300F3A4A5 /* LeftBiceps.png */; };
+		7C0EA78521C071F300F3A4A5 /* userButtom.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA70521C071F300F3A4A5 /* userButtom.png */; };
+		7C0EA78621C071F300F3A4A5 /* myUser.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA70621C071F300F3A4A5 /* myUser.png */; };
+		7C0EA78721C071F300F3A4A5 /* MiddleAbs.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA70721C071F300F3A4A5 /* MiddleAbs.png */; };
+		7C0EA78821C071F300F3A4A5 /* signup.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA70821C071F300F3A4A5 /* signup.png */; };
+		7C0EA78921C071F300F3A4A5 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA70921C071F300F3A4A5 /* twitter.png */; };
+		7C0EA78A21C071F300F3A4A5 /* LeftGlut.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA70A21C071F300F3A4A5 /* LeftGlut.png */; };
+		7C0EA78B21C071F300F3A4A5 /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA70B21C071F300F3A4A5 /* share.png */; };
+		7C0EA78C21C071F300F3A4A5 /* LeftShoulder.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA70C21C071F300F3A4A5 /* LeftShoulder.png */; };
+		7C0EA78D21C071F300F3A4A5 /* bg_full_720x1280.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA70D21C071F300F3A4A5 /* bg_full_720x1280.png */; };
+		7C0EA78E21C071F300F3A4A5 /* phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA70E21C071F300F3A4A5 /* phone.png */; };
+		7C0EA78F21C071F300F3A4A5 /* RightHamString.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA70F21C071F300F3A4A5 /* RightHamString.png */; };
+		7C0EA79021C071F300F3A4A5 /* RightGlut.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA71021C071F300F3A4A5 /* RightGlut.png */; };
+		7C0EA79121C071F300F3A4A5 /* roller_video.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA71121C071F300F3A4A5 /* roller_video.png */; };
+		7C0EA79221C071F300F3A4A5 /* exercise.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA71221C071F300F3A4A5 /* exercise.png */; };
+		7C0EA79321C071F300F3A4A5 /* righthamstring.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA71321C071F300F3A4A5 /* righthamstring.jpg */; };
+		7C0EA79421C071F300F3A4A5 /* RightBackWrist.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA71421C071F300F3A4A5 /* RightBackWrist.png */; };
+		7C0EA79521C071F300F3A4A5 /* right_mid_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA71521C071F300F3A4A5 /* right_mid_back.png */; };
+		7C0EA79621C071F300F3A4A5 /* LeftAbs.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA71621C071F300F3A4A5 /* LeftAbs.png */; };
+		7C0EA79721C071F300F3A4A5 /* youtube.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA71721C071F300F3A4A5 /* youtube.png */; };
+		7C0EA79821C071F300F3A4A5 /* LeftAnkle.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA71821C071F300F3A4A5 /* LeftAnkle.png */; };
+		7C0EA79921C071F300F3A4A5 /* user_create_account.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA71921C071F300F3A4A5 /* user_create_account.png */; };
+		7C0EA79A21C071F300F3A4A5 /* right_fore_arm.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA71A21C071F300F3A4A5 /* right_fore_arm.png */; };
+		7C0EA79B21C071F300F3A4A5 /* right_fore_arm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA71B21C071F300F3A4A5 /* right_fore_arm.jpg */; };
+		7C0EA79C21C071F300F3A4A5 /* RightAnkle.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA71C21C071F300F3A4A5 /* RightAnkle.png */; };
+		7C0EA79D21C071F300F3A4A5 /* left_lat_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA71D21C071F300F3A4A5 /* left_lat_back.png */; };
+		7C0EA79E21C071F300F3A4A5 /* RightBiceps.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA71E21C071F300F3A4A5 /* RightBiceps.png */; };
+		7C0EA79F21C071F300F3A4A5 /* more.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA71F21C071F300F3A4A5 /* more.png */; };
+		7C0EA7A021C071F300F3A4A5 /* favorites.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA72021C071F300F3A4A5 /* favorites.png */; };
+		7C0EA7A121C071F300F3A4A5 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA72121C071F300F3A4A5 /* facebook.png */; };
+		7C0EA7A221C071F300F3A4A5 /* box-HR(left).png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA72221C071F300F3A4A5 /* box-HR(left).png */; };
+		7C0EA7A321C071F300F3A4A5 /* workouts.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA72321C071F300F3A4A5 /* workouts.png */; };
+		7C0EA7A421C071F300F3A4A5 /* right_glut.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA72421C071F300F3A4A5 /* right_glut.png */; };
+		7C0EA7A521C071F300F3A4A5 /* GluteMedius.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA72521C071F300F3A4A5 /* GluteMedius.png */; };
+		7C0EA7A621C071F300F3A4A5 /* ios_close.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA72621C071F300F3A4A5 /* ios_close.png */; };
+		7C0EA7A721C071F300F3A4A5 /* My_Tracker.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA72721C071F300F3A4A5 /* My_Tracker.png */; };
+		7C0EA7A821C071F300F3A4A5 /* lefttrapezius.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA72821C071F300F3A4A5 /* lefttrapezius.jpg */; };
+		7C0EA7A921C071F300F3A4A5 /* message.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA72921C071F300F3A4A5 /* message.png */; };
+		7C0EA7AA21C071F300F3A4A5 /* LeftTrapezius.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA72A21C071F300F3A4A5 /* LeftTrapezius.png */; };
+		7C0EA7AB21C071F300F3A4A5 /* mfricon120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA72B21C071F300F3A4A5 /* mfricon120x120.png */; };
+		7C0EA7AC21C071F300F3A4A5 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA72C21C071F300F3A4A5 /* back.png */; };
+		7C0EA7AD21C071F300F3A4A5 /* RightShoulder.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA72D21C071F300F3A4A5 /* RightShoulder.png */; };
+		7C0EA7AE21C071F300F3A4A5 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA72E21C071F300F3A4A5 /* refresh.png */; };
+		7C0EA7AF21C071F300F3A4A5 /* playPlayer.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA72F21C071F300F3A4A5 /* playPlayer.png */; };
+		7C0EA7B021C071F300F3A4A5 /* left_glut.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA73021C071F300F3A4A5 /* left_glut.png */; };
+		7C0EA7B121C071F300F3A4A5 /* Login_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA73121C071F300F3A4A5 /* Login_button.png */; };
+		7C0EA7B221C071F300F3A4A5 /* openlock.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA73221C071F300F3A4A5 /* openlock.png */; };
+		7C0EA7B321C071F300F3A4A5 /* clearlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA73321C071F300F3A4A5 /* clearlogo.png */; };
+		7C0EA7B421C071F300F3A4A5 /* digital.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA73521C071F300F3A4A5 /* digital.ttf */; };
+		7C0EA7B621C0733000F3A4A5 /* NewLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0EA7B521C0733000F3A4A5 /* NewLogin.swift */; };
+		7C0EA7B821C0739F00F3A4A5 /* TextFieldWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0EA7B721C0739F00F3A4A5 /* TextFieldWithImage.swift */; };
+		7C0EA7BA21C0816B00F3A4A5 /* WaitingToLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0EA7B921C0816B00F3A4A5 /* WaitingToLoad.swift */; };
+		7C0EA7BC21C083BC00F3A4A5 /* LoginAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0EA7BB21C083BC00F3A4A5 /* LoginAlert.swift */; };
+		7C0EA7BE21C2D90100F3A4A5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA7BD21C2D90100F3A4A5 /* GoogleService-Info.plist */; };
+		B61FD8839D2D15E9015B44AC /* Pods_MuscleFLossingRoller.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CC727AACDCF460E1E874F6 /* Pods_MuscleFLossingRoller.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C9320D06F538666B6F9D098 /* Pods-MuscleFLossingRoller.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuscleFLossingRoller.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MuscleFLossingRoller/Pods-MuscleFLossingRoller.debug.xcconfig"; sourceTree = "<group>"; };
 		7C0EA69E21C06FC300F3A4A5 /* MuscleFLossingRoller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuscleFLossingRoller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C0EA6A121C06FC300F3A4A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C0EA6A321C06FC300F3A4A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +157,141 @@
 		7C0EA6A821C06FC400F3A4A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C0EA6AB21C06FC400F3A4A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C0EA6AD21C06FC400F3A4A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C0EA6B321C06FE100F3A4A5 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		7C0EA6B621C071F300F3A4A5 /* straching.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = straching.png; sourceTree = "<group>"; };
+		7C0EA6B721C071F300F3A4A5 /* LeftForeArm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LeftForeArm.png; sourceTree = "<group>"; };
+		7C0EA6B821C071F300F3A4A5 /* RightLatBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RightLatBack.png; sourceTree = "<group>"; };
+		7C0EA6B921C071F300F3A4A5 /* RightBackShoulder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RightBackShoulder.png; sourceTree = "<group>"; };
+		7C0EA6BA21C071F300F3A4A5 /* lefthamstring.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lefthamstring.jpg; sourceTree = "<group>"; };
+		7C0EA6BB21C071F300F3A4A5 /* LeftBackWrist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LeftBackWrist.png; sourceTree = "<group>"; };
+		7C0EA6BC21C071F300F3A4A5 /* LeftHamString.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LeftHamString.png; sourceTree = "<group>"; };
+		7C0EA6BD21C071F300F3A4A5 /* LeftThigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LeftThigh.png; sourceTree = "<group>"; };
+		7C0EA6BE21C071F300F3A4A5 /* box_verticle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = box_verticle.png; sourceTree = "<group>"; };
+		7C0EA6BF21C071F300F3A4A5 /* right_calf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_calf.png; sourceTree = "<group>"; };
+		7C0EA6C021C071F300F3A4A5 /* left_calf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left_calf.png; sourceTree = "<group>"; };
+		7C0EA6C121C071F300F3A4A5 /* RightThigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RightThigh.png; sourceTree = "<group>"; };
+		7C0EA6C221C071F300F3A4A5 /* rightbackwritst.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rightbackwritst.jpg; sourceTree = "<group>"; };
+		7C0EA6C321C071F300F3A4A5 /* mfricon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mfricon.png; sourceTree = "<group>"; };
+		7C0EA6C421C071F300F3A4A5 /* ios_more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ios_more.png; sourceTree = "<group>"; };
+		7C0EA6C521C071F300F3A4A5 /* mysessions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mysessions.png; sourceTree = "<group>"; };
+		7C0EA6C621C071F300F3A4A5 /* RightKnee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RightKnee.png; sourceTree = "<group>"; };
+		7C0EA6C721C071F300F3A4A5 /* ios_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ios_back.png; sourceTree = "<group>"; };
+		7C0EA6C821C071F300F3A4A5 /* closebuton.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = closebuton.gif; sourceTree = "<group>"; };
+		7C0EA6C921C071F300F3A4A5 /* right_thigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_thigh.png; sourceTree = "<group>"; };
+		7C0EA6CA21C071F300F3A4A5 /* left_chest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left_chest.png; sourceTree = "<group>"; };
+		7C0EA6CB21C071F300F3A4A5 /* threesides.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = threesides.png; sourceTree = "<group>"; };
+		7C0EA6CC21C071F300F3A4A5 /* LeftKnee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LeftKnee.png; sourceTree = "<group>"; };
+		7C0EA6CD21C071F300F3A4A5 /* question.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = question.png; sourceTree = "<group>"; };
+		7C0EA6CE21C071F300F3A4A5 /* LeftCalf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LeftCalf.png; sourceTree = "<group>"; };
+		7C0EA6CF21C071F300F3A4A5 /* my_sessions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = my_sessions.png; sourceTree = "<group>"; };
+		7C0EA6D021C071F300F3A4A5 /* rightbackshoulder .jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "rightbackshoulder .jpg"; sourceTree = "<group>"; };
+		7C0EA6D121C071F300F3A4A5 /* LeftInnerThigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LeftInnerThigh.png; sourceTree = "<group>"; };
+		7C0EA6D221C071F300F3A4A5 /* right_chest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_chest.png; sourceTree = "<group>"; };
+		7C0EA6D321C071F300F3A4A5 /* backview.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backview.jpg; sourceTree = "<group>"; };
+		7C0EA6D421C071F300F3A4A5 /* left_thigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left_thigh.png; sourceTree = "<group>"; };
+		7C0EA6D521C071F300F3A4A5 /* backview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backview.png; sourceTree = "<group>"; };
+		7C0EA6D621C071F300F3A4A5 /* ios_startup@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ios_startup@2x.png"; sourceTree = "<group>"; };
+		7C0EA6D721C071F300F3A4A5 /* bg_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_full.png; sourceTree = "<group>"; };
+		7C0EA6D821C071F300F3A4A5 /* messageBoard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = messageBoard.png; sourceTree = "<group>"; };
+		7C0EA6D921C071F300F3A4A5 /* RightTrapezius.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RightTrapezius.png; sourceTree = "<group>"; };
+		7C0EA6DA21C071F300F3A4A5 /* RightCalf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RightCalf.png; sourceTree = "<group>"; };
+		7C0EA6DB21C071F300F3A4A5 /* box-HR_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "box-HR_right.png"; sourceTree = "<group>"; };
+		7C0EA6DC21C071F300F3A4A5 /* ressetPlayer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ressetPlayer.png; sourceTree = "<group>"; };
+		7C0EA6DD21C071F300F3A4A5 /* myRoller.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = myRoller.png; sourceTree = "<group>"; };
+		7C0EA6DE21C071F300F3A4A5 /* RightForeArm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RightForeArm.png; sourceTree = "<group>"; };
+		7C0EA6DF21C071F300F3A4A5 /* shop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shop.png; sourceTree = "<group>"; };
+		7C0EA6E021C071F300F3A4A5 /* RightChest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RightChest.png; sourceTree = "<group>"; };
+		7C0EA6E121C071F300F3A4A5 /* LeftLatBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LeftLatBack.png; sourceTree = "<group>"; };
+		7C0EA6E221C071F300F3A4A5 /* pausePlayer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pausePlayer.png; sourceTree = "<group>"; };
+		7C0EA6E321C071F300F3A4A5 /* Left Chest .jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Left Chest .jpg"; sourceTree = "<group>"; };
+		7C0EA6E421C071F300F3A4A5 /* LeftElbow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LeftElbow.png; sourceTree = "<group>"; };
+		7C0EA6E521C071F300F3A4A5 /* right_lat_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_lat_back.png; sourceTree = "<group>"; };
+		7C0EA6E621C071F300F3A4A5 /* eStore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eStore.png; sourceTree = "<group>"; };
+		7C0EA6E721C071F300F3A4A5 /* RightAbs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RightAbs.png; sourceTree = "<group>"; };
+		7C0EA6E821C071F300F3A4A5 /* right_knee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_knee.png; sourceTree = "<group>"; };
+		7C0EA6E921C071F300F3A4A5 /* left_fore_arm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left_fore_arm.png; sourceTree = "<group>"; };
+		7C0EA6EA21C071F300F3A4A5 /* LeftChest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LeftChest.png; sourceTree = "<group>"; };
+		7C0EA6EB21C071F300F3A4A5 /* myEmail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = myEmail.png; sourceTree = "<group>"; };
+		7C0EA6EC21C071F300F3A4A5 /* RightElbow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RightElbow.png; sourceTree = "<group>"; };
+		7C0EA6ED21C071F300F3A4A5 /* rightelbow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rightelbow.jpg; sourceTree = "<group>"; };
+		7C0EA6EE21C071F300F3A4A5 /* left_mid_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left_mid_back.png; sourceTree = "<group>"; };
+		7C0EA6EF21C071F300F3A4A5 /* leftbackshoulder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = leftbackshoulder.jpg; sourceTree = "<group>"; };
+		7C0EA6F021C071F300F3A4A5 /* user_icon_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_icon_login.png; sourceTree = "<group>"; };
+		7C0EA6F121C071F300F3A4A5 /* LeftBackShoulder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LeftBackShoulder.png; sourceTree = "<group>"; };
+		7C0EA6F221C071F300F3A4A5 /* Power_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Power_.png; sourceTree = "<group>"; };
+		7C0EA6F321C071F300F3A4A5 /* ios_more_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ios_more_1.png; sourceTree = "<group>"; };
+		7C0EA6F421C071F300F3A4A5 /* myPassword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = myPassword.png; sourceTree = "<group>"; };
+		7C0EA6F521C071F300F3A4A5 /* LeftWrist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LeftWrist.png; sourceTree = "<group>"; };
+		7C0EA6F621C071F300F3A4A5 /* fitlabblurry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fitlabblurry.png; sourceTree = "<group>"; };
+		7C0EA6F721C071F300F3A4A5 /* leftthigh.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = leftthigh.gif; sourceTree = "<group>"; };
+		7C0EA6F821C071F300F3A4A5 /* stopPlayer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stopPlayer.png; sourceTree = "<group>"; };
+		7C0EA6F921C071F300F3A4A5 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
+		7C0EA6FA21C071F300F3A4A5 /* RightWrist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RightWrist.png; sourceTree = "<group>"; };
+		7C0EA6FB21C071F300F3A4A5 /* box_horizontal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = box_horizontal.png; sourceTree = "<group>"; };
+		7C0EA6FC21C071F300F3A4A5 /* bodyfront.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bodyfront.png; sourceTree = "<group>"; };
+		7C0EA6FD21C071F300F3A4A5 /* left_abs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left_abs.png; sourceTree = "<group>"; };
+		7C0EA6FE21C071F300F3A4A5 /* bydate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bydate.png; sourceTree = "<group>"; };
+		7C0EA6FF21C071F300F3A4A5 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		7C0EA70021C071F300F3A4A5 /* Exercise_video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Exercise_video.png; sourceTree = "<group>"; };
+		7C0EA70121C071F300F3A4A5 /* last3workouts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = last3workouts.png; sourceTree = "<group>"; };
+		7C0EA70221C071F300F3A4A5 /* frontback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frontback.png; sourceTree = "<group>"; };
+		7C0EA70321C071F300F3A4A5 /* setfavorite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setfavorite.png; sourceTree = "<group>"; };
+		7C0EA70421C071F300F3A4A5 /* LeftBiceps.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LeftBiceps.png; sourceTree = "<group>"; };
+		7C0EA70521C071F300F3A4A5 /* userButtom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userButtom.png; sourceTree = "<group>"; };
+		7C0EA70621C071F300F3A4A5 /* myUser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = myUser.png; sourceTree = "<group>"; };
+		7C0EA70721C071F300F3A4A5 /* MiddleAbs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MiddleAbs.png; sourceTree = "<group>"; };
+		7C0EA70821C071F300F3A4A5 /* signup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signup.png; sourceTree = "<group>"; };
+		7C0EA70921C071F300F3A4A5 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
+		7C0EA70A21C071F300F3A4A5 /* LeftGlut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LeftGlut.png; sourceTree = "<group>"; };
+		7C0EA70B21C071F300F3A4A5 /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
+		7C0EA70C21C071F300F3A4A5 /* LeftShoulder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LeftShoulder.png; sourceTree = "<group>"; };
+		7C0EA70D21C071F300F3A4A5 /* bg_full_720x1280.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_full_720x1280.png; sourceTree = "<group>"; };
+		7C0EA70E21C071F300F3A4A5 /* phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone.png; sourceTree = "<group>"; };
+		7C0EA70F21C071F300F3A4A5 /* RightHamString.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RightHamString.png; sourceTree = "<group>"; };
+		7C0EA71021C071F300F3A4A5 /* RightGlut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RightGlut.png; sourceTree = "<group>"; };
+		7C0EA71121C071F300F3A4A5 /* roller_video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roller_video.png; sourceTree = "<group>"; };
+		7C0EA71221C071F300F3A4A5 /* exercise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exercise.png; sourceTree = "<group>"; };
+		7C0EA71321C071F300F3A4A5 /* righthamstring.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = righthamstring.jpg; sourceTree = "<group>"; };
+		7C0EA71421C071F300F3A4A5 /* RightBackWrist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RightBackWrist.png; sourceTree = "<group>"; };
+		7C0EA71521C071F300F3A4A5 /* right_mid_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_mid_back.png; sourceTree = "<group>"; };
+		7C0EA71621C071F300F3A4A5 /* LeftAbs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LeftAbs.png; sourceTree = "<group>"; };
+		7C0EA71721C071F300F3A4A5 /* youtube.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = youtube.png; sourceTree = "<group>"; };
+		7C0EA71821C071F300F3A4A5 /* LeftAnkle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LeftAnkle.png; sourceTree = "<group>"; };
+		7C0EA71921C071F300F3A4A5 /* user_create_account.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_create_account.png; sourceTree = "<group>"; };
+		7C0EA71A21C071F300F3A4A5 /* right_fore_arm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_fore_arm.png; sourceTree = "<group>"; };
+		7C0EA71B21C071F300F3A4A5 /* right_fore_arm.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = right_fore_arm.jpg; sourceTree = "<group>"; };
+		7C0EA71C21C071F300F3A4A5 /* RightAnkle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RightAnkle.png; sourceTree = "<group>"; };
+		7C0EA71D21C071F300F3A4A5 /* left_lat_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left_lat_back.png; sourceTree = "<group>"; };
+		7C0EA71E21C071F300F3A4A5 /* RightBiceps.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RightBiceps.png; sourceTree = "<group>"; };
+		7C0EA71F21C071F300F3A4A5 /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more.png; sourceTree = "<group>"; };
+		7C0EA72021C071F300F3A4A5 /* favorites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favorites.png; sourceTree = "<group>"; };
+		7C0EA72121C071F300F3A4A5 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
+		7C0EA72221C071F300F3A4A5 /* box-HR(left).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "box-HR(left).png"; sourceTree = "<group>"; };
+		7C0EA72321C071F300F3A4A5 /* workouts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = workouts.png; sourceTree = "<group>"; };
+		7C0EA72421C071F300F3A4A5 /* right_glut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_glut.png; sourceTree = "<group>"; };
+		7C0EA72521C071F300F3A4A5 /* GluteMedius.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GluteMedius.png; sourceTree = "<group>"; };
+		7C0EA72621C071F300F3A4A5 /* ios_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ios_close.png; sourceTree = "<group>"; };
+		7C0EA72721C071F300F3A4A5 /* My_Tracker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = My_Tracker.png; sourceTree = "<group>"; };
+		7C0EA72821C071F300F3A4A5 /* lefttrapezius.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lefttrapezius.jpg; sourceTree = "<group>"; };
+		7C0EA72921C071F300F3A4A5 /* message.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = message.png; sourceTree = "<group>"; };
+		7C0EA72A21C071F300F3A4A5 /* LeftTrapezius.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LeftTrapezius.png; sourceTree = "<group>"; };
+		7C0EA72B21C071F300F3A4A5 /* mfricon120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mfricon120x120.png; sourceTree = "<group>"; };
+		7C0EA72C21C071F300F3A4A5 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		7C0EA72D21C071F300F3A4A5 /* RightShoulder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RightShoulder.png; sourceTree = "<group>"; };
+		7C0EA72E21C071F300F3A4A5 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
+		7C0EA72F21C071F300F3A4A5 /* playPlayer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playPlayer.png; sourceTree = "<group>"; };
+		7C0EA73021C071F300F3A4A5 /* left_glut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left_glut.png; sourceTree = "<group>"; };
+		7C0EA73121C071F300F3A4A5 /* Login_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Login_button.png; sourceTree = "<group>"; };
+		7C0EA73221C071F300F3A4A5 /* openlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = openlock.png; sourceTree = "<group>"; };
+		7C0EA73321C071F300F3A4A5 /* clearlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clearlogo.png; sourceTree = "<group>"; };
+		7C0EA73521C071F300F3A4A5 /* digital.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = digital.ttf; sourceTree = "<group>"; };
+		7C0EA7B521C0733000F3A4A5 /* NewLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLogin.swift; sourceTree = "<group>"; };
+		7C0EA7B721C0739F00F3A4A5 /* TextFieldWithImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldWithImage.swift; sourceTree = "<group>"; };
+		7C0EA7B921C0816B00F3A4A5 /* WaitingToLoad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitingToLoad.swift; sourceTree = "<group>"; };
+		7C0EA7BB21C083BC00F3A4A5 /* LoginAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAlert.swift; sourceTree = "<group>"; };
+		7C0EA7BD21C2D90100F3A4A5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		88CC727AACDCF460E1E874F6 /* Pods_MuscleFLossingRoller.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuscleFLossingRoller.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A68CDE8349018C3DF5E9143D /* Pods-MuscleFLossingRoller.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuscleFLossingRoller.release.xcconfig"; path = "Pods/Target Support Files/Pods-MuscleFLossingRoller/Pods-MuscleFLossingRoller.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +299,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B61FD8839D2D15E9015B44AC /* Pods_MuscleFLossingRoller.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +311,8 @@
 			children = (
 				7C0EA6A021C06FC300F3A4A5 /* MuscleFLossingRoller */,
 				7C0EA69F21C06FC300F3A4A5 /* Products */,
+				C7F98BC755D2E4F1C3EEA8B0 /* Pods */,
+				ED75C969C9F5E233EFA3B969 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +327,180 @@
 		7C0EA6A021C06FC300F3A4A5 /* MuscleFLossingRoller */ = {
 			isa = PBXGroup;
 			children = (
+				7C0EA73421C071F300F3A4A5 /* fonts */,
+				7C0EA6B521C071F300F3A4A5 /* Images */,
+				7C0EA6B321C06FE100F3A4A5 /* CustomButton.swift */,
 				7C0EA6A121C06FC300F3A4A5 /* AppDelegate.swift */,
 				7C0EA6A321C06FC300F3A4A5 /* ViewController.swift */,
 				7C0EA6A521C06FC300F3A4A5 /* Main.storyboard */,
+				7C0EA7B921C0816B00F3A4A5 /* WaitingToLoad.swift */,
+				7C0EA7B721C0739F00F3A4A5 /* TextFieldWithImage.swift */,
 				7C0EA6A821C06FC400F3A4A5 /* Assets.xcassets */,
 				7C0EA6AA21C06FC400F3A4A5 /* LaunchScreen.storyboard */,
 				7C0EA6AD21C06FC400F3A4A5 /* Info.plist */,
+				7C0EA7BD21C2D90100F3A4A5 /* GoogleService-Info.plist */,
+				7C0EA7B521C0733000F3A4A5 /* NewLogin.swift */,
+				7C0EA7BB21C083BC00F3A4A5 /* LoginAlert.swift */,
 			);
 			path = MuscleFLossingRoller;
+			sourceTree = "<group>";
+		};
+		7C0EA6B521C071F300F3A4A5 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				7C0EA6B621C071F300F3A4A5 /* straching.png */,
+				7C0EA6B721C071F300F3A4A5 /* LeftForeArm.png */,
+				7C0EA6B821C071F300F3A4A5 /* RightLatBack.png */,
+				7C0EA6B921C071F300F3A4A5 /* RightBackShoulder.png */,
+				7C0EA6BA21C071F300F3A4A5 /* lefthamstring.jpg */,
+				7C0EA6BB21C071F300F3A4A5 /* LeftBackWrist.png */,
+				7C0EA6BC21C071F300F3A4A5 /* LeftHamString.png */,
+				7C0EA6BD21C071F300F3A4A5 /* LeftThigh.png */,
+				7C0EA6BE21C071F300F3A4A5 /* box_verticle.png */,
+				7C0EA6BF21C071F300F3A4A5 /* right_calf.png */,
+				7C0EA6C021C071F300F3A4A5 /* left_calf.png */,
+				7C0EA6C121C071F300F3A4A5 /* RightThigh.png */,
+				7C0EA6C221C071F300F3A4A5 /* rightbackwritst.jpg */,
+				7C0EA6C321C071F300F3A4A5 /* mfricon.png */,
+				7C0EA6C421C071F300F3A4A5 /* ios_more.png */,
+				7C0EA6C521C071F300F3A4A5 /* mysessions.png */,
+				7C0EA6C621C071F300F3A4A5 /* RightKnee.png */,
+				7C0EA6C721C071F300F3A4A5 /* ios_back.png */,
+				7C0EA6C821C071F300F3A4A5 /* closebuton.gif */,
+				7C0EA6C921C071F300F3A4A5 /* right_thigh.png */,
+				7C0EA6CA21C071F300F3A4A5 /* left_chest.png */,
+				7C0EA6CB21C071F300F3A4A5 /* threesides.png */,
+				7C0EA6CC21C071F300F3A4A5 /* LeftKnee.png */,
+				7C0EA6CD21C071F300F3A4A5 /* question.png */,
+				7C0EA6CE21C071F300F3A4A5 /* LeftCalf.png */,
+				7C0EA6CF21C071F300F3A4A5 /* my_sessions.png */,
+				7C0EA6D021C071F300F3A4A5 /* rightbackshoulder .jpg */,
+				7C0EA6D121C071F300F3A4A5 /* LeftInnerThigh.png */,
+				7C0EA6D221C071F300F3A4A5 /* right_chest.png */,
+				7C0EA6D321C071F300F3A4A5 /* backview.jpg */,
+				7C0EA6D421C071F300F3A4A5 /* left_thigh.png */,
+				7C0EA6D521C071F300F3A4A5 /* backview.png */,
+				7C0EA6D621C071F300F3A4A5 /* ios_startup@2x.png */,
+				7C0EA6D721C071F300F3A4A5 /* bg_full.png */,
+				7C0EA6D821C071F300F3A4A5 /* messageBoard.png */,
+				7C0EA6D921C071F300F3A4A5 /* RightTrapezius.png */,
+				7C0EA6DA21C071F300F3A4A5 /* RightCalf.png */,
+				7C0EA6DB21C071F300F3A4A5 /* box-HR_right.png */,
+				7C0EA6DC21C071F300F3A4A5 /* ressetPlayer.png */,
+				7C0EA6DD21C071F300F3A4A5 /* myRoller.png */,
+				7C0EA6DE21C071F300F3A4A5 /* RightForeArm.png */,
+				7C0EA6DF21C071F300F3A4A5 /* shop.png */,
+				7C0EA6E021C071F300F3A4A5 /* RightChest.png */,
+				7C0EA6E121C071F300F3A4A5 /* LeftLatBack.png */,
+				7C0EA6E221C071F300F3A4A5 /* pausePlayer.png */,
+				7C0EA6E321C071F300F3A4A5 /* Left Chest .jpg */,
+				7C0EA6E421C071F300F3A4A5 /* LeftElbow.png */,
+				7C0EA6E521C071F300F3A4A5 /* right_lat_back.png */,
+				7C0EA6E621C071F300F3A4A5 /* eStore.png */,
+				7C0EA6E721C071F300F3A4A5 /* RightAbs.png */,
+				7C0EA6E821C071F300F3A4A5 /* right_knee.png */,
+				7C0EA6E921C071F300F3A4A5 /* left_fore_arm.png */,
+				7C0EA6EA21C071F300F3A4A5 /* LeftChest.png */,
+				7C0EA6EB21C071F300F3A4A5 /* myEmail.png */,
+				7C0EA6EC21C071F300F3A4A5 /* RightElbow.png */,
+				7C0EA6ED21C071F300F3A4A5 /* rightelbow.jpg */,
+				7C0EA6EE21C071F300F3A4A5 /* left_mid_back.png */,
+				7C0EA6EF21C071F300F3A4A5 /* leftbackshoulder.jpg */,
+				7C0EA6F021C071F300F3A4A5 /* user_icon_login.png */,
+				7C0EA6F121C071F300F3A4A5 /* LeftBackShoulder.png */,
+				7C0EA6F221C071F300F3A4A5 /* Power_.png */,
+				7C0EA6F321C071F300F3A4A5 /* ios_more_1.png */,
+				7C0EA6F421C071F300F3A4A5 /* myPassword.png */,
+				7C0EA6F521C071F300F3A4A5 /* LeftWrist.png */,
+				7C0EA6F621C071F300F3A4A5 /* fitlabblurry.png */,
+				7C0EA6F721C071F300F3A4A5 /* leftthigh.gif */,
+				7C0EA6F821C071F300F3A4A5 /* stopPlayer.png */,
+				7C0EA6F921C071F300F3A4A5 /* splash.png */,
+				7C0EA6FA21C071F300F3A4A5 /* RightWrist.png */,
+				7C0EA6FB21C071F300F3A4A5 /* box_horizontal.png */,
+				7C0EA6FC21C071F300F3A4A5 /* bodyfront.png */,
+				7C0EA6FD21C071F300F3A4A5 /* left_abs.png */,
+				7C0EA6FE21C071F300F3A4A5 /* bydate.png */,
+				7C0EA6FF21C071F300F3A4A5 /* logo.png */,
+				7C0EA70021C071F300F3A4A5 /* Exercise_video.png */,
+				7C0EA70121C071F300F3A4A5 /* last3workouts.png */,
+				7C0EA70221C071F300F3A4A5 /* frontback.png */,
+				7C0EA70321C071F300F3A4A5 /* setfavorite.png */,
+				7C0EA70421C071F300F3A4A5 /* LeftBiceps.png */,
+				7C0EA70521C071F300F3A4A5 /* userButtom.png */,
+				7C0EA70621C071F300F3A4A5 /* myUser.png */,
+				7C0EA70721C071F300F3A4A5 /* MiddleAbs.png */,
+				7C0EA70821C071F300F3A4A5 /* signup.png */,
+				7C0EA70921C071F300F3A4A5 /* twitter.png */,
+				7C0EA70A21C071F300F3A4A5 /* LeftGlut.png */,
+				7C0EA70B21C071F300F3A4A5 /* share.png */,
+				7C0EA70C21C071F300F3A4A5 /* LeftShoulder.png */,
+				7C0EA70D21C071F300F3A4A5 /* bg_full_720x1280.png */,
+				7C0EA70E21C071F300F3A4A5 /* phone.png */,
+				7C0EA70F21C071F300F3A4A5 /* RightHamString.png */,
+				7C0EA71021C071F300F3A4A5 /* RightGlut.png */,
+				7C0EA71121C071F300F3A4A5 /* roller_video.png */,
+				7C0EA71221C071F300F3A4A5 /* exercise.png */,
+				7C0EA71321C071F300F3A4A5 /* righthamstring.jpg */,
+				7C0EA71421C071F300F3A4A5 /* RightBackWrist.png */,
+				7C0EA71521C071F300F3A4A5 /* right_mid_back.png */,
+				7C0EA71621C071F300F3A4A5 /* LeftAbs.png */,
+				7C0EA71721C071F300F3A4A5 /* youtube.png */,
+				7C0EA71821C071F300F3A4A5 /* LeftAnkle.png */,
+				7C0EA71921C071F300F3A4A5 /* user_create_account.png */,
+				7C0EA71A21C071F300F3A4A5 /* right_fore_arm.png */,
+				7C0EA71B21C071F300F3A4A5 /* right_fore_arm.jpg */,
+				7C0EA71C21C071F300F3A4A5 /* RightAnkle.png */,
+				7C0EA71D21C071F300F3A4A5 /* left_lat_back.png */,
+				7C0EA71E21C071F300F3A4A5 /* RightBiceps.png */,
+				7C0EA71F21C071F300F3A4A5 /* more.png */,
+				7C0EA72021C071F300F3A4A5 /* favorites.png */,
+				7C0EA72121C071F300F3A4A5 /* facebook.png */,
+				7C0EA72221C071F300F3A4A5 /* box-HR(left).png */,
+				7C0EA72321C071F300F3A4A5 /* workouts.png */,
+				7C0EA72421C071F300F3A4A5 /* right_glut.png */,
+				7C0EA72521C071F300F3A4A5 /* GluteMedius.png */,
+				7C0EA72621C071F300F3A4A5 /* ios_close.png */,
+				7C0EA72721C071F300F3A4A5 /* My_Tracker.png */,
+				7C0EA72821C071F300F3A4A5 /* lefttrapezius.jpg */,
+				7C0EA72921C071F300F3A4A5 /* message.png */,
+				7C0EA72A21C071F300F3A4A5 /* LeftTrapezius.png */,
+				7C0EA72B21C071F300F3A4A5 /* mfricon120x120.png */,
+				7C0EA72C21C071F300F3A4A5 /* back.png */,
+				7C0EA72D21C071F300F3A4A5 /* RightShoulder.png */,
+				7C0EA72E21C071F300F3A4A5 /* refresh.png */,
+				7C0EA72F21C071F300F3A4A5 /* playPlayer.png */,
+				7C0EA73021C071F300F3A4A5 /* left_glut.png */,
+				7C0EA73121C071F300F3A4A5 /* Login_button.png */,
+				7C0EA73221C071F300F3A4A5 /* openlock.png */,
+				7C0EA73321C071F300F3A4A5 /* clearlogo.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		7C0EA73421C071F300F3A4A5 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7C0EA73521C071F300F3A4A5 /* digital.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		C7F98BC755D2E4F1C3EEA8B0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5C9320D06F538666B6F9D098 /* Pods-MuscleFLossingRoller.debug.xcconfig */,
+				A68CDE8349018C3DF5E9143D /* Pods-MuscleFLossingRoller.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		ED75C969C9F5E233EFA3B969 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				88CC727AACDCF460E1E874F6 /* Pods_MuscleFLossingRoller.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +510,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7C0EA6B021C06FC400F3A4A5 /* Build configuration list for PBXNativeTarget "MuscleFLossingRoller" */;
 			buildPhases = (
+				D98DEA065103647B1EC46536 /* [CP] Check Pods Manifest.lock */,
 				7C0EA69A21C06FC300F3A4A5 /* Sources */,
 				7C0EA69B21C06FC300F3A4A5 /* Frameworks */,
 				7C0EA69C21C06FC300F3A4A5 /* Resources */,
+				8FB1402F37E5CF9EF23E4508 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -122,21 +563,199 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C0EA74021C071F300F3A4A5 /* left_calf.png in Resources */,
+				7C0EA77621C071F300F3A4A5 /* fitlabblurry.png in Resources */,
+				7C0EA74621C071F300F3A4A5 /* RightKnee.png in Resources */,
+				7C0EA77521C071F300F3A4A5 /* LeftWrist.png in Resources */,
+				7C0EA78C21C071F300F3A4A5 /* LeftShoulder.png in Resources */,
+				7C0EA73A21C071F300F3A4A5 /* lefthamstring.jpg in Resources */,
+				7C0EA79321C071F300F3A4A5 /* righthamstring.jpg in Resources */,
+				7C0EA79621C071F300F3A4A5 /* LeftAbs.png in Resources */,
+				7C0EA73E21C071F300F3A4A5 /* box_verticle.png in Resources */,
+				7C0EA74821C071F300F3A4A5 /* closebuton.gif in Resources */,
+				7C0EA74121C071F300F3A4A5 /* RightThigh.png in Resources */,
+				7C0EA78521C071F300F3A4A5 /* userButtom.png in Resources */,
+				7C0EA75021C071F300F3A4A5 /* rightbackshoulder .jpg in Resources */,
+				7C0EA73F21C071F300F3A4A5 /* right_calf.png in Resources */,
+				7C0EA7AA21C071F300F3A4A5 /* LeftTrapezius.png in Resources */,
 				7C0EA6AC21C06FC400F3A4A5 /* LaunchScreen.storyboard in Resources */,
+				7C0EA7A521C071F300F3A4A5 /* GluteMedius.png in Resources */,
+				7C0EA77021C071F300F3A4A5 /* user_icon_login.png in Resources */,
+				7C0EA74E21C071F300F3A4A5 /* LeftCalf.png in Resources */,
+				7C0EA74F21C071F300F3A4A5 /* my_sessions.png in Resources */,
+				7C0EA75F21C071F300F3A4A5 /* shop.png in Resources */,
+				7C0EA7AB21C071F300F3A4A5 /* mfricon120x120.png in Resources */,
+				7C0EA75121C071F300F3A4A5 /* LeftInnerThigh.png in Resources */,
+				7C0EA74521C071F300F3A4A5 /* mysessions.png in Resources */,
+				7C0EA79A21C071F300F3A4A5 /* right_fore_arm.png in Resources */,
+				7C0EA76B21C071F300F3A4A5 /* myEmail.png in Resources */,
+				7C0EA73C21C071F300F3A4A5 /* LeftHamString.png in Resources */,
+				7C0EA77321C071F300F3A4A5 /* ios_more_1.png in Resources */,
+				7C0EA79F21C071F300F3A4A5 /* more.png in Resources */,
+				7C0EA74A21C071F300F3A4A5 /* left_chest.png in Resources */,
+				7C0EA79E21C071F300F3A4A5 /* RightBiceps.png in Resources */,
+				7C0EA7A921C071F300F3A4A5 /* message.png in Resources */,
+				7C0EA7B021C071F300F3A4A5 /* left_glut.png in Resources */,
 				7C0EA6A921C06FC400F3A4A5 /* Assets.xcassets in Resources */,
+				7C0EA79421C071F300F3A4A5 /* RightBackWrist.png in Resources */,
+				7C0EA76821C071F300F3A4A5 /* right_knee.png in Resources */,
+				7C0EA74921C071F300F3A4A5 /* right_thigh.png in Resources */,
+				7C0EA79721C071F300F3A4A5 /* youtube.png in Resources */,
+				7C0EA78121C071F300F3A4A5 /* last3workouts.png in Resources */,
+				7C0EA77721C071F300F3A4A5 /* leftthigh.gif in Resources */,
+				7C0EA78221C071F300F3A4A5 /* frontback.png in Resources */,
+				7C0EA77B21C071F300F3A4A5 /* box_horizontal.png in Resources */,
+				7C0EA7A121C071F300F3A4A5 /* facebook.png in Resources */,
+				7C0EA73B21C071F300F3A4A5 /* LeftBackWrist.png in Resources */,
+				7C0EA74B21C071F300F3A4A5 /* threesides.png in Resources */,
+				7C0EA7A421C071F300F3A4A5 /* right_glut.png in Resources */,
+				7C0EA76021C071F300F3A4A5 /* RightChest.png in Resources */,
+				7C0EA75421C071F300F3A4A5 /* left_thigh.png in Resources */,
+				7C0EA75821C071F300F3A4A5 /* messageBoard.png in Resources */,
+				7C0EA7A321C071F300F3A4A5 /* workouts.png in Resources */,
+				7C0EA78F21C071F300F3A4A5 /* RightHamString.png in Resources */,
+				7C0EA79021C071F300F3A4A5 /* RightGlut.png in Resources */,
+				7C0EA75621C071F300F3A4A5 /* ios_startup@2x.png in Resources */,
+				7C0EA75C21C071F300F3A4A5 /* ressetPlayer.png in Resources */,
+				7C0EA77921C071F300F3A4A5 /* splash.png in Resources */,
+				7C0EA79821C071F300F3A4A5 /* LeftAnkle.png in Resources */,
+				7C0EA74321C071F300F3A4A5 /* mfricon.png in Resources */,
+				7C0EA76E21C071F300F3A4A5 /* left_mid_back.png in Resources */,
+				7C0EA74721C071F300F3A4A5 /* ios_back.png in Resources */,
 				7C0EA6A721C06FC300F3A4A5 /* Main.storyboard in Resources */,
+				7C0EA75721C071F300F3A4A5 /* bg_full.png in Resources */,
+				7C0EA78921C071F300F3A4A5 /* twitter.png in Resources */,
+				7C0EA75B21C071F300F3A4A5 /* box-HR_right.png in Resources */,
+				7C0EA7AC21C071F300F3A4A5 /* back.png in Resources */,
+				7C0EA76C21C071F300F3A4A5 /* RightElbow.png in Resources */,
+				7C0EA78E21C071F300F3A4A5 /* phone.png in Resources */,
+				7C0EA76721C071F300F3A4A5 /* RightAbs.png in Resources */,
+				7C0EA7B121C071F300F3A4A5 /* Login_button.png in Resources */,
+				7C0EA76421C071F300F3A4A5 /* LeftElbow.png in Resources */,
+				7C0EA76321C071F300F3A4A5 /* Left Chest .jpg in Resources */,
+				7C0EA75221C071F300F3A4A5 /* right_chest.png in Resources */,
+				7C0EA79121C071F300F3A4A5 /* roller_video.png in Resources */,
+				7C0EA7AD21C071F300F3A4A5 /* RightShoulder.png in Resources */,
+				7C0EA77D21C071F300F3A4A5 /* left_abs.png in Resources */,
+				7C0EA77F21C071F300F3A4A5 /* logo.png in Resources */,
+				7C0EA77421C071F300F3A4A5 /* myPassword.png in Resources */,
+				7C0EA77821C071F300F3A4A5 /* stopPlayer.png in Resources */,
+				7C0EA73821C071F300F3A4A5 /* RightLatBack.png in Resources */,
+				7C0EA75A21C071F300F3A4A5 /* RightCalf.png in Resources */,
+				7C0EA79521C071F300F3A4A5 /* right_mid_back.png in Resources */,
+				7C0EA77A21C071F300F3A4A5 /* RightWrist.png in Resources */,
+				7C0EA7A721C071F300F3A4A5 /* My_Tracker.png in Resources */,
+				7C0EA78821C071F300F3A4A5 /* signup.png in Resources */,
+				7C0EA79B21C071F300F3A4A5 /* right_fore_arm.jpg in Resources */,
+				7C0EA77221C071F300F3A4A5 /* Power_.png in Resources */,
+				7C0EA76621C071F300F3A4A5 /* eStore.png in Resources */,
+				7C0EA76521C071F300F3A4A5 /* right_lat_back.png in Resources */,
+				7C0EA74D21C071F300F3A4A5 /* question.png in Resources */,
+				7C0EA76D21C071F300F3A4A5 /* rightelbow.jpg in Resources */,
+				7C0EA78A21C071F300F3A4A5 /* LeftGlut.png in Resources */,
+				7C0EA7B221C071F300F3A4A5 /* openlock.png in Resources */,
+				7C0EA7A221C071F300F3A4A5 /* box-HR(left).png in Resources */,
+				7C0EA78B21C071F300F3A4A5 /* share.png in Resources */,
+				7C0EA78021C071F300F3A4A5 /* Exercise_video.png in Resources */,
+				7C0EA78321C071F300F3A4A5 /* setfavorite.png in Resources */,
+				7C0EA75521C071F300F3A4A5 /* backview.png in Resources */,
+				7C0EA7A821C071F300F3A4A5 /* lefttrapezius.jpg in Resources */,
+				7C0EA7B321C071F300F3A4A5 /* clearlogo.png in Resources */,
+				7C0EA74421C071F300F3A4A5 /* ios_more.png in Resources */,
+				7C0EA77121C071F300F3A4A5 /* LeftBackShoulder.png in Resources */,
+				7C0EA76F21C071F300F3A4A5 /* leftbackshoulder.jpg in Resources */,
+				7C0EA76121C071F300F3A4A5 /* LeftLatBack.png in Resources */,
+				7C0EA76921C071F300F3A4A5 /* left_fore_arm.png in Resources */,
+				7C0EA7AF21C071F300F3A4A5 /* playPlayer.png in Resources */,
+				7C0EA73921C071F300F3A4A5 /* RightBackShoulder.png in Resources */,
+				7C0EA75D21C071F300F3A4A5 /* myRoller.png in Resources */,
+				7C0EA75321C071F300F3A4A5 /* backview.jpg in Resources */,
+				7C0EA79C21C071F300F3A4A5 /* RightAnkle.png in Resources */,
+				7C0EA74C21C071F300F3A4A5 /* LeftKnee.png in Resources */,
+				7C0EA77C21C071F300F3A4A5 /* bodyfront.png in Resources */,
+				7C0EA73621C071F300F3A4A5 /* straching.png in Resources */,
+				7C0EA73D21C071F300F3A4A5 /* LeftThigh.png in Resources */,
+				7C0EA76A21C071F300F3A4A5 /* LeftChest.png in Resources */,
+				7C0EA78D21C071F300F3A4A5 /* bg_full_720x1280.png in Resources */,
+				7C0EA7AE21C071F300F3A4A5 /* refresh.png in Resources */,
+				7C0EA79D21C071F300F3A4A5 /* left_lat_back.png in Resources */,
+				7C0EA75921C071F300F3A4A5 /* RightTrapezius.png in Resources */,
+				7C0EA79221C071F300F3A4A5 /* exercise.png in Resources */,
+				7C0EA75E21C071F300F3A4A5 /* RightForeArm.png in Resources */,
+				7C0EA76221C071F300F3A4A5 /* pausePlayer.png in Resources */,
+				7C0EA74221C071F300F3A4A5 /* rightbackwritst.jpg in Resources */,
+				7C0EA7B421C071F300F3A4A5 /* digital.ttf in Resources */,
+				7C0EA7A621C071F300F3A4A5 /* ios_close.png in Resources */,
+				7C0EA77E21C071F300F3A4A5 /* bydate.png in Resources */,
+				7C0EA7BE21C2D90100F3A4A5 /* GoogleService-Info.plist in Resources */,
+				7C0EA78421C071F300F3A4A5 /* LeftBiceps.png in Resources */,
+				7C0EA78721C071F300F3A4A5 /* MiddleAbs.png in Resources */,
+				7C0EA78621C071F300F3A4A5 /* myUser.png in Resources */,
+				7C0EA7A021C071F300F3A4A5 /* favorites.png in Resources */,
+				7C0EA79921C071F300F3A4A5 /* user_create_account.png in Resources */,
+				7C0EA73721C071F300F3A4A5 /* LeftForeArm.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8FB1402F37E5CF9EF23E4508 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MuscleFLossingRoller/Pods-MuscleFLossingRoller-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MuscleFLossingRoller/Pods-MuscleFLossingRoller-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D98DEA065103647B1EC46536 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MuscleFLossingRoller-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7C0EA69A21C06FC300F3A4A5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C0EA7BC21C083BC00F3A4A5 /* LoginAlert.swift in Sources */,
+				7C0EA7BA21C0816B00F3A4A5 /* WaitingToLoad.swift in Sources */,
+				7C0EA7B621C0733000F3A4A5 /* NewLogin.swift in Sources */,
 				7C0EA6A421C06FC300F3A4A5 /* ViewController.swift in Sources */,
 				7C0EA6A221C06FC300F3A4A5 /* AppDelegate.swift in Sources */,
+				7C0EA7B821C0739F00F3A4A5 /* TextFieldWithImage.swift in Sources */,
+				7C0EA6B421C06FE100F3A4A5 /* CustomButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +899,7 @@
 		};
 		7C0EA6B121C06FC400F3A4A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C9320D06F538666B6F9D098 /* Pods-MuscleFLossingRoller.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +918,7 @@
 		};
 		7C0EA6B221C06FC400F3A4A5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A68CDE8349018C3DF5E9143D /* Pods-MuscleFLossingRoller.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
