@@ -1,0 +1,6 @@
+framework module Pods_MuscleFLossingRoller {
+  umbrella header "Pods-MuscleFLossingRoller-umbrella.h"
+
+  export *
+  module * { export * }
+}
