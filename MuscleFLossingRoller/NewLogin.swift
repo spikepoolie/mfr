@@ -406,7 +406,7 @@ class NewLogin: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
 //            }
 //            task.resume()
 //        }
-        // to be removed later
+    
     }
     
     func ShowErrorMessage(){
