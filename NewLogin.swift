@@ -326,9 +326,7 @@ class NewLogin: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
                 }
             })
             
-        } else {
-            print("didn't work")
-        }
+        } 
        
 //        if let url = URL(string: "http://up2speedtraining.com/mobile/php/up2speed_create_account.php"){
 //            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
