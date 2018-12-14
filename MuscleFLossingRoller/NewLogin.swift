@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import FirebaseStorage
 
 extension UIImage {
     func resized(img: UIImage, size: CGSize) -> UIImage? {
@@ -55,6 +56,7 @@ class NewLogin: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
     }
     
     var ref: DatabaseReference?
+    var storageRef: StorageReference?
     
     
     
@@ -290,16 +292,44 @@ class NewLogin: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
     }
     
     func CreateAccount(_ username: String, password: String, name: String, cellphone: String){
-        self.view.endEditing(true)
-        let key = ref?.childByAutoId().key
-        let newUser = [
-            "key" : key,
-            "username" : username,
-            "password" : password,
-            "name" : name,
-            "cellphone" : cellphone
-        ]
-        ref?.child(key!).setValue( newUser )
+         self.view.endEditing(true)
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: "watingtoload") as UIViewController
+        self.present(vc,animated:true,completion: nil)
+        let profileImage = myUserImage.image
+        let imageName = NSUUID().uuidString
+         let storageRef = Storage.storage().reference().child("\(imageName).png")
+        if let uploadData = profileImage!.pngData() {
+            storageRef.putData(uploadData, metadata: nil, completion : {
+                (metadata, error) in
+                
+                if (( error) != nil) {
+                    print(error!)
+                    return
+                }
+                
+                if let profileImageUrl = metadata?.downloadURL()?.absoluteString {
+                    self.view.endEditing(true)
+                    let key = self.ref?.childByAutoId().key
+                    let newUser = [
+                        "key" : key,
+                        "username" : username,
+                        "password" : password,
+                        "name" : name,
+                        "cellphone" : cellphone,
+                        "profileImageUrl" : profileImageUrl
+                    ]
+                    self.ref?.child(key!).setValue( newUser )
+                    self.dismiss(animated: true, completion: nil)
+                } else {
+                    print("herer")
+                }
+            })
+            
+        } else {
+            print("didn't work")
+        }
+       
 //        if let url = URL(string: "http://up2speedtraining.com/mobile/php/up2speed_create_account.php"){
 //            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
 //            let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: "watingtoload") as UIViewController
