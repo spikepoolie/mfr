@@ -39,7 +39,7 @@ class LogMeIn: UIViewController , UITextFieldDelegate{
             else{
                 emailOk = 1
             }
-            if txtPassword.text!.characters.count == 0 || txtPassword.text == " "{
+            if txtPassword.text!.count == 0 || txtPassword.text == " "{
                 passwordOk = 0
                 waitToLogIn.stopAnimating()
             }
