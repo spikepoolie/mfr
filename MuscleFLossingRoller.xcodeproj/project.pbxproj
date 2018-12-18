@@ -145,6 +145,8 @@
 		7C0EA7BA21C0816B00F3A4A5 /* WaitingToLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0EA7B921C0816B00F3A4A5 /* WaitingToLoad.swift */; };
 		7C0EA7BC21C083BC00F3A4A5 /* LoginAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0EA7BB21C083BC00F3A4A5 /* LoginAlert.swift */; };
 		7C0EA7BE21C2D90100F3A4A5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA7BD21C2D90100F3A4A5 /* GoogleService-Info.plist */; };
+		7C140FBE21C873D800D16F47 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C140FBD21C873D700D16F47 /* SpinnerViewController.swift */; };
+		7C140FC021C875F400D16F47 /* LogMeIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C140FBF21C875F400D16F47 /* LogMeIn.swift */; };
 		B61FD8839D2D15E9015B44AC /* Pods_MuscleFLossingRoller.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CC727AACDCF460E1E874F6 /* Pods_MuscleFLossingRoller.framework */; };
 /* End PBXBuildFile section */
 
@@ -290,6 +292,8 @@
 		7C0EA7B921C0816B00F3A4A5 /* WaitingToLoad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitingToLoad.swift; sourceTree = "<group>"; };
 		7C0EA7BB21C083BC00F3A4A5 /* LoginAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAlert.swift; sourceTree = "<group>"; };
 		7C0EA7BD21C2D90100F3A4A5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7C140FBD21C873D700D16F47 /* SpinnerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
+		7C140FBF21C875F400D16F47 /* LogMeIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogMeIn.swift; sourceTree = "<group>"; };
 		88CC727AACDCF460E1E874F6 /* Pods_MuscleFLossingRoller.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuscleFLossingRoller.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A68CDE8349018C3DF5E9143D /* Pods-MuscleFLossingRoller.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuscleFLossingRoller.release.xcconfig"; path = "Pods/Target Support Files/Pods-MuscleFLossingRoller/Pods-MuscleFLossingRoller.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -331,6 +335,8 @@
 				7C0EA6B521C071F300F3A4A5 /* Images */,
 				7C0EA6B321C06FE100F3A4A5 /* CustomButton.swift */,
 				7C0EA6A121C06FC300F3A4A5 /* AppDelegate.swift */,
+				7C140FBF21C875F400D16F47 /* LogMeIn.swift */,
+				7C140FBD21C873D700D16F47 /* SpinnerViewController.swift */,
 				7C0EA6A321C06FC300F3A4A5 /* ViewController.swift */,
 				7C0EA6A521C06FC300F3A4A5 /* Main.storyboard */,
 				7C0EA7B921C0816B00F3A4A5 /* WaitingToLoad.swift */,
@@ -751,10 +757,12 @@
 			files = (
 				7C0EA7BC21C083BC00F3A4A5 /* LoginAlert.swift in Sources */,
 				7C0EA7BA21C0816B00F3A4A5 /* WaitingToLoad.swift in Sources */,
+				7C140FC021C875F400D16F47 /* LogMeIn.swift in Sources */,
 				7C0EA7B621C0733000F3A4A5 /* NewLogin.swift in Sources */,
 				7C0EA6A421C06FC300F3A4A5 /* ViewController.swift in Sources */,
 				7C0EA6A221C06FC300F3A4A5 /* AppDelegate.swift in Sources */,
 				7C0EA7B821C0739F00F3A4A5 /* TextFieldWithImage.swift in Sources */,
+				7C140FBE21C873D800D16F47 /* SpinnerViewController.swift in Sources */,
 				7C0EA6B421C06FE100F3A4A5 /* CustomButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

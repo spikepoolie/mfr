@@ -37,13 +37,13 @@ class LoginAlert: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         
-        loginAlert.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
-        self.loginAlert.backgroundColor=UIColor.red
+        loginAlert.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
+        //self.loginAlert.backgroundColor=UIColor.red
         UIView.animate(withDuration: 2, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.5, options: .allowUserInteraction, animations:{
             
             self.loginAlert.transform = CGAffineTransform.identity
             // loginAlert.layer.backgroundColor=originalColor
-            self.loginAlert.backgroundColor=UIColor.black
+            //self.loginAlert.backgroundColor=UIColor.black
             //btnLogin.setTitle("Creating Account",for: .normal)
         }, completion: nil)
 
