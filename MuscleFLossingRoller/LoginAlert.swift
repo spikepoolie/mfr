@@ -11,8 +11,6 @@ import UIKit
 class LoginAlert: UIViewController {
 
    
-    
-   
     @IBOutlet weak var redview: UIView!
     @IBOutlet weak var loginAlert: UIView!
     @IBOutlet weak var lblMessage: UILabel!

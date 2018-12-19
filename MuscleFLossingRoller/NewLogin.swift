@@ -69,7 +69,6 @@ class NewLogin: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
     var myEighteen = 1
     var hasAccountCreated = 0
     
-    @IBOutlet weak var waiting: UIActivityIndicatorView!
     
     @IBOutlet weak var userImageButton: CustomButton!
     
@@ -89,7 +88,7 @@ class NewLogin: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
     
     @IBOutlet weak var hasAccount: UISwitch!
     
-    @IBOutlet weak var switchEighteen: UISwitch!
+    
     
     @IBAction func hasAccount(_ sender: Any) {
         if hasAccount.isOn{
@@ -105,6 +104,7 @@ class NewLogin: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
     }
     
     @IBAction func submitForm(_ sender: Any) {
+        self.view.endEditing(true)
         let defaults = UserDefaults.standard
         if isValidEmail(testStr: username.text!){
             if username.text! == "" || password.text! == "" || fullname.text! == "" || cellphone.text! == ""{
@@ -206,10 +206,12 @@ class NewLogin: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
         ref = Database.database().reference().child("Users")
         super.viewDidLoad()
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        myUserImage.layer.cornerRadius=46
-        myUserImage.layer.masksToBounds=true
-        userImageButton.layer.cornerRadius=46
-        userImageButton.layer.masksToBounds=true
+        myUserImage.layer.cornerRadius=10
+        myUserImage.clipsToBounds = true
+        userImageButton.layer.cornerRadius=10
+        userImageButton.clipsToBounds=true
+        myUserImage.layer.borderColor=UIColor.lightGray.cgColor
+        myUserImage.layer.borderWidth=1
         
         fullname.delegate=self
         password.delegate=self

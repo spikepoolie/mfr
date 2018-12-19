@@ -12,36 +12,50 @@ class LogMeIn: UIViewController , UITextFieldDelegate{
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var txtEmailAddress: UITextField!
     @IBOutlet weak var btnLogin: UIButton!
-    @IBOutlet weak var waitToLogIn: UIActivityIndicatorView!
+    @IBOutlet weak var hasAccount: UISwitch!
+    @IBOutlet var logmeview: UIView!
     
     var myUsername = ""
     var myPassword = ""
+    var hasAccountCreated = 0
     
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
+    
+    @IBAction func hasAccountSwitch(_ sender: Any) {
+        if hasAccount.isOn{
+            hasAccountCreated = 1
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: "newloginscreen") as UIViewController
 
-    @IBOutlet var logmeview: UIView!
-   
+            self.present(vc,animated:true,completion: nil)
+        }
+        else{
+            hasAccountCreated = 0
+        }
+    }
+    
     let defaults = UserDefaults.standard
     
     @IBAction func btnLogin(_ sender: Any) {
-        waitToLogIn.startAnimating()
+        self.view.endEditing(true)
         var emailOk = 1
         var passwordOk = 1
         //let defaults = UserDefaults.standard
         if isValidEmail(testStr: txtEmailAddress.text!){
-            if txtEmailAddress.text!.characters.count == 0 || txtEmailAddress.text == " "{
+            if txtEmailAddress.text!.count == 0 || txtEmailAddress.text == "" || txtEmailAddress.text == " "{
                 emailOk = 0
-                waitToLogIn.stopAnimating()
                 txtEmailAddress.shake()
             }
             else{
                 emailOk = 1
             }
-            if txtPassword.text!.count == 0 || txtPassword.text == " "{
+            if txtPassword.text!.count == 0 || txtPassword.text == " " || txtPassword.text == ""{
                 passwordOk = 0
-                waitToLogIn.stopAnimating()
+                defaults.set("Password can not be blank", forKey: "loginMessage")
+                ShowErrorMessage()
             }
             else{
                 passwordOk = 1
@@ -52,11 +66,10 @@ class LogMeIn: UIViewController , UITextFieldDelegate{
                 myPassword = (txtPassword.text)!
                 sendLoginInfo(username: myUsername,password: myPassword)
             }
+        } else {
+            defaults.set("Invalid email address", forKey: "loginMessage")
+            ShowErrorMessage()
         }
-        else{
-            waitToLogIn.stopAnimating()
-        }
-        
     }
     
     override func viewDidLoad() {
@@ -92,7 +105,6 @@ class LogMeIn: UIViewController , UITextFieldDelegate{
     func SendToMainQeue(){
         DispatchQueue.global().async {
             DispatchQueue.main.async {
-                self.waitToLogIn.stopAnimating()
                 self.txtEmailAddress.shake()
                 self.txtPassword.shake()
                 //self.CreateAccount()
@@ -174,7 +186,6 @@ class LogMeIn: UIViewController , UITextFieldDelegate{
                                 DispatchQueue.global().async {
                                     DispatchQueue.main.async {
                                         self.btnLogin.isEnabled=true
-                                        self.waitToLogIn.stopAnimating()
                                         UserDefaults.standard.set(self.myUsername, forKey: "username")
                                         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                                        
