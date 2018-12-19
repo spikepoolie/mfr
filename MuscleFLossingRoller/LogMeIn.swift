@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseDatabase
+
 
 class LogMeIn: UIViewController , UITextFieldDelegate{
     @IBOutlet weak var txtPassword: UITextField!
@@ -18,6 +20,9 @@ class LogMeIn: UIViewController , UITextFieldDelegate{
     var myUsername = ""
     var myPassword = ""
     var hasAccountCreated = 0
+    
+    var ref: DatabaseReference?
+    var handle: DatabaseHandle?
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -74,6 +79,8 @@ class LogMeIn: UIViewController , UITextFieldDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = Database.database().reference().child("Users")
+       
         btnLogin.layer.cornerRadius=10
         btnLogin.layer.masksToBounds=true
         txtPassword.delegate=self
@@ -150,7 +157,7 @@ class LogMeIn: UIViewController , UITextFieldDelegate{
        // if Int(self.view.frame.size.height) < 569{ // iphone 5 or older
             moveTextField(textField: textField, moveDistance: -250, up: false)
        // }
-        if txtEmailAddress.text?.characters.count == 0 || txtPassword.text?.characters.count == 0{
+        if txtEmailAddress.text?.count == 0 || txtPassword.text?.count == 0{
             //btnLogin.isEnabled = false
             //btnLogin.backgroundColor = UIColor.darkGray.withAlphaComponent(0.5)
             //btnLogin.setTitleColor(UIColor.gray , for: .normal)
@@ -164,66 +171,108 @@ class LogMeIn: UIViewController , UITextFieldDelegate{
     
     func sendLoginInfo(username: String, password: String){
         
-        if let url = URL(string: "http://www.up2speedtraining.com/mobile/php/up2speed_login.php"){
-            let request = NSMutableURLRequest(url:url)
-            request.httpMethod = "POST";// Compose a query string
-            let postString = "email=\(myUsername)&password=\(myPassword)"
-            request.httpBody = postString.data(using: String.Encoding.utf8)
-            let task = URLSession.shared.dataTask(with:request as URLRequest){
-                data, response, error in
+//        ref?.child("Users")
+//            .queryOrdered(byChild: "name")
+//            .queryEqual(toValue: "did")
+//            .observe(.value, with: { (snapshot: DataSnapshot) in
+//
+//                 if let dict = snapshot.value as? [String:AnyObject]{
+//
+//                print(snapshot.children.allObjects)
+//                }
+//
+//        })
+        
+      //  ref? =  FIRDatabase.database().reference().child("Users")
+        print("\(username)_\(password)")
+        ref?.queryOrdered(byChild: "user_key").queryEqual(toValue: "\(username)_\(password)")
+            .observeSingleEvent(of: .value, with: { snapshot in
                 
-                if error != nil{
-                }
-                do {
-                    if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSArray {
-                        if convertedJsonIntoDict.count > 0{
-                            let emailValue = (convertedJsonIntoDict[0] as! NSDictionary)["email"] as? String
-                            let myuserid = (convertedJsonIntoDict[0] as! NSDictionary)["userid"] as? Int
-                            UserDefaults.standard.set(myuserid, forKey: "myuserid")
-                            if emailValue != nil{
-                                UserDefaults.standard.set(self.myUsername, forKey: "username")
-                                
-                                DispatchQueue.global().async {
-                                    DispatchQueue.main.async {
-                                        self.btnLogin.isEnabled=true
-                                        UserDefaults.standard.set(self.myUsername, forKey: "username")
-                                        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                                       
-                                        let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: "myprofile") as UIViewController
-                                        self.present(vc,animated:true,completion: nil)
-                                      
-                                    }
-                                }
-                            }
-                            else{
-                                self.btnLogin.isEnabled=true
-                                self.SendToMainQeue()
-                            }
-                        }
-                        else{
-                            self.btnLogin.isEnabled=true
-                            UserDefaults.standard.set("blank", forKey: "username")
-                            UserDefaults.standard.set("blank", forKey: "password")
-                            UserDefaults.standard.set("blank", forKey: "name")
-                            self.SendToMainQeue()
-                        }
-                    }
-                    else{
-                        self.btnLogin.isEnabled=true
-                        UserDefaults.standard.set("blank", forKey: "username")
-                        UserDefaults.standard.set("blank", forKey: "password")
-                        UserDefaults.standard.set("blank", forKey: "name")
-                        self.SendToMainQeue()
-                    }
-                }
-                catch let error as NSError {
-                    self.btnLogin.isEnabled=true
-                    //self.btnLogin.alpha=1
-                    print(error.localizedDescription)
-                }
-            }
-            task.resume()
-        }
+                print(snapshot)
+            })
+        
+//        let dri = ref?.child("Users").queryOrdered(byChild: "username").queryEqual(toValue: "a@a.comd").observe(.value, with: { (snapshot: DataSnapshot) in
+//
+//                             if let dict = snapshot.value as? [String:AnyObject]{
+//
+//                            print(snapshot.children.allObjects)
+//                             } else {
+//                                print("go to bed")
+//            }
+//
+//                    })
+        
+      
+        
+
+            
+        
+        
+       
+        
+//        let myLogin = ref!.child("users").queryOrdered(byChild: "user_key").queryEqual(toValue: "\(username)_\(password)")
+//        print("Info = \(myLogin)")
+        
+//        if let url = URL(string: "http://www.up2speedtraining.com/mobile/php/up2speed_login.php"){
+//            let request = NSMutableURLRequest(url:url)
+//            request.httpMethod = "POST";// Compose a query string
+//            let postString = "email=\(myUsername)&password=\(myPassword)"
+//            request.httpBody = postString.data(using: String.Encoding.utf8)
+//            let task = URLSession.shared.dataTask(with:request as URLRequest){
+//                data, response, error in
+//
+//                if error != nil{
+//                }
+//                do {
+//                    if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSArray {
+//                        if convertedJsonIntoDict.count > 0{
+//                            let emailValue = (convertedJsonIntoDict[0] as! NSDictionary)["email"] as? String
+//                            let myuserid = (convertedJsonIntoDict[0] as! NSDictionary)["userid"] as? Int
+//                            UserDefaults.standard.set(myuserid, forKey: "myuserid")
+//                            if emailValue != nil{
+//                                UserDefaults.standard.set(self.myUsername, forKey: "username")
+//
+//                                DispatchQueue.global().async {
+//                                    DispatchQueue.main.async {
+//                                        self.btnLogin.isEnabled=true
+//                                        UserDefaults.standard.set(self.myUsername, forKey: "username")
+//                                        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//
+//                                        let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: "myprofile") as UIViewController
+//                                        self.present(vc,animated:true,completion: nil)
+//
+//                                    }
+//                                }
+//                            }
+//                            else{
+//                                self.btnLogin.isEnabled=true
+//                                self.SendToMainQeue()
+//                            }
+//                        }
+//                        else{
+//                            self.btnLogin.isEnabled=true
+//                            UserDefaults.standard.set("blank", forKey: "username")
+//                            UserDefaults.standard.set("blank", forKey: "password")
+//                            UserDefaults.standard.set("blank", forKey: "name")
+//                            self.SendToMainQeue()
+//                        }
+//                    }
+//                    else{
+//                        self.btnLogin.isEnabled=true
+//                        UserDefaults.standard.set("blank", forKey: "username")
+//                        UserDefaults.standard.set("blank", forKey: "password")
+//                        UserDefaults.standard.set("blank", forKey: "name")
+//                        self.SendToMainQeue()
+//                    }
+//                }
+//                catch let error as NSError {
+//                    self.btnLogin.isEnabled=true
+//                    //self.btnLogin.alpha=1
+//                    print(error.localizedDescription)
+//                }
+//            }
+//            task.resume()
+//        }
     }
     
     func moveTextField(textField: UITextField, moveDistance: Int, up:Bool){
