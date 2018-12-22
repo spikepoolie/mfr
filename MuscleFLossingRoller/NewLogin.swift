@@ -300,10 +300,13 @@ class NewLogin: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
         let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: "watingtoload") as UIViewController
         self.present(vc,animated:true,completion: nil)
         self.view.endEditing(true)
+       
+
         let profileImage = myUserImage.image
+        let myImage = profileImage?.resizeWithPercent(percentage: 50)!
         let imageName = NSUUID().uuidString
         let storageRef = Storage.storage().reference().child("\(imageName).png")
-        if let uploadData = profileImage!.pngData() {
+        if let uploadData = myImage!.pngData() {
             storageRef.putData(uploadData, metadata: nil, completion : {
                 (metadata, error) in
                 
@@ -478,5 +481,31 @@ class NewLogin: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
 //        body.appendString(string: "--\(boundary)--\r\n")
         
         return body
+    }
+}
+
+
+extension UIImage {
+    func resizeWithPercent(percentage: CGFloat) -> UIImage? {
+        let imageView = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: size.width * percentage, height: size.height * percentage)))
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = self
+        UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, false, scale)
+        guard let context = UIGraphicsGetCurrentContext() else { return nil }
+        imageView.layer.render(in: context)
+        guard let result = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
+        UIGraphicsEndImageContext()
+        return result
+    }
+    func resizeWithWidth(width: CGFloat) -> UIImage? {
+        let imageView = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: width, height: CGFloat(ceil(width/size.width * size.height)))))
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = self
+        UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, false, scale)
+        guard let context = UIGraphicsGetCurrentContext() else { return nil }
+        imageView.layer.render(in: context)
+        guard let result = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
+        UIGraphicsEndImageContext()
+        return result
     }
 }

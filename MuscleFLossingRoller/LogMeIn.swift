@@ -171,18 +171,6 @@ class LogMeIn: UIViewController , UITextFieldDelegate{
     
     func sendLoginInfo(username: String, password: String){
         
-//        ref?.child("Users")
-//            .queryOrdered(byChild: "name")
-//            .queryEqual(toValue: "did")
-//            .observe(.value, with: { (snapshot: DataSnapshot) in
-//
-//                 if let dict = snapshot.value as? [String:AnyObject]{
-//
-//                print(snapshot.children.allObjects)
-//                }
-//
-//        })
-        
       //  ref? =  FIRDatabase.database().reference().child("Users")
         print("\(username)_\(password)")
         ref?.queryOrdered(byChild: "user_key").queryEqual(toValue: "\(username)_\(password)")
@@ -190,19 +178,6 @@ class LogMeIn: UIViewController , UITextFieldDelegate{
                 
                 print(snapshot)
             })
-        
-//        let dri = ref?.child("Users").queryOrdered(byChild: "username").queryEqual(toValue: "a@a.comd").observe(.value, with: { (snapshot: DataSnapshot) in
-//
-//                             if let dict = snapshot.value as? [String:AnyObject]{
-//
-//                            print(snapshot.children.allObjects)
-//                             } else {
-//                                print("go to bed")
-//            }
-//
-//                    })
-        
-      
         
 
             
