@@ -303,10 +303,13 @@ class NewLogin: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
        
 
         let profileImage = myUserImage.image
-        let myImage = profileImage?.resizeWithPercent(percentage: 50)!
+        
+        
+//        let myImage = profileImage?.resizeWithPercent(percentage: 50)!
         let imageName = NSUUID().uuidString
+        let myImage =  self.resizeImage(image: profileImage!, targetSize: CGSize(width: 500.0, height:500.0))
         let storageRef = Storage.storage().reference().child("\(imageName).png")
-        if let uploadData = myImage!.pngData() {
+        if let uploadData = myImage.pngData() {
             storageRef.putData(uploadData, metadata: nil, completion : {
                 (metadata, error) in
                 
@@ -335,6 +338,32 @@ class NewLogin: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
             
         }
        
+    }
+    
+    func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+        let size = image.size
+        
+        let widthRatio  = targetSize.width  / size.width
+        let heightRatio = targetSize.height / size.height
+        
+        // Figure out what our orientation is, and use that to form the rectangle
+        var newSize: CGSize
+        if(widthRatio > heightRatio) {
+            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+        } else {
+            newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
+        }
+        
+        // This is the rect that we've calculated out and this is what is actually used below
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+        
+        // Actually do the resizing to the rect using the ImageContext stuff
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        image.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
     }
     
     func ShowErrorMessage(){
@@ -406,106 +435,5 @@ class NewLogin: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
     func generateBoundaryString() -> String {
         return "Boundary-\(NSUUID().uuidString)"
     }
-    
-    func UploadImage(email:String){
-        let myUrl = NSURL(string: "http://www.up2speedtraining.com/mobile/php/up2speed_create_account.php");
-        let request = NSMutableURLRequest(url:myUrl! as URL);
-        request.httpMethod = "POST";
-        
-        let param = ["userId":email]
-        
-        let boundary = generateBoundaryString()
-        
-        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
-        let myPicture = myUserImage.image
-        let myUserImageProfile = myPicture?.resized(img: myPicture!, size: CGSize(width: 110, height: 110))
-        let imageData = myUserImageProfile!.pngData()
-        
-        if(imageData==nil)  { return; }
-        
-        request.httpBody = createBodyWithParameters(parameters: param, filePathKey: "file", imageDataKey: imageData! as NSData, boundary: boundary) as Data
-        
-        let task = URLSession.shared.dataTask(with: request as URLRequest) {
-            data, response, error in
-            
-            if error != nil {
-                print(error as Any)
-                self.dismiss(animated: true, completion: nil)
-                return
-            }
-            
-            do {
-                _ = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary
-                
-                DispatchQueue.global().async {
-                    DispatchQueue.main.async {
-                        
-                        UserDefaults.standard.set(email, forKey: "username")
-                        UserDefaults.standard.set(1, forKey: "hasaccount")
-                        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                        let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: "logmein") as UIViewController
-                        
-                        self.present(vc,animated:true,completion: nil)
-                    }
-                }
-            }
-            catch let error as NSError {
-                print("error")
-                self.dismiss(animated: true, completion: nil)
-                //self.btnLogin.alpha=1
-                print(error.localizedDescription)
-            }
-        }
-        
-        task.resume()
-    }
-    
-    func createBodyWithParameters(parameters: [String: String]?, filePathKey: String?, imageDataKey: NSData, boundary: String) -> NSData {
-        let body = NSMutableData();
-        
-//        if parameters != nil {
-//            for (key, value) in parameters! {
-//                body.appendString(string: "--\(boundary)\r\n")
-//                body.appendString(string: "Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n")
-//                body.appendString(string: "\(value)\r\n")
-//            }
-//        }
-//        let filename = "user-profile.png"
-//        let mimetype = "image/png"
-//
-//        body.appendString(string: "--\(boundary)\r\n")
-//        body.appendString(string: "Content-Disposition: form-data; name=\"\(filePathKey!)\"; filename=\"\(filename)\"\r\n")
-//        body.appendString(string: "Content-Type: \(mimetype)\r\n\r\n")
-//        body.append(imageDataKey as Data)
-//        body.appendString(string: "\r\n")
-//        body.appendString(string: "--\(boundary)--\r\n")
-        
-        return body
-    }
-}
-
-
-extension UIImage {
-    func resizeWithPercent(percentage: CGFloat) -> UIImage? {
-        let imageView = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: size.width * percentage, height: size.height * percentage)))
-        imageView.contentMode = .scaleAspectFit
-        imageView.image = self
-        UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, false, scale)
-        guard let context = UIGraphicsGetCurrentContext() else { return nil }
-        imageView.layer.render(in: context)
-        guard let result = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
-        UIGraphicsEndImageContext()
-        return result
-    }
-    func resizeWithWidth(width: CGFloat) -> UIImage? {
-        let imageView = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: width, height: CGFloat(ceil(width/size.width * size.height)))))
-        imageView.contentMode = .scaleAspectFit
-        imageView.image = self
-        UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, false, scale)
-        guard let context = UIGraphicsGetCurrentContext() else { return nil }
-        imageView.layer.render(in: context)
-        guard let result = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
-        UIGraphicsEndImageContext()
-        return result
-    }
+   
 }
