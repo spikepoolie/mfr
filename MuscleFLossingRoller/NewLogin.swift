@@ -20,23 +20,6 @@ extension UIImage {
     }
 }
 
-extension UIImage {
-    
-    /// Returns a image that fills in newSize
-    func resizedImage(newSize: CGSize) -> UIImage {
-        // Guard newSize is different
-        guard self.size != newSize else { return self }
-        let canvasSize = CGSize(width: size.width, height: size.height)
-        UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0);
-        self.draw(in: CGRect(origin: .zero, size: canvasSize))
-        let newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext()
-        return newImage
-    }
-    
-    /// Returns a resized image that fits in rectSize, keeping it's aspect ratio
-    /// Note that the new image size is not rectSize, but within it.
-}
 
 extension UIView {
     func shake() {
@@ -116,7 +99,8 @@ class NewLogin: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
                 myPassword = (password.text)!
                 myName = (fullname.text)!
                 myCell = (cellphone.text)!
-                sendLoginInfo(myUsername,password: myPassword,fullname: myName, cellphone:myCell)
+                checkIfLoginExists(email: myUsername)
+                //sendLoginInfo(myUsername,password: myPassword,fullname: myName, cellphone:myCell)
             }
         }
         else{
@@ -172,6 +156,26 @@ class NewLogin: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
         cellphone.text=""
     }
     
+    func checkIfLoginExists(email: String) {
+        ref?.queryOrdered(byChild: "username").queryEqual(toValue: email)
+        .observeSingleEvent(of: .value, with: { snapshot in
+           
+            if snapshot.exists() {
+                var users = snapshot.value as! [String:AnyObject]
+                let usersKeys = Array(users.keys)
+                
+                for userKey in usersKeys  {
+                    
+                    if let value = users[userKey] as? [String:AnyObject] {
+                        if let title = value["username"] as? String {
+                            print("title = \(String(describing: title))")
+                        }
+                    }
+                }
+            }
+        })
+    }
+    
     func DoLogin(){
         let defaults = UserDefaults.standard
         if isValidEmail(testStr: username.text!){
@@ -198,6 +202,7 @@ class NewLogin: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
     @IBAction func PickMyUserImage(_ sender: Any) {
         let myImagePicker = UIImagePickerController()
         myImagePicker.delegate = self
+        //myImagePicker.allowsEditing = true
         myImagePicker.sourceType = .savedPhotosAlbum
         self.present(myImagePicker,animated:true,completion: nil)
     }
@@ -222,50 +227,50 @@ class NewLogin: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
     
     func sendLoginInfo(_ username: String, password: String, fullname: String, cellphone: String){
         
-        if let url = URL(string: "http://www.up2speedtraining.com/mobile/php/up2speed_check_login.php"){
-            let request = NSMutableURLRequest(url:url)
-            request.httpMethod = "POST";// Compose a query string
-            let postString = "email=\(myUsername)"
-            request.httpBody = postString.data(using: String.Encoding.utf8)
-            let task = URLSession.shared.dataTask(with:request as URLRequest){
-                data, response, error in
-                
-                if error != nil{
-                    
-                }
-                do {
-                    if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? NSArray {
-                        if convertedJsonIntoDict.count > 0{
-                            let emailValue = (convertedJsonIntoDict[0] as! NSDictionary)["email"] as? String
-                            if emailValue != nil{
-                                DispatchQueue.global().async {
-                                    DispatchQueue.main.async {
-                                        self.btnLogin.isEnabled=true
-                                        self.defaults.set("Email already exists", forKey: "loginMessage")
-                                        self.ShowErrorMessage()
-                                    }
-                                }
-                            }
-                            else{
-                                self.btnLogin.isEnabled=true
-                                //self.SendToMainQeue()
-                            }
-                        }
-                        else{
-                            self.SendToMainQeue()
-                        }
-                    }
-                    else{
-                        self.clearDefaults()
-                    }
-                }
-                catch let error as NSError {
-                    self.btnLogin.isEnabled=true
-                    print(error.localizedDescription)
-                }
-            }
-            task.resume()
-        }
+//        if let url = URL(string: "http://www.up2speedtraining.com/mobile/php/up2speed_check_login.php"){
+//            let request = NSMutableURLRequest(url:url)
+//            request.httpMethod = "POST";// Compose a query string
+//            let postString = "email=\(myUsername)"
+//            request.httpBody = postString.data(using: String.Encoding.utf8)
+//            let task = URLSession.shared.dataTask(with:request as URLRequest){
+//                data, response, error in
+//                
+//                if error != nil{
+//                    
+//                }
+//                do {
+//                    if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? NSArray {
+//                        if convertedJsonIntoDict.count > 0{
+//                            let emailValue = (convertedJsonIntoDict[0] as! NSDictionary)["email"] as? String
+//                            if emailValue != nil{
+//                                DispatchQueue.global().async {
+//                                    DispatchQueue.main.async {
+//                                        self.btnLogin.isEnabled=true
+//                                        self.defaults.set("Email already exists", forKey: "loginMessage")
+//                                        self.ShowErrorMessage()
+//                                    }
+//                                }
+//                            }
+//                            else{
+//                                self.btnLogin.isEnabled=true
+//                                //self.SendToMainQeue()
+//                            }
+//                        }
+//                        else{
+//                            self.SendToMainQeue()
+//                        }
+//                    }
+//                    else{
+//                        self.clearDefaults()
+//                    }
+//                }
+//                catch let error as NSError {
+//                    self.btnLogin.isEnabled=true
+//                    print(error.localizedDescription)
+//                }
+//            }
+//            task.resume()
+//        }
     }
     
     func SendToMainQeue(){
@@ -292,6 +297,10 @@ class NewLogin: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
                 self.password.shake()
             }
         }
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion:nil)
     }
     
     func CreateAccount(_ username: String, password: String, name: String, cellphone: String){

@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "closure #1 in NewLogin.checkIfLoginExists(email:):NewLogin.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "dictionary[&quot;user_key&quot;].val()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "LogMeIn.btnLogin(_:):LogMeIn.swift">
          <PersistentStrings>
             <PersistentString
