@@ -100,7 +100,6 @@ class NewLogin: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
                 myName = (fullname.text)!
                 myCell = (cellphone.text)!
                 checkIfLoginExists(email: myUsername)
-                //sendLoginInfo(myUsername,password: myPassword,fullname: myName, cellphone:myCell)
             }
         }
         else{
@@ -181,28 +180,6 @@ class NewLogin: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
         })
     }
     
-    func DoLogin(){
-        let defaults = UserDefaults.standard
-        if isValidEmail(testStr: username.text!){
-            if username.text! == "" || password.text! == "" || fullname.text! == "" || cellphone.text == ""{
-                defaults.set("All fields are required", forKey: "loginMessage")
-                ShowErrorMessage()
-            }
-            else{
-                myUsername = (username.text)!
-                myPassword = (password.text)!
-                myName = (fullname.text)!
-                myCell = (cellphone.text)!
-                sendLoginInfo(myUsername,password: myPassword,fullname: myName, cellphone: myCell)
-            }
-        }
-        else{
-            defaults.set("Invalid email address", forKey: "loginMessage")
-            ShowErrorMessage()
-        }
-        //UploadImage()
-    }
-    
     
     @IBAction func PickMyUserImage(_ sender: Any) {
         let myImagePicker = UIImagePickerController()
@@ -230,53 +207,6 @@ class NewLogin: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
         
     }
     
-    func sendLoginInfo(_ username: String, password: String, fullname: String, cellphone: String){
-        
-//        if let url = URL(string: "http://www.up2speedtraining.com/mobile/php/up2speed_check_login.php"){
-//            let request = NSMutableURLRequest(url:url)
-//            request.httpMethod = "POST";// Compose a query string
-//            let postString = "email=\(myUsername)"
-//            request.httpBody = postString.data(using: String.Encoding.utf8)
-//            let task = URLSession.shared.dataTask(with:request as URLRequest){
-//                data, response, error in
-//                
-//                if error != nil{
-//                    
-//                }
-//                do {
-//                    if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? NSArray {
-//                        if convertedJsonIntoDict.count > 0{
-//                            let emailValue = (convertedJsonIntoDict[0] as! NSDictionary)["email"] as? String
-//                            if emailValue != nil{
-//                                DispatchQueue.global().async {
-//                                    DispatchQueue.main.async {
-//                                        self.btnLogin.isEnabled=true
-//                                        self.defaults.set("Email already exists", forKey: "loginMessage")
-//                                        self.ShowErrorMessage()
-//                                    }
-//                                }
-//                            }
-//                            else{
-//                                self.btnLogin.isEnabled=true
-//                                //self.SendToMainQeue()
-//                            }
-//                        }
-//                        else{
-//                            self.SendToMainQeue()
-//                        }
-//                    }
-//                    else{
-//                        self.clearDefaults()
-//                    }
-//                }
-//                catch let error as NSError {
-//                    self.btnLogin.isEnabled=true
-//                    print(error.localizedDescription)
-//                }
-//            }
-//            task.resume()
-//        }
-    }
     
     func SendToMainQeue(){
         DispatchQueue.global().async {
@@ -308,18 +238,23 @@ class NewLogin: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
         dismiss(animated: true, completion:nil)
     }
     
-    func CreateAccount(_ username: String, password: String, name: String, cellphone: String){
-        
+    func presentStoryBoards(storyboardid: String, transitionid: String) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: "watingtoload") as UIViewController
+        let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: storyboardid) as UIViewController
+        if transitionid != "" {
+            vc.modalTransitionStyle = .flipHorizontal
+        }
         self.present(vc,animated:true,completion: nil)
+        //return vc
+    }
+    
+    func CreateAccount(_ username: String, password: String, name: String, cellphone: String){
+
+        presentStoryBoards(storyboardid: "watingtoload", transitionid: "")
         self.view.endEditing(true)
-       
 
         let profileImage = myUserImage.image
-        
-        
-//        let myImage = profileImage?.resizeWithPercent(percentage: 50)!
+
         let imageName = NSUUID().uuidString
         let myImage =  self.resizeImage(image: profileImage!, targetSize: CGSize(width: 500.0, height:500.0))
         let storageRef = Storage.storage().reference().child("\(imageName).png")
@@ -345,6 +280,7 @@ class NewLogin: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
                     ]
                     self.ref?.child(key!).setValue( newUser )
                     self.dismiss(animated: true, completion: nil)
+                    self.presentStoryBoards(storyboardid: "myprofile", transitionid: ".flipHorizontal")
                 } else {
                     print("herer")
                 }
