@@ -157,21 +157,26 @@ class NewLogin: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
     }
     
     func checkIfLoginExists(email: String) {
+        
         ref?.queryOrdered(byChild: "username").queryEqual(toValue: email)
         .observeSingleEvent(of: .value, with: { snapshot in
-           
+          
             if snapshot.exists() {
-                var users = snapshot.value as! [String:AnyObject]
-                let usersKeys = Array(users.keys)
-                
-                for userKey in usersKeys  {
-                    
-                    if let value = users[userKey] as? [String:AnyObject] {
-                        if let title = value["username"] as? String {
-                            print("title = \(String(describing: title))")
-                        }
-                    }
-                }
+                self.defaults.set("Email already exists", forKey: "loginMessage")
+                self.ShowErrorMessage()
+//                var users = snapshot.value as! [String:AnyObject]
+//                let usersKeys = Array(users.keys)
+//
+//                for userKey in usersKeys  {
+//
+//                    if let value = users[userKey] as? [String:AnyObject] {
+//                        if let title = value["username"] as? String {
+//                            print("title = \(String(describing: title))")
+//                        }
+//                    }
+//                }
+            } else {
+                self.CreateAccount(self.myUsername,password: self.myPassword,name: self.myName, cellphone:self.myCell)
             }
         })
     }
