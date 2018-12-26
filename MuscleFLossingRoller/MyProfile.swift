@@ -14,6 +14,7 @@ class MyProfile: UIViewController{
     let defaults = UserDefaults.standard
 
     @IBOutlet weak var myImageProfile: UIImageView!
+    var profileImageUrl: String!
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -38,14 +39,30 @@ class MyProfile: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         let myUser = defaults.integer(forKey: "myuserid")
-        let myimagename = "myprofileimage_\(myUser).png"
-        
-        if let checkedUrl = URL(string: "http://www.up2speedtraining.com/mobile/php/uploads/\(myimagename)") {
-            downloadImage(url: checkedUrl)
+        downloadImage(from: NSURL(string:profileImageUrl)! as URL)
+        myImageProfile.layer.cornerRadius=10
+        myImageProfile.clipsToBounds = true
+        myImageProfile.layer.cornerRadius=10
+        myImageProfile.clipsToBounds=true
+        myImageProfile.layer.borderColor=UIColor.lightGray.cgColor
+        myImageProfile.layer.borderWidth=1
+    }
+    
+    func downloadImage(from url: URL) {
+        print("Download Started")
+        getData(from: url) { data, response, error in
+            guard let data = data, error == nil else { return }
+            print(response?.suggestedFilename ?? url.lastPathComponent)
+            print("Download Finished")
+            DispatchQueue.main.async() {
+                self.myImageProfile.image = UIImage(data: data)!
+            }
         }
-        
+    }
+    
+    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
     }
 
     override func didReceiveMemoryWarning() {
@@ -101,6 +118,7 @@ class MyProfile: UIViewController{
         let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: "webview") as UIViewController
         self.present(vc,animated:true,completion: nil)
     }
+    
     func downloadImage(url: URL) {
         getDataFromUrl(url: url) { (data, response, error)  in
             if data != nil{

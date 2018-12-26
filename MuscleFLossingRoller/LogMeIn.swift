@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import FirebaseStorage
 
 
 class LogMeIn: UIViewController , UITextFieldDelegate{
@@ -17,12 +18,16 @@ class LogMeIn: UIViewController , UITextFieldDelegate{
     @IBOutlet weak var hasAccount: UISwitch!
     @IBOutlet var logmeview: UIView!
     
+    @IBOutlet weak var myProfileImage: UIImageView!
     var myUsername = ""
     var myPassword = ""
     var hasAccountCreated = 0
+    var imageFirebase = UIImage()
+    var imageUrl = ""
     
     var ref: DatabaseReference?
     var handle: DatabaseHandle?
+    var storageRef: StorageReference?
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -87,7 +92,7 @@ class LogMeIn: UIViewController , UITextFieldDelegate{
         txtEmailAddress.delegate=self
        // txtEmailAddress.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         //txtPassword.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        txtPassword.text="a"
+        txtPassword.text="o"
         txtEmailAddress.text="a@a.com"
     }
     
@@ -170,85 +175,34 @@ class LogMeIn: UIViewController , UITextFieldDelegate{
     }
     
     func sendLoginInfo(username: String, password: String){
-        
-      //  ref? =  FIRDatabase.database().reference().child("Users")
-        print("\(username)_\(password)")
         ref?.queryOrdered(byChild: "user_key").queryEqual(toValue: "\(username)_\(password)")
-            .observeSingleEvent(of: .value, with: { snapshot in
-                
-                print(snapshot)
-            })
-        
-
+        .observeSingleEvent(of: .value, with: { snapshot in
             
-        
-        
-       
-        
-//        let myLogin = ref!.child("users").queryOrdered(byChild: "user_key").queryEqual(toValue: "\(username)_\(password)")
-//        print("Info = \(myLogin)")
-        
-//        if let url = URL(string: "http://www.up2speedtraining.com/mobile/php/up2speed_login.php"){
-//            let request = NSMutableURLRequest(url:url)
-//            request.httpMethod = "POST";// Compose a query string
-//            let postString = "email=\(myUsername)&password=\(myPassword)"
-//            request.httpBody = postString.data(using: String.Encoding.utf8)
-//            let task = URLSession.shared.dataTask(with:request as URLRequest){
-//                data, response, error in
-//
-//                if error != nil{
-//                }
-//                do {
-//                    if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSArray {
-//                        if convertedJsonIntoDict.count > 0{
-//                            let emailValue = (convertedJsonIntoDict[0] as! NSDictionary)["email"] as? String
-//                            let myuserid = (convertedJsonIntoDict[0] as! NSDictionary)["userid"] as? Int
-//                            UserDefaults.standard.set(myuserid, forKey: "myuserid")
-//                            if emailValue != nil{
-//                                UserDefaults.standard.set(self.myUsername, forKey: "username")
-//
-//                                DispatchQueue.global().async {
-//                                    DispatchQueue.main.async {
-//                                        self.btnLogin.isEnabled=true
-//                                        UserDefaults.standard.set(self.myUsername, forKey: "username")
-//                                        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//
-//                                        let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: "myprofile") as UIViewController
-//                                        self.present(vc,animated:true,completion: nil)
-//
-//                                    }
-//                                }
-//                            }
-//                            else{
-//                                self.btnLogin.isEnabled=true
-//                                self.SendToMainQeue()
-//                            }
-//                        }
-//                        else{
-//                            self.btnLogin.isEnabled=true
-//                            UserDefaults.standard.set("blank", forKey: "username")
-//                            UserDefaults.standard.set("blank", forKey: "password")
-//                            UserDefaults.standard.set("blank", forKey: "name")
-//                            self.SendToMainQeue()
-//                        }
-//                    }
-//                    else{
-//                        self.btnLogin.isEnabled=true
-//                        UserDefaults.standard.set("blank", forKey: "username")
-//                        UserDefaults.standard.set("blank", forKey: "password")
-//                        UserDefaults.standard.set("blank", forKey: "name")
-//                        self.SendToMainQeue()
-//                    }
-//                }
-//                catch let error as NSError {
-//                    self.btnLogin.isEnabled=true
-//                    //self.btnLogin.alpha=1
-//                    print(error.localizedDescription)
-//                }
-//            }
-//            task.resume()
-//        }
+            if !snapshot.exists() {
+                self.defaults.set("Wrong email or password", forKey: "loginMessage")
+                self.txtEmailAddress.shake()
+                self.txtPassword.shake()
+                self.btnLogin.isEnabled=true
+                return
+            }
+            
+            var users = snapshot.value as! [String:AnyObject]
+            let usersKeys = Array(users.keys)
+
+            for userKey in usersKeys  {
+              
+
+                if let value = users[userKey] as? [String:AnyObject] {
+                    if let myImageUrl = value["profileImageUrl"] as? String {
+                        let vc = self.storyboard?.instantiateViewController(withIdentifier: "myprofile") as! MyProfile
+                        vc.profileImageUrl = myImageUrl
+                        self.present(vc, animated: true, completion: nil)
+                    }
+                }
+            }
+        })
     }
+
     
     func moveTextField(textField: UITextField, moveDistance: Int, up:Bool){
         let moveDuration = 0.3

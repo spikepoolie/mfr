@@ -502,6 +502,10 @@
                                 <rect key="frame" x="169" y="799" width="30" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="38p-rt-Pjr">
+                                <rect key="frame" x="88" y="592" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="tep-pi-Nzo" firstAttribute="top" secondItem="jCW-Wj-OMF" secondAttribute="top" id="H9i-dY-GZ7"/>
@@ -515,6 +519,7 @@
                         <outlet property="btnLogin" destination="cAG-3i-iTr" id="Mln-1k-U3p"/>
                         <outlet property="hasAccount" destination="Aqz-0h-fjl" id="J0s-pH-CCz"/>
                         <outlet property="logmeview" destination="jCW-Wj-OMF" id="7ZS-JP-4tI"/>
+                        <outlet property="myProfileImage" destination="38p-rt-Pjr" id="Gnb-Ok-hzf"/>
                         <outlet property="txtEmailAddress" destination="bok-lN-ENJ" id="q1h-8R-wsJ"/>
                         <outlet property="txtPassword" destination="91T-cX-Uuq" id="Kve-ia-VQ5"/>
                     </connections>
@@ -526,7 +531,7 @@
         <!--My Profile-->
         <scene sceneID="fBn-Uu-P5W">
             <objects>
-                <viewController storyboardIdentifier="myprofile" useStoryboardIdentifierAsRestorationIdentifier="YES" id="96E-mc-YG0" customClass="MyProfile" customModule="FitLab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="myprofile" useStoryboardIdentifierAsRestorationIdentifier="YES" id="96E-mc-YG0" customClass="MyProfile" customModule="MuscleFLossingRoller" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ofh-PY-d7i"/>
                         <viewControllerLayoutGuide type="bottom" id="uJf-1z-3Uk"/>
@@ -675,10 +680,6 @@
                                 <rect key="frame" x="0.0" y="102" width="414" height="140"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lWl-KG-YEp">
-                                        <rect key="frame" x="8" y="13" width="115" height="117"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LRd-AS-Oef">
                                         <rect key="frame" x="320" y="38" width="65" height="64"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -687,6 +688,10 @@
                                             <action selector="LogMeOut:" destination="96E-mc-YG0" eventType="touchUpInside" id="Dxy-Zf-IzN"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lWl-KG-YEp">
+                                        <rect key="frame" x="8" y="24" width="92" height="92"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
