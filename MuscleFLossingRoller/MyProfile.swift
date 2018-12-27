@@ -12,9 +12,12 @@ class MyProfile: UIViewController{
 
  
     let defaults = UserDefaults.standard
-
-    @IBOutlet weak var myImageProfile: UIImageView!
+  
     var profileImageUrl: String!
+    var hasProfileImage = false
+    var mydata = Data()
+    
+    @IBOutlet weak var myImageProfile: UIImageView!
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -24,7 +27,8 @@ class MyProfile: UIViewController{
     @IBAction func GoToMyOptions(_ sender: Any) {
         defaults.set("myprofile", forKey: "fromwhichview")
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: "viewoptions") as UIViewController
+        let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: "viewsideoptions") as UIViewController
+        
         self.present(vc,animated:true,completion: nil)
         
     }
@@ -40,7 +44,12 @@ class MyProfile: UIViewController{
         super.viewDidLoad()
         
         let myUser = defaults.integer(forKey: "myuserid")
-        downloadImage(from: NSURL(string:profileImageUrl)! as URL)
+        
+        if !hasProfileImage {
+            downloadImage(from: NSURL(string:profileImageUrl)! as URL)
+        } else {
+            self.myImageProfile.image = UIImage(data: mydata)!
+        }
         myImageProfile.layer.cornerRadius=10
         myImageProfile.clipsToBounds = true
         myImageProfile.layer.cornerRadius=10
@@ -50,12 +59,10 @@ class MyProfile: UIViewController{
     }
     
     func downloadImage(from url: URL) {
-        print("Download Started")
         getData(from: url) { data, response, error in
             guard let data = data, error == nil else { return }
-            print(response?.suggestedFilename ?? url.lastPathComponent)
-            print("Download Finished")
             DispatchQueue.main.async() {
+                self.mydata = data
                 self.myImageProfile.image = UIImage(data: data)!
             }
         }
@@ -87,23 +94,15 @@ class MyProfile: UIViewController{
     
 
     @IBAction func myTracker(_ sender: Any) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "viewsideoptions") as! ViewOptions
+        vc.myImageData = self.mydata
+        self.present(vc, animated: true, completion: nil)
         
         
-         let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: "viewsideoptions") as UIViewController
-        
-        //let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: "popupoptions") as UIViewController
-        self.present(vc,animated:true,completion: nil)
-        
+     
     }
     
-    
-    func getDataFromUrl(url: URL, completion: @escaping (_ data: Data?, _  response: URLResponse?, _ error: Error?) -> Void) {
-        URLSession.shared.dataTask(with: url) {
-            (data, response, error) in
-            completion(data, response, error)
-            }.resume()
-    }
     
     @IBAction func btnFaceBook(_ sender: Any) {
         /*
@@ -117,20 +116,5 @@ class MyProfile: UIViewController{
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: "webview") as UIViewController
         self.present(vc,animated:true,completion: nil)
-    }
-    
-    func downloadImage(url: URL) {
-        getDataFromUrl(url: url) { (data, response, error)  in
-            if data != nil{
-                let image = UIImage(data:data!)
-                if image != nil{
-                    DispatchQueue.main.async(execute:{
-                        self.myImageProfile.image = image
-                        self.myImageProfile.layer.cornerRadius=58
-                        self.myImageProfile.layer.masksToBounds=true
-                    })
-                }
-            }
-        }
     }
 }

@@ -3,10 +3,10 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "closure #1 in NewLogin.checkIfLoginExists(email:):NewLogin.swift">
+         contextName = "ViewOptions.goBackToThePreviousScreen():ViewOptions.swift">
          <PersistentStrings>
             <PersistentString
-               value = "dictionary[&quot;user_key&quot;].val()">
+               value = "self.myImageData">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -15,6 +15,14 @@
          <PersistentStrings>
             <PersistentString
                value = "profileImage">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in NewLogin.checkIfLoginExists(email:):NewLogin.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "dictionary[&quot;user_key&quot;].val()">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
