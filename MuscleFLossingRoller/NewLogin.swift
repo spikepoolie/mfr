@@ -254,7 +254,8 @@ class NewLogin: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
         self.view.endEditing(true)
 
         let profileImage = myUserImage.image
-
+        let myUserImageData: NSData = profileImage!.pngData()! as NSData
+        UserDefaults.standard.set(myUserImageData, forKey:  "imageProfile")
         let imageName = NSUUID().uuidString
         let myImage =  self.resizeImage(image: profileImage!, targetSize: CGSize(width: 500.0, height:500.0))
         let storageRef = Storage.storage().reference().child("\(imageName).png")
@@ -366,8 +367,7 @@ class NewLogin: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
         //selected image
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             myUserImage.image = image
-            let myUserImageData: NSData = image.pngData()! as NSData
-            UserDefaults.standard.set(myUserImageData, forKey:  "imageProfile")
+           // let myUserImageData: NSData = image.pngData()! as NSData
         } else{
             print("Something went wrong")
         }
