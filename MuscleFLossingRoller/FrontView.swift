@@ -13,11 +13,17 @@ class FrontView: UIViewController {
         return true
     }
     @IBOutlet var bodyView: UIView!
+    var myImage = Data()
     let defaults = UserDefaults.standard
     var bodyPartSelected = ""
     var bodypartid = 0;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
+        rightSwipe.direction = .right
+        
+        view.addGestureRecognizer(rightSwipe)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -165,14 +171,30 @@ class FrontView: UIViewController {
     }
 
     @IBAction func back(_ sender: Any) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: "bodyparts") as UIViewController
-        self.present(vc,animated:true,completion: nil)
+       goBack()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @objc func handleSwipe(sender: UISwipeGestureRecognizer) {
+        
+        if sender.state == .ended {
+            switch sender.direction {
+            case .right:
+                self.goBack()
+            default:
+                break
+            }
+        }
+    }
+    
+    func goBack(){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: "viewsideoptions") as UIViewController
+        self.present(vc,animated:true,completion: nil)
     }
     
     func goToRollerView(bodypart: String, bodypartid: Int){

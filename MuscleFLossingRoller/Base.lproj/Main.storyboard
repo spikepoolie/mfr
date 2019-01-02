@@ -922,15 +922,18 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RSq-hj-XZ0">
-                                <rect key="frame" x="12" y="35" width="46" height="68"/>
+                                <rect key="frame" x="0.0" y="23" width="46" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="back.png"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
-                                    <action selector="backToFrontView:" destination="3mg-RI-aau" eventType="touchUpInside" id="zcz-ed-9IS"/>
+                                    <action selector="back:" destination="3mg-RI-aau" eventType="touchUpInside" id="nxV-Hw-qpg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KZb-JK-GqW">
-                                <rect key="frame" x="356" y="38" width="30" height="30"/>
+                                <rect key="frame" x="364" y="24" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="more.png"/>
                                 <connections>
@@ -947,14 +950,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WwS-Ay-dgn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2084" y="-1972"/>
+            <point key="canvasLocation" x="-2084.057971014493" y="-1972.0982142857142"/>
         </scene>
     </scenes>
     <resources>
         <image name="Exercise_video.png" width="1200" height="1200"/>
         <image name="My_Tracker.png" width="1200" height="1200"/>
         <image name="Power_.png" width="120" height="120"/>
-        <image name="back.png" width="128" height="128"/>
         <image name="bg_full.png" width="720" height="1280"/>
         <image name="bg_full_720x1280.png" width="720" height="1280"/>
         <image name="bodyfront.png" width="900" height="1490"/>

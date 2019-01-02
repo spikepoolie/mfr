@@ -186,20 +186,23 @@ class LogMeIn: UIViewController , UITextFieldDelegate{
                 return
             }
             
-            var users = snapshot.value as! [String:AnyObject]
-            let usersKeys = Array(users.keys)
-
-            for userKey in usersKeys  {
-              
-
-                if let value = users[userKey] as? [String:AnyObject] {
-                    if let myImageUrl = value["profileImageUrl"] as? String {
-                        let vc = self.storyboard?.instantiateViewController(withIdentifier: "myprofile") as! MyProfile
-                        vc.profileImageUrl = myImageUrl
-                        self.present(vc, animated: true, completion: nil)
-                    }
-                }
-            }
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "myprofile") as! MyProfile
+            self.present(vc, animated: true, completion: nil)
+            
+//            var users = snapshot.value as! [String:AnyObject]
+//            let usersKeys = Array(users.keys)
+//
+//            for userKey in usersKeys  {
+//
+//
+//                if let value = users[userKey] as? [String:AnyObject] {
+//                    if let myImageUrl = value["profileImageUrl"] as? String {
+//                        let vc = self.storyboard?.instantiateViewController(withIdentifier: "myprofile") as! MyProfile
+//                        vc.profileImageUrl = myImageUrl
+//                        self.present(vc, animated: true, completion: nil)
+//                    }
+//                }
+//            }
         })
     }
 

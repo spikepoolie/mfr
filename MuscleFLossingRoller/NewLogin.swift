@@ -279,6 +279,7 @@ class NewLogin: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
                         "user_key": "\(username)_\(password)"
                     ]
                     self.ref?.child(key!).setValue( newUser )
+                    UserDefaults.standard.set("\(username)_\(password)", forKey:  "myuserid")
                     self.dismiss(animated: true, completion: nil)
                     self.presentStoryBoards(storyboardid: "myprofile", transitionid: ".flipHorizontal")
                 } else {
@@ -365,6 +366,8 @@ class NewLogin: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
         //selected image
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             myUserImage.image = image
+            let myUserImageData: NSData = image.pngData()! as NSData
+            UserDefaults.standard.set(myUserImageData, forKey:  "imageProfile")
         } else{
             print("Something went wrong")
         }

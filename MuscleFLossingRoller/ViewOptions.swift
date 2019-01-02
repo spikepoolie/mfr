@@ -11,8 +11,7 @@ import UIKit
 class ViewOptions: UIViewController {
     
     @IBOutlet weak var sideviewoptions: UIImageView!
-    
-    @IBOutlet var myview: UIView!
+  
     var myImageData = Data()
     
     override var prefersStatusBarHidden: Bool {
@@ -46,10 +45,10 @@ class ViewOptions: UIViewController {
     }
     
     @IBAction func goToFrontView(_ sender: Any) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: "frontview") as UIViewController
-        self.present(vc,animated:true,completion: nil)
         
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "frontview") as! FrontView
+        vc.myImage = myImageData
+        self.present(vc, animated: true, completion: nil)
     }
    
     @IBAction func GoBack(_ sender: Any) {
@@ -76,6 +75,7 @@ class ViewOptions: UIViewController {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "myprofile") as! MyProfile
         vc.hasProfileImage = true
         vc.mydata = self.myImageData
+        vc.canClick = true
         self.present(vc, animated: true, completion: nil)
     }
 }

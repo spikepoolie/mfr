@@ -12,7 +12,7 @@ class MyProfile: UIViewController{
 
  
     let defaults = UserDefaults.standard
-  
+    var canClick = false
     var profileImageUrl: String!
     var hasProfileImage = false
     var mydata = Data()
@@ -44,18 +44,15 @@ class MyProfile: UIViewController{
         super.viewDidLoad()
         
         let myUser = defaults.integer(forKey: "myuserid")
+        let imageProfile = defaults.data(forKey: "imageProfile")! as NSData
+        self.myImageProfile.image = UIImage(data: imageProfile as Data)
         
-        if !hasProfileImage {
-            downloadImage(from: NSURL(string:profileImageUrl)! as URL)
-        } else {
-            self.myImageProfile.image = UIImage(data: mydata)!
-        }
-        myImageProfile.layer.cornerRadius=10
-        myImageProfile.clipsToBounds = true
-        myImageProfile.layer.cornerRadius=10
-        myImageProfile.clipsToBounds=true
-        myImageProfile.layer.borderColor=UIColor.lightGray.cgColor
-        myImageProfile.layer.borderWidth=1
+//        if !hasProfileImage {
+//            downloadImage(from: NSURL(string:profileImageUrl)! as URL)
+//        } else {
+//            self.myImageProfile.image = UIImage(data: mydata)!
+//        }
+        
     }
     
     func downloadImage(from url: URL) {
@@ -64,6 +61,13 @@ class MyProfile: UIViewController{
             DispatchQueue.main.async() {
                 self.mydata = data
                 self.myImageProfile.image = UIImage(data: data)!
+                self.canClick = true
+                self.myImageProfile.layer.cornerRadius=10
+                self.myImageProfile.clipsToBounds = true
+                self.myImageProfile.layer.cornerRadius=10
+                self.myImageProfile.clipsToBounds=true
+                self.myImageProfile.layer.borderColor=UIColor.lightGray.cgColor
+               self.myImageProfile.layer.borderWidth=1
             }
         }
     }
@@ -94,10 +98,11 @@ class MyProfile: UIViewController{
     
 
     @IBAction func myTracker(_ sender: Any) {
-        
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "viewsideoptions") as! ViewOptions
-        vc.myImageData = self.mydata
-        self.present(vc, animated: true, completion: nil)
+        if canClick{
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "viewsideoptions") as! ViewOptions
+            vc.myImageData = self.mydata
+            self.present(vc, animated: true, completion: nil)
+        }
         
         
      
