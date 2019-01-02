@@ -75,7 +75,6 @@ class ViewOptions: UIViewController {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "myprofile") as! MyProfile
         vc.hasProfileImage = true
         vc.mydata = self.myImageData
-        vc.canClick = true
         self.present(vc, animated: true, completion: nil)
     }
 }

@@ -12,7 +12,6 @@ class MyProfile: UIViewController{
 
  
     let defaults = UserDefaults.standard
-    var canClick = false
     var profileImageUrl: String!
     var hasProfileImage = false
     var mydata = Data()
@@ -61,7 +60,6 @@ class MyProfile: UIViewController{
             DispatchQueue.main.async() {
                 self.mydata = data
                 self.myImageProfile.image = UIImage(data: data)!
-                self.canClick = true
                 self.myImageProfile.layer.cornerRadius=10
                 self.myImageProfile.clipsToBounds = true
                 self.myImageProfile.layer.cornerRadius=10
@@ -98,14 +96,9 @@ class MyProfile: UIViewController{
     
 
     @IBAction func myTracker(_ sender: Any) {
-        if canClick{
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "viewsideoptions") as! ViewOptions
-            vc.myImageData = self.mydata
-            self.present(vc, animated: true, completion: nil)
-        }
-        
-        
-     
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "viewsideoptions") as! ViewOptions
+        vc.myImageData = self.mydata
+        self.present(vc, animated: true, completion: nil)
     }
     
     

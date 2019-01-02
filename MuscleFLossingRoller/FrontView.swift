@@ -198,10 +198,10 @@ class FrontView: UIViewController {
     }
     
     func goToRollerView(bodypart: String, bodypartid: Int){
-//        let vc = storyboard?.instantiateViewController(withIdentifier: "rollertracker") as? RollerTracker
-//        vc?.pageFrom = "frontview"
-//        vc?.bodypartname = self.bodyPartSelected
-//        vc?.bodypartid = self.bodypartid
-//        self.present(vc!, animated: true, completion: nil)
+        let vc = storyboard?.instantiateViewController(withIdentifier: "rollertracker") as? RollerTracker
+        vc?.pageFrom = "frontview"
+        vc?.bodypartname = self.bodyPartSelected
+        vc?.bodypartid = self.bodypartid
+        self.present(vc!, animated: true, completion: nil)
     }
 }

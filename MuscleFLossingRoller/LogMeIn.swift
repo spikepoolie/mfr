@@ -92,7 +92,7 @@ class LogMeIn: UIViewController , UITextFieldDelegate{
         txtEmailAddress.delegate=self
        // txtEmailAddress.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         //txtPassword.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        txtPassword.text="o"
+        txtPassword.text="a"
         txtEmailAddress.text="a@a.com"
     }
     
