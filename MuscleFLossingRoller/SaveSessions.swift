@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 extension UITextView {
     
@@ -23,6 +24,7 @@ extension UITextView {
 }
 
 class SaveSessions: UIViewController, UITextViewDelegate {
+    var ref: DatabaseReference?
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -31,6 +33,7 @@ class SaveSessions: UIViewController, UITextViewDelegate {
     var currentImageName = "favorites"
     var bodyPartId = 0
     var painlevelafer=0
+    
     
     let defaults = UserDefaults.standard
     
@@ -42,11 +45,8 @@ class SaveSessions: UIViewController, UITextViewDelegate {
     @IBOutlet weak var labelPainAfter: UILabel!
     @IBOutlet weak var sliderPainAfter: UISlider!
     @IBOutlet weak var sliderPainBefore: UISlider!
-    
     @IBOutlet weak var favoriteimage: UIImageView!
 
-
-    
     @IBAction func slidePainBefore(_ sender: Any) {
         let myPainBefore = Int(sliderPainBefore.value)
         labelPainBefore.text = "\(myPainBefore)"
@@ -70,78 +70,50 @@ class SaveSessions: UIViewController, UITextViewDelegate {
     
     
     @IBAction func SaveRollSession(_ sender: Any) {
-        if let url = URL(string: "http://up2speedtraining.com/mobile/php/up2speed_save_session.php?"){
-            let request = NSMutableURLRequest(url:url)
-            let defaults = UserDefaults.standard
-            if let myUsename = defaults.string(forKey: "username") {
-                let myMinutes = defaults.string(forKey: "minutesrolling")!
-                let myReps = defaults.string(forKey: "repsdone")!
-                //let myBodyPart = defaults.string(forKey: "bodypart")!
-                let myBodyPart = bodyPartId
-                let myCoolOff = defaults.string(forKey: "cooloff")!
-                let myPainBefore = sliderPainBefore.value
-                let myPainAfter =  sliderPainAfter.value
-                let myNotes = notes.text!
-                var myFavorite = 0
-                if currentImageName != "favorites"{
-                    myFavorite = 1
-                }
-                else{
-                    myFavorite = 0
-                }
-                request.httpMethod = "POST";// Compose a query string
-                let postString = "mynotes=\(myNotes)&username=\(myUsename)&favorite=\(myFavorite)&minutes=\(myMinutes)&reps=\(myReps)&bodypartid=\(myBodyPart)&painbefore=\(Int(myPainBefore))&painafter=\(Int(myPainAfter))&cooloff=\(String(describing: myCoolOff))"
-                print("post String = \(postString)")
-                request.httpBody = postString.data(using: String.Encoding.utf8)
-                let task = URLSession.shared.dataTask(with:request as URLRequest){
-                    data, response, error in
-                    
-                    if error != nil{
-                    }
-                    do {
-                        if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSArray {
-                            if convertedJsonIntoDict.count > 0{
-                                let emailValue = (convertedJsonIntoDict[0] as! NSDictionary)["email"] as? String
-                                if emailValue != nil{
-                                    DispatchQueue.global().async {
-                                        DispatchQueue.main.async {
-                                            self.dismiss(animated: true, completion: {
-                                                UserDefaults.standard.set("session saved", forKey: "issessionsaved")
-                                                
-                                                
-                                                
-                                                
-                                                
-                                            })
-                                            UserDefaults.standard.set("Session Saved", forKey: "loginMessage")
-                                        }
-                                    }
-                                }
-                                else{
-                                    UserDefaults.standard.set("Error Saving Session", forKey: "loginMessage")
-                                    self.SendToMainQeue()
-                                }
-                            }
-                            else{
-                                UserDefaults.standard.set("Error Saving Session", forKey: "loginMessage")
-                                self.SendToMainQeue()
-                            }
-                        }
-                        else{
-                            UserDefaults.standard.set("Error Saving Session", forKey: "loginMessage")
-                            self.SendToMainQeue()
-                        }
-                    }
-                    catch let error as NSError {
-                        print(error.localizedDescription)
-                    }
-                }
-                task.resume()
+        
+        let defaults = UserDefaults.standard
+        if let myUsename = defaults.string(forKey: "myuserid") {
+            let myMinutes = defaults.string(forKey: "minutesrolling")!
+            let myReps = defaults.string(forKey: "repsdone")!
+            //let myBodyPart = defaults.string(forKey: "bodypart")!
+            let myBodyPart = bodyPartId
+            let myCoolOff = defaults.string(forKey: "cooloff")!
+            let myPainBefore = sliderPainBefore.value
+            let myPainAfter =  sliderPainAfter.value
+            let myNotes = notes.text!
+            var myFavorite = 0
+            if currentImageName != "favorites"{
+                myFavorite = 1
+            }
+            else{
+                myFavorite = 0
+            }
+            
+            let key = ref?.childByAutoId().key
+            let newSession = [
+                "username" : myUsename,
+                "minutes" : myMinutes,
+                "reps" : myReps,
+                "bodypart" : bodyPartId,
+                "cooloff" : myCoolOff,
+                "painbefore": myPainBefore,
+                "painafter" :myPainAfter,
+                "notes" : myNotes,
+                "isfavorite" : myFavorite
+                ] as [String : Any]
+            if ((self.ref?.child(key!).setValue( newSession )) != nil){
+                UserDefaults.standard.set("session saved", forKey: "issessionsaved")
+                 UserDefaults.standard.set("Session Saved", forKey: "loginMessage")
+            } else {
+                UserDefaults.standard.set("Error Saving Session", forKey: "loginMessage")
+                SendInfo()
             }
         }
+       
     }
     
     override func viewDidLoad() {
+        ref = Database.database().reference().child("Sessions")
         super.viewDidLoad()
         notes.text=""
         notes.delegate = self
@@ -149,6 +121,7 @@ class SaveSessions: UIViewController, UITextViewDelegate {
         savesession.layer.shadowOpacity=0.3
         savesession.layer.borderWidth=1.5
         savesession.layer.borderColor = UIColor.white.cgColor
+       
     }
     
     override func didReceiveMemoryWarning() {
@@ -175,16 +148,9 @@ class SaveSessions: UIViewController, UITextViewDelegate {
     @IBAction func CloseSaveSession(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+
     
-    func SendToMainQeue(){
-        DispatchQueue.global().async {
-            DispatchQueue.main.async {
-                self.SendErrorInfo()
-            }
-        }
-    }
-    
-    func SendErrorInfo(){
+    func SendInfo(){
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: "alertview") as UIViewController
         self.present(vc,animated:true,completion: nil)

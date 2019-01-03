@@ -207,15 +207,6 @@ class NewLogin: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
         
     }
     
-    
-    func SendToMainQeue(){
-        DispatchQueue.global().async {
-            DispatchQueue.main.async {
-                self.CreateAccount(self.myUsername,password: self.myPassword,name: self.myName, cellphone:self.myCell)
-            }
-        }
-    }
-    
     func clearDefaults(){
         self.btnLogin.isEnabled=true
         //UserDefaults.standard.set("blank", forKey: "username")
