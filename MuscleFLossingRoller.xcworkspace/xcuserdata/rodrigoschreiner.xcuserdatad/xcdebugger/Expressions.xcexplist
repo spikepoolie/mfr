@@ -3,10 +3,10 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "ViewOptions.goBackToThePreviousScreen():ViewOptions.swift">
+         contextName = "LogMeIn.btnLogin(_:):LogMeIn.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.myImageData">
+               value = "txtPassword.text">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -19,6 +19,17 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "RollerTracker.viewDidLoad():RollerTracker.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "bodyImageName">
+            </PersistentString>
+            <PersistentString
+               value = "self.bodypartname">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in NewLogin.checkIfLoginExists(email:):NewLogin.swift">
          <PersistentStrings>
             <PersistentString
@@ -27,10 +38,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "LogMeIn.btnLogin(_:):LogMeIn.swift">
+         contextName = "ViewOptions.goBackToThePreviousScreen():ViewOptions.swift">
          <PersistentStrings>
             <PersistentString
-               value = "txtPassword.text">
+               value = "self.myImageData">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
