@@ -29,10 +29,12 @@ class SaveSessions: UIViewController, UITextViewDelegate {
         return true
     }
     var delegate: triggerSaveSessionComplete?
-    var painlevelbefore=0
     var currentImageName = "favorites"
     var bodyPartId = 0
-    var painlevelafer=0
+    var minutesRolling = 0
+    var repsDone = 0
+    var bodyPartName = ""
+    var coolOff = 0
     
     
     let defaults = UserDefaults.standard
@@ -46,6 +48,18 @@ class SaveSessions: UIViewController, UITextViewDelegate {
     @IBOutlet weak var sliderPainAfter: UISlider!
     @IBOutlet weak var sliderPainBefore: UISlider!
     @IBOutlet weak var favoriteimage: UIImageView!
+    
+    override func viewDidLoad() {
+        ref = Database.database().reference().child("Sessions")
+        super.viewDidLoad()
+        notes.text=""
+        notes.delegate = self
+        savesession.layer.cornerRadius=5
+        savesession.layer.shadowOpacity=0.3
+        savesession.layer.borderWidth=1.5
+        savesession.layer.borderColor = UIColor.white.cgColor
+        
+    }
 
     @IBAction func slidePainBefore(_ sender: Any) {
         let myPainBefore = Int(sliderPainBefore.value)
@@ -73,13 +87,8 @@ class SaveSessions: UIViewController, UITextViewDelegate {
         
         let defaults = UserDefaults.standard
         if let myUsename = defaults.string(forKey: "myuserid") {
-            let myMinutes = defaults.string(forKey: "minutesrolling")!
-            let myReps = defaults.string(forKey: "repsdone")!
-            //let myBodyPart = defaults.string(forKey: "bodypart")!
-            let myBodyPart = bodyPartId
-            let myCoolOff = defaults.string(forKey: "cooloff")!
-            let myPainBefore = sliderPainBefore.value
-            let myPainAfter =  sliderPainAfter.value
+            let myPainBefore = Int(sliderPainBefore.value)
+            let myPainAfter =  Int(sliderPainAfter.value)
             let myNotes = notes.text!
             var myFavorite = 0
             if currentImageName != "favorites"{
@@ -92,18 +101,20 @@ class SaveSessions: UIViewController, UITextViewDelegate {
             let key = ref?.childByAutoId().key
             let newSession = [
                 "username" : myUsename,
-                "minutes" : myMinutes,
-                "reps" : myReps,
-                "bodypart" : bodyPartId,
-                "cooloff" : myCoolOff,
+                "minutes" : minutesRolling,
+                "reps" : repsDone,
+                "bodypartname" : bodyPartName,
+                "bodypartid" : bodyPartId,
+                "cooloff" : coolOff,
                 "painbefore": myPainBefore,
                 "painafter" :myPainAfter,
                 "notes" : myNotes,
                 "isfavorite" : myFavorite
                 ] as [String : Any]
             if ((self.ref?.child(key!).setValue( newSession )) != nil){
+                self.dismiss(animated: true, completion: nil)
                 UserDefaults.standard.set("session saved", forKey: "issessionsaved")
-                 UserDefaults.standard.set("Session Saved", forKey: "loginMessage")
+                UserDefaults.standard.set("Session Saved", forKey: "loginMessage")
             } else {
                 UserDefaults.standard.set("Error Saving Session", forKey: "loginMessage")
                 SendInfo()
@@ -111,30 +122,7 @@ class SaveSessions: UIViewController, UITextViewDelegate {
         }
        
     }
-    
-    override func viewDidLoad() {
-        ref = Database.database().reference().child("Sessions")
-        super.viewDidLoad()
-        notes.text=""
-        notes.delegate = self
-        savesession.layer.cornerRadius=5
-        savesession.layer.shadowOpacity=0.3
-        savesession.layer.borderWidth=1.5
-        savesession.layer.borderColor = UIColor.white.cgColor
-       
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewDidLayoutSubviews() {
-//        let maskLayer = CAShapeLayer()
-//        maskLayer.path = UIBezierPath(roundedRect: view.bounds, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: 10, height: 10)).cgPath
-//        saveSessionTopBar.layer.mask = maskLayer
-    }
-    
+
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let resultRange = text.rangeOfCharacter(from: CharacterSet.newlines, options: .backwards)

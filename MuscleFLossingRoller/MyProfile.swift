@@ -41,17 +41,15 @@ class MyProfile: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let myUser = defaults.integer(forKey: "myuserid")
-        let imageProfile = defaults.data(forKey: "imageProfile")! as NSData
-        self.myImageProfile.image = UIImage(data: imageProfile as Data)
-        
-//        if !hasProfileImage {
-//            downloadImage(from: NSURL(string:profileImageUrl)! as URL)
-//        } else {
-//            self.myImageProfile.image = UIImage(data: mydata)!
-//        }
-        
+ 
+        if((defaults.data(forKey: "imageProfile")) != nil){
+            let imageProfile = defaults.data(forKey: "imageProfile")! as NSData
+            self.myImageProfile.image = UIImage(data: imageProfile as Data)
+        } else {
+            let imageProfile = UIImage(named: "userButtom")
+            let myUserImageData: NSData = imageProfile!.pngData()! as NSData
+            self.myImageProfile.image = UIImage(data: myUserImageData as Data)
+        }
     }
     
     func downloadImage(from url: URL) {
