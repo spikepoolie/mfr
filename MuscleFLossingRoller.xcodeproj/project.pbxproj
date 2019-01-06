@@ -149,7 +149,7 @@
 		7C140FC021C875F400D16F47 /* LogMeIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C140FBF21C875F400D16F47 /* LogMeIn.swift */; };
 		7C919C3021DD806E000D6CB7 /* RollerTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C919C2F21DD806E000D6CB7 /* RollerTracker.swift */; };
 		7C919C3221DDC79D000D6CB7 /* SaveSessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C919C3121DDC79D000D6CB7 /* SaveSessions.swift */; };
-		7CB78F1B21E1DB4600AE84B4 /* QuickSessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB78F1A21E1DB4600AE84B4 /* QuickSessions.swift */; };
+		7C95592921E1E5DE000424FC /* QuickSessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C95592821E1E5DE000424FC /* QuickSessions.swift */; };
 		7CC081E121D42C3300050256 /* ViewOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC081E021D42C3300050256 /* ViewOptions.swift */; };
 		7CC081E321D5638A00050256 /* FrontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC081E221D5638900050256 /* FrontView.swift */; };
 		7CDA847C21D041BA00DFE9DB /* MyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDA847B21D041BA00DFE9DB /* MyProfile.swift */; };
@@ -302,7 +302,7 @@
 		7C140FBF21C875F400D16F47 /* LogMeIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogMeIn.swift; sourceTree = "<group>"; };
 		7C919C2F21DD806E000D6CB7 /* RollerTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RollerTracker.swift; path = ../../MyFitLabSolutions/MyFitLabSolutions/RollerTracker.swift; sourceTree = "<group>"; };
 		7C919C3121DDC79D000D6CB7 /* SaveSessions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveSessions.swift; sourceTree = "<group>"; };
-		7CB78F1A21E1DB4600AE84B4 /* QuickSessions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickSessions.swift; sourceTree = "<group>"; };
+		7C95592821E1E5DE000424FC /* QuickSessions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickSessions.swift; sourceTree = "<group>"; };
 		7CC081E021D42C3300050256 /* ViewOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewOptions.swift; sourceTree = "<group>"; };
 		7CC081E221D5638900050256 /* FrontView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontView.swift; sourceTree = "<group>"; };
 		7CDA847B21D041BA00DFE9DB /* MyProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfile.swift; sourceTree = "<group>"; };
@@ -348,11 +348,11 @@
 				7C0EA6B321C06FE100F3A4A5 /* CustomButton.swift */,
 				7C0EA6A121C06FC300F3A4A5 /* AppDelegate.swift */,
 				7C919C3121DDC79D000D6CB7 /* SaveSessions.swift */,
-				7CB78F1A21E1DB4600AE84B4 /* QuickSessions.swift */,
 				7C140FBF21C875F400D16F47 /* LogMeIn.swift */,
 				7C140FBD21C873D700D16F47 /* SpinnerViewController.swift */,
 				7C0EA6A321C06FC300F3A4A5 /* ViewController.swift */,
 				7C0EA6A521C06FC300F3A4A5 /* Main.storyboard */,
+				7C95592821E1E5DE000424FC /* QuickSessions.swift */,
 				7C919C2F21DD806E000D6CB7 /* RollerTracker.swift */,
 				7CC081E021D42C3300050256 /* ViewOptions.swift */,
 				7CC081E221D5638900050256 /* FrontView.swift */,
@@ -777,7 +777,7 @@
 				7CDA847C21D041BA00DFE9DB /* MyProfile.swift in Sources */,
 				7CC081E321D5638A00050256 /* FrontView.swift in Sources */,
 				7C0EA7BA21C0816B00F3A4A5 /* WaitingToLoad.swift in Sources */,
-				7CB78F1B21E1DB4600AE84B4 /* QuickSessions.swift in Sources */,
+				7C95592921E1E5DE000424FC /* QuickSessions.swift in Sources */,
 				7C140FC021C875F400D16F47 /* LogMeIn.swift in Sources */,
 				7C0EA7B621C0733000F3A4A5 /* NewLogin.swift in Sources */,
 				7C0EA6A421C06FC300F3A4A5 /* ViewController.swift in Sources */,
