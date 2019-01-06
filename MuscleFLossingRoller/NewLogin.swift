@@ -375,9 +375,5 @@ class NewLogin: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
         self.view.frame = self.view.frame.offsetBy(dx: 0,dy: movement)
         UIView.commitAnimations()
     }
-    
-    func generateBoundaryString() -> String {
-        return "Boundary-\(NSUUID().uuidString)"
-    }
    
 }
