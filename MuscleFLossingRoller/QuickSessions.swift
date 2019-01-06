@@ -14,6 +14,26 @@ class QuickSessions: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
+        rightSwipe.direction = .right
+        
+        view.addGestureRecognizer(rightSwipe)
+        
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
+        leftSwipe.direction = .left
+        
+        view.addGestureRecognizer(leftSwipe)
+        
+        let upSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
+        upSwipe.direction = .up
+        
+        view.addGestureRecognizer(upSwipe)
+        
+        let downSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
+        downSwipe.direction = .down
+        
+        view.addGestureRecognizer(downSwipe)
 
         // Do any additional setup after loading the view.
     }
@@ -24,6 +44,17 @@ class QuickSessions: UIViewController {
     }
     
     @IBAction func CloseQuickSession(_ sender: Any) {
+        sendBack()
+    }
+    
+    @objc func handleSwipe(sender: UISwipeGestureRecognizer) {
+        
+        if sender.state == .ended {
+            sendBack()
+        }
+    }
+    
+    func sendBack() {
          self.dismiss(animated: true, completion: nil)
     }
     
