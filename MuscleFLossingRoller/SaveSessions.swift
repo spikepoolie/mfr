@@ -35,6 +35,7 @@ class SaveSessions: UIViewController, UITextViewDelegate {
     var repsDone = 0
     var bodyPartName = ""
     var coolOff = 0
+    var dateString = ""
     
     
     let defaults = UserDefaults.standard
@@ -58,6 +59,19 @@ class SaveSessions: UIViewController, UITextViewDelegate {
         savesession.layer.shadowOpacity=0.3
         savesession.layer.borderWidth=1.5
         savesession.layer.borderColor = UIColor.white.cgColor
+        
+        let timestamp = Date().timeIntervalSince1970
+
+        let date = Date(timeIntervalSince1970: timestamp)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy h:mm:ss a"  // change to your required format
+        dateFormatter.amSymbol = "AM"
+        dateFormatter.pmSymbol = "PM"
+        dateFormatter.timeZone = TimeZone.current
+        
+        // date with time portion in your specified timezone
+        dateString = dateFormatter.string(from: Date())
         
     }
 
@@ -97,6 +111,7 @@ class SaveSessions: UIViewController, UITextViewDelegate {
             else{
                 myFavorite = 0
             }
+
             
             let key = ref?.childByAutoId().key
             let newSession = [
@@ -109,7 +124,8 @@ class SaveSessions: UIViewController, UITextViewDelegate {
                 "painbefore": myPainBefore,
                 "painafter" :myPainAfter,
                 "notes" : myNotes,
-                "isfavorite" : myFavorite
+                "isfavorite" : myFavorite,
+                "sessiondate" : dateString
                 ] as [String : Any]
             if ((self.ref?.child(key!).setValue( newSession )) != nil){
                 self.dismiss(animated: true, completion: nil)
