@@ -153,6 +153,8 @@
 		7CC081E121D42C3300050256 /* ViewOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC081E021D42C3300050256 /* ViewOptions.swift */; };
 		7CC081E321D5638A00050256 /* FrontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC081E221D5638900050256 /* FrontView.swift */; };
 		7CDA847C21D041BA00DFE9DB /* MyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDA847B21D041BA00DFE9DB /* MyProfile.swift */; };
+		7CFED86821E7BA82000B4021 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFED86721E7BA82000B4021 /* Users.swift */; };
+		7CFED86A21E7C196000B4021 /* Sessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFED86921E7C196000B4021 /* Sessions.swift */; };
 		B61FD8839D2D15E9015B44AC /* Pods_MuscleFLossingRoller.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CC727AACDCF460E1E874F6 /* Pods_MuscleFLossingRoller.framework */; };
 /* End PBXBuildFile section */
 
@@ -306,6 +308,8 @@
 		7CC081E021D42C3300050256 /* ViewOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewOptions.swift; sourceTree = "<group>"; };
 		7CC081E221D5638900050256 /* FrontView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontView.swift; sourceTree = "<group>"; };
 		7CDA847B21D041BA00DFE9DB /* MyProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfile.swift; sourceTree = "<group>"; };
+		7CFED86721E7BA82000B4021 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		7CFED86921E7C196000B4021 /* Sessions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sessions.swift; sourceTree = "<group>"; };
 		88CC727AACDCF460E1E874F6 /* Pods_MuscleFLossingRoller.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuscleFLossingRoller.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A68CDE8349018C3DF5E9143D /* Pods-MuscleFLossingRoller.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuscleFLossingRoller.release.xcconfig"; path = "Pods/Target Support Files/Pods-MuscleFLossingRoller/Pods-MuscleFLossingRoller.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -343,6 +347,7 @@
 		7C0EA6A021C06FC300F3A4A5 /* MuscleFLossingRoller */ = {
 			isa = PBXGroup;
 			children = (
+				7CFED86621E7BA63000B4021 /* Modules */,
 				7C0EA73421C071F300F3A4A5 /* fonts */,
 				7C0EA6B521C071F300F3A4A5 /* Images */,
 				7C0EA6B321C06FE100F3A4A5 /* CustomButton.swift */,
@@ -508,6 +513,15 @@
 				7C0EA73521C071F300F3A4A5 /* digital.ttf */,
 			);
 			path = fonts;
+			sourceTree = "<group>";
+		};
+		7CFED86621E7BA63000B4021 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				7CFED86721E7BA82000B4021 /* Users.swift */,
+				7CFED86921E7C196000B4021 /* Sessions.swift */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		C7F98BC755D2E4F1C3EEA8B0 /* Pods */ = {
@@ -731,15 +745,27 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MuscleFLossingRoller/Pods-MuscleFLossingRoller-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -781,7 +807,9 @@
 				7C140FC021C875F400D16F47 /* LogMeIn.swift in Sources */,
 				7C0EA7B621C0733000F3A4A5 /* NewLogin.swift in Sources */,
 				7C0EA6A421C06FC300F3A4A5 /* ViewController.swift in Sources */,
+				7CFED86821E7BA82000B4021 /* Users.swift in Sources */,
 				7C919C3221DDC79D000D6CB7 /* SaveSessions.swift in Sources */,
+				7CFED86A21E7C196000B4021 /* Sessions.swift in Sources */,
 				7C0EA6A221C06FC300F3A4A5 /* AppDelegate.swift in Sources */,
 				7C0EA7B821C0739F00F3A4A5 /* TextFieldWithImage.swift in Sources */,
 				7C919C3021DD806E000D6CB7 /* RollerTracker.swift in Sources */,

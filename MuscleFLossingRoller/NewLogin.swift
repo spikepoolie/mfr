@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import FirebaseDatabase
+import FirebaseFirestore
 import FirebaseStorage
 
 extension UIImage {
@@ -38,7 +38,7 @@ class NewLogin: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
         return true
     }
     
-    var ref: DatabaseReference?
+    //var ref: DatabaseReference?
     var storageRef: StorageReference?
     
     
@@ -156,28 +156,18 @@ class NewLogin: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
     }
     
     func checkIfLoginExists(email: String) {
-        
-        ref?.queryOrdered(byChild: "username").queryEqual(toValue: email)
-        .observeSingleEvent(of: .value, with: { snapshot in
-          
-            if snapshot.exists() {
-                self.defaults.set("Email already exists", forKey: "loginMessage")
-                self.ShowErrorMessage()
-//                var users = snapshot.value as! [String:AnyObject]
-//                let usersKeys = Array(users.keys)
-//
-//                for userKey in usersKeys  {
-//
-//                    if let value = users[userKey] as? [String:AnyObject] {
-//                        if let title = value["username"] as? String {
-//                            print("title = \(String(describing: title))")
-//                        }
-//                    }
-//                }
-            } else {
-                self.CreateAccount(self.myUsername,password: self.myPassword,name: self.myName, cellphone:self.myCell)
-            }
-        })
+         self.CreateAccount(self.myUsername,password: self.myPassword,name: self.myName, cellphone:self.myCell)
+//        ref?.queryOrdered(byChild: "username").queryEqual(toValue: email)
+//        .observeSingleEvent(of: .value, with: { snapshot in
+//          
+//            if snapshot.exists() {
+//                self.defaults.set("Email already exists", forKey: "loginMessage")
+//                self.ShowErrorMessage()
+//               }
+//            } else {
+//                self.CreateAccount(self.myUsername,password: self.myPassword,name: self.myName, cellphone:self.myCell)
+//            }
+//        })
     }
     
     
@@ -190,7 +180,7 @@ class NewLogin: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
     }
     
     override func viewDidLoad() {
-        ref = Database.database().reference().child("Users")
+       // ref = Database.database().reference().child("Users")
         super.viewDidLoad()
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         myUserImage.layer.cornerRadius=10
@@ -261,19 +251,37 @@ class NewLogin: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
                 
                 if let profileImageUrl = metadata?.downloadURL()?.absoluteString {
                     self.view.endEditing(true)
-                    let key = self.ref?.childByAutoId().key
-                    let newUser = [
-                        "username" : username,
-                        "password" : password,
-                        "name" : name,
+//                    let key = self.ref?.childByAutoId().key
+//                    let newUser = [
+//                        "username" : username,
+//                        "password" : password,
+//                        "name" : name,
+//                        "cellphone" : cellphone,
+//                        "profileImageUrl" : profileImageUrl,
+//                        "user_key": "\(username)_\(password)"
+//                    ]
+//                    self.ref?.child(key!).setValue( newUser )
+                    
+                    
+                    let db = Firestore.firestore()
+                    db.collection("users").document(username).setData([
                         "cellphone" : cellphone,
+                        "datecreated" : Date(),
+                        "name" : name,
+                        "password" : password,
                         "profileImageUrl" : profileImageUrl,
-                        "user_key": "\(username)_\(password)"
-                    ]
-                    self.ref?.child(key!).setValue( newUser )
-                    UserDefaults.standard.set("\(username)_\(password)", forKey:  "myuserid")
-                    self.dismiss(animated: true, completion: nil)
-                    self.presentStoryBoards(storyboardid: "myprofile", transitionid: ".flipHorizontal")
+                        "user_key": "\(username)_\(password)",
+                        "username" : username
+                    ]) { err in
+                        if let err = err {
+                            print("Error writing document: \(err)")
+                        } else {
+                            UserDefaults.standard.set("\(username)_\(password)", forKey:  "myuserid")
+                            self.dismiss(animated: true, completion: nil)
+                            self.presentStoryBoards(storyboardid: "myprofile", transitionid: ".flipHorizontal")
+                        }
+                    }
+                   
                 } else {
                     print("herer")
                 }

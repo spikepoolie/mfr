@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FD76E816D43382799A459AF4BD9C7D11"
+               BlueprintIdentifier = "314067B78CABCA36BEBCADABFF838BED"
                BlueprintName = "Pods-MuscleFLossingRoller"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "Pods-MuscleFLossingRoller.framework">

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import FirebaseDatabase
+//import FirebaseDatabase
 import FirebaseStorage
 
 
@@ -25,8 +25,8 @@ class LogMeIn: UIViewController , UITextFieldDelegate{
     var imageFirebase = UIImage()
     var imageUrl = ""
     
-    var ref: DatabaseReference?
-    var handle: DatabaseHandle?
+//    var ref: DatabaseReference?
+//    var handle: DatabaseHandle?
     var storageRef: StorageReference?
     
     override var prefersStatusBarHidden: Bool {
@@ -84,7 +84,7 @@ class LogMeIn: UIViewController , UITextFieldDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ref = Database.database().reference().child("Users")
+        //ref = Database.database().reference().child("Users")
        
         btnLogin.layer.cornerRadius=10
         btnLogin.layer.masksToBounds=true
@@ -175,35 +175,22 @@ class LogMeIn: UIViewController , UITextFieldDelegate{
     }
     
     func sendLoginInfo(username: String, password: String){
-        ref?.queryOrdered(byChild: "user_key").queryEqual(toValue: "\(username)_\(password)")
-        .observeSingleEvent(of: .value, with: { snapshot in
-            
-            if !snapshot.exists() {
-                self.defaults.set("Wrong email or password", forKey: "loginMessage")
-                self.txtEmailAddress.shake()
-                self.txtPassword.shake()
-                self.btnLogin.isEnabled=true
-                return
-            }
-            
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "myprofile") as! MyProfile
-            self.present(vc, animated: true, completion: nil)
-            
-//            var users = snapshot.value as! [String:AnyObject]
-//            let usersKeys = Array(users.keys)
-//
-//            for userKey in usersKeys  {
-//
-//
-//                if let value = users[userKey] as? [String:AnyObject] {
-//                    if let myImageUrl = value["profileImageUrl"] as? String {
-//                        let vc = self.storyboard?.instantiateViewController(withIdentifier: "myprofile") as! MyProfile
-//                        vc.profileImageUrl = myImageUrl
-//                        self.present(vc, animated: true, completion: nil)
-//                    }
-//                }
+//        ref?.queryOrdered(byChild: "user_key").queryEqual(toValue: "\(username)_\(password)")
+//        .observeSingleEvent(of: .value, with: { snapshot in
+//            
+//            if !snapshot.exists() {
+//                self.defaults.set("Wrong email or password", forKey: "loginMessage")
+//                self.txtEmailAddress.shake()
+//                self.txtPassword.shake()
+//                self.btnLogin.isEnabled=true
+//                return
 //            }
-        })
+//            
+//            let vc = self.storyboard?.instantiateViewController(withIdentifier: "myprofile") as! MyProfile
+//            self.present(vc, animated: true, completion: nil)
+//            
+//
+//        })
     }
 
     

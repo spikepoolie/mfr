@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import FirebaseDatabase
+import FirebaseFirestore
 
 extension UITextView {
     
@@ -24,7 +24,7 @@ extension UITextView {
 }
 
 class SaveSessions: UIViewController, UITextViewDelegate {
-    var ref: DatabaseReference?
+   // var ref: DatabaseReference?
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -51,7 +51,7 @@ class SaveSessions: UIViewController, UITextViewDelegate {
     @IBOutlet weak var favoriteimage: UIImageView!
     
     override func viewDidLoad() {
-        ref = Database.database().reference().child("Sessions")
+       // ref = Database.database().reference().child("Sessions")
         super.viewDidLoad()
         notes.text=""
         notes.delegate = self
@@ -60,18 +60,18 @@ class SaveSessions: UIViewController, UITextViewDelegate {
         savesession.layer.borderWidth=1.5
         savesession.layer.borderColor = UIColor.white.cgColor
         
-        let timestamp = Date().timeIntervalSince1970
-
-        let date = Date(timeIntervalSince1970: timestamp)
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd/yyyy h:mm:ss a"  // change to your required format
-        dateFormatter.amSymbol = "AM"
-        dateFormatter.pmSymbol = "PM"
-        dateFormatter.timeZone = TimeZone.current
-        
-        // date with time portion in your specified timezone
-        dateString = dateFormatter.string(from: Date())
+//        let timestamp = Date().timeIntervalSince1970
+//
+//        let date = Date(timeIntervalSince1970: timestamp)
+//
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "MM/dd/yyyy h:mm:ss a"  // change to your required format
+//        dateFormatter.amSymbol = "AM"
+//        dateFormatter.pmSymbol = "PM"
+//        dateFormatter.timeZone = TimeZone.current
+//
+//        // date with time portion in your specified timezone
+//        dateString = dateFormatter.string(from: Date())
         
     }
 
@@ -111,10 +111,10 @@ class SaveSessions: UIViewController, UITextViewDelegate {
             else{
                 myFavorite = 0
             }
-
             
-            let key = ref?.childByAutoId().key
-            let newSession = [
+            let db = Firestore.firestore()
+
+            db.collection("sessions").document(myUsename).setData([
                 "username" : myUsename,
                 "minutes" : minutesRolling,
                 "reps" : repsDone,
@@ -125,18 +125,19 @@ class SaveSessions: UIViewController, UITextViewDelegate {
                 "painafter" :myPainAfter,
                 "notes" : myNotes,
                 "isfavorite" : myFavorite,
-                "sessiondate" : dateString
-                ] as [String : Any]
-            if ((self.ref?.child(key!).setValue( newSession )) != nil){
-                self.dismiss(animated: true, completion: nil)
-                UserDefaults.standard.set("session saved", forKey: "issessionsaved")
-                UserDefaults.standard.set("Session Saved", forKey: "loginMessage")
-            } else {
-                UserDefaults.standard.set("Error Saving Session", forKey: "loginMessage")
-                SendInfo()
+                "sessiondate" : Date()
+            ]) { err in
+                if err != nil {
+                    UserDefaults.standard.set("Error Saving Session", forKey: "loginMessage")
+                    self.SendInfo()
+
+                } else {
+                    self.dismiss(animated: true, completion: nil)
+                    UserDefaults.standard.set("session saved", forKey: "issessionsaved")
+                    UserDefaults.standard.set("Session Saved", forKey: "loginMessage")
+                }
             }
         }
-       
     }
 
     
