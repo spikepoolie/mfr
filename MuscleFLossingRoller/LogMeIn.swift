@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import FirebaseDatabase
+import FirebaseFirestore
 import FirebaseStorage
 
 
@@ -25,8 +25,6 @@ class LogMeIn: UIViewController , UITextFieldDelegate{
     var imageFirebase = UIImage()
     var imageUrl = ""
     
-//    var ref: DatabaseReference?
-//    var handle: DatabaseHandle?
     var storageRef: StorageReference?
     
     override var prefersStatusBarHidden: Bool {
@@ -175,22 +173,26 @@ class LogMeIn: UIViewController , UITextFieldDelegate{
     }
     
     func sendLoginInfo(username: String, password: String){
-//        ref?.queryOrdered(byChild: "user_key").queryEqual(toValue: "\(username)_\(password)")
-//        .observeSingleEvent(of: .value, with: { snapshot in
-//            
-//            if !snapshot.exists() {
-//                self.defaults.set("Wrong email or password", forKey: "loginMessage")
-//                self.txtEmailAddress.shake()
-//                self.txtPassword.shake()
-//                self.btnLogin.isEnabled=true
-//                return
-//            }
-//            
-//            let vc = self.storyboard?.instantiateViewController(withIdentifier: "myprofile") as! MyProfile
-//            self.present(vc, animated: true, completion: nil)
-//            
-//
-//        })
+
+        
+        let db = Firestore.firestore()
+        db.collection("users").whereField("user_key", isEqualTo: "\(username)_\(password)").getDocuments {(snapshot, error) in
+            if error != nil {
+                print(error as Any)
+            } else {
+                if (snapshot?.documents.count)! > 0 {
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "myprofile") as! MyProfile
+                    self.present(vc, animated: true, completion: nil)
+                   
+                } else {
+                    self.defaults.set("Wrong email or password", forKey: "loginMessage")
+                    self.txtEmailAddress.shake()
+                    self.txtPassword.shake()
+                    self.btnLogin.isEnabled=true
+                    return
+                }
+            }
+        }
     }
 
     
