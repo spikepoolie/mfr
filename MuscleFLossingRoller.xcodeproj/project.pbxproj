@@ -158,6 +158,12 @@
 		7CFED86C21E7CBA8000B4021 /* MySessionsOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFED86B21E7CBA8000B4021 /* MySessionsOptions.swift */; };
 		7CFED86E21E7CF71000B4021 /* mysessions.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7CFED86D21E7CF70000B4021 /* mysessions.jpeg */; };
 		7CFED87021E86576000B4021 /* WorkedMuscles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFED86F21E86576000B4021 /* WorkedMuscles.swift */; };
+		7CFED87221E91576000B4021 /* MuscleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFED87121E91576000B4021 /* MuscleList.swift */; };
+		7CFED87421E92562000B4021 /* MuscleReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFED87321E92562000B4021 /* MuscleReport.swift */; };
+		7CFED87C21E93F4F000B4021 /* muscleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFED87A21E93F4F000B4021 /* muscleCell.swift */; };
+		7CFED87D21E93F4F000B4021 /* muscleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CFED87B21E93F4F000B4021 /* muscleCell.xib */; };
+		7CFED88021E93FFF000B4021 /* MuscleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFED87E21E93FFF000B4021 /* MuscleVC.swift */; };
+		7CFED88121E93FFF000B4021 /* MuscleVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CFED87F21E93FFF000B4021 /* MuscleVC.xib */; };
 		B61FD8839D2D15E9015B44AC /* Pods_MuscleFLossingRoller.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CC727AACDCF460E1E874F6 /* Pods_MuscleFLossingRoller.framework */; };
 /* End PBXBuildFile section */
 
@@ -316,6 +322,12 @@
 		7CFED86B21E7CBA8000B4021 /* MySessionsOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySessionsOptions.swift; sourceTree = "<group>"; };
 		7CFED86D21E7CF70000B4021 /* mysessions.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mysessions.jpeg; sourceTree = "<group>"; };
 		7CFED86F21E86576000B4021 /* WorkedMuscles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkedMuscles.swift; sourceTree = "<group>"; };
+		7CFED87121E91576000B4021 /* MuscleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleList.swift; sourceTree = "<group>"; };
+		7CFED87321E92562000B4021 /* MuscleReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleReport.swift; sourceTree = "<group>"; };
+		7CFED87A21E93F4F000B4021 /* muscleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = muscleCell.swift; sourceTree = "<group>"; };
+		7CFED87B21E93F4F000B4021 /* muscleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = muscleCell.xib; sourceTree = "<group>"; };
+		7CFED87E21E93FFF000B4021 /* MuscleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleVC.swift; sourceTree = "<group>"; };
+		7CFED87F21E93FFF000B4021 /* MuscleVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MuscleVC.xib; sourceTree = "<group>"; };
 		88CC727AACDCF460E1E874F6 /* Pods_MuscleFLossingRoller.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuscleFLossingRoller.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A68CDE8349018C3DF5E9143D /* Pods-MuscleFLossingRoller.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuscleFLossingRoller.release.xcconfig"; path = "Pods/Target Support Files/Pods-MuscleFLossingRoller/Pods-MuscleFLossingRoller.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -353,6 +365,7 @@
 		7C0EA6A021C06FC300F3A4A5 /* MuscleFLossingRoller */ = {
 			isa = PBXGroup;
 			children = (
+				7CFED87921E93F2E000B4021 /* customcells */,
 				7CFED86621E7BA63000B4021 /* Modules */,
 				7C0EA73421C071F300F3A4A5 /* fonts */,
 				7C0EA6B521C071F300F3A4A5 /* Images */,
@@ -364,6 +377,8 @@
 				7C0EA6A321C06FC300F3A4A5 /* ViewController.swift */,
 				7C0EA6A521C06FC300F3A4A5 /* Main.storyboard */,
 				7CFED86B21E7CBA8000B4021 /* MySessionsOptions.swift */,
+				7CFED87121E91576000B4021 /* MuscleList.swift */,
+				7CFED87321E92562000B4021 /* MuscleReport.swift */,
 				7CFED86F21E86576000B4021 /* WorkedMuscles.swift */,
 				7C95592821E1E5DE000424FC /* QuickSessions.swift */,
 				7C919C2F21DD806E000D6CB7 /* RollerTracker.swift */,
@@ -533,6 +548,17 @@
 			path = Modules;
 			sourceTree = "<group>";
 		};
+		7CFED87921E93F2E000B4021 /* customcells */ = {
+			isa = PBXGroup;
+			children = (
+				7CFED87A21E93F4F000B4021 /* muscleCell.swift */,
+				7CFED87B21E93F4F000B4021 /* muscleCell.xib */,
+				7CFED87E21E93FFF000B4021 /* MuscleVC.swift */,
+				7CFED87F21E93FFF000B4021 /* MuscleVC.xib */,
+			);
+			path = customcells;
+			sourceTree = "<group>";
+		};
 		C7F98BC755D2E4F1C3EEA8B0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -676,6 +702,7 @@
 				7C0EA7AC21C071F300F3A4A5 /* back.png in Resources */,
 				7C0EA76C21C071F300F3A4A5 /* RightElbow.png in Resources */,
 				7C0EA78E21C071F300F3A4A5 /* phone.png in Resources */,
+				7CFED87D21E93F4F000B4021 /* muscleCell.xib in Resources */,
 				7C0EA76721C071F300F3A4A5 /* RightAbs.png in Resources */,
 				7C0EA7B121C071F300F3A4A5 /* Login_button.png in Resources */,
 				7C0EA76421C071F300F3A4A5 /* LeftElbow.png in Resources */,
@@ -724,6 +751,7 @@
 				7C0EA73621C071F300F3A4A5 /* straching.png in Resources */,
 				7C0EA73D21C071F300F3A4A5 /* LeftThigh.png in Resources */,
 				7C0EA76A21C071F300F3A4A5 /* LeftChest.png in Resources */,
+				7CFED88121E93FFF000B4021 /* MuscleVC.xib in Resources */,
 				7C0EA78D21C071F300F3A4A5 /* bg_full_720x1280.png in Resources */,
 				7C0EA7AE21C071F300F3A4A5 /* refresh.png in Resources */,
 				7C0EA79D21C071F300F3A4A5 /* left_lat_back.png in Resources */,
@@ -809,7 +837,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CFED87221E91576000B4021 /* MuscleList.swift in Sources */,
+				7CFED87C21E93F4F000B4021 /* muscleCell.swift in Sources */,
 				7C0EA7BC21C083BC00F3A4A5 /* LoginAlert.swift in Sources */,
+				7CFED88021E93FFF000B4021 /* MuscleVC.swift in Sources */,
 				7CDA847C21D041BA00DFE9DB /* MyProfile.swift in Sources */,
 				7CC081E321D5638A00050256 /* FrontView.swift in Sources */,
 				7C0EA7BA21C0816B00F3A4A5 /* WaitingToLoad.swift in Sources */,
@@ -821,6 +852,7 @@
 				7C919C3221DDC79D000D6CB7 /* SaveSessions.swift in Sources */,
 				7CFED86A21E7C196000B4021 /* Sessions.swift in Sources */,
 				7C0EA6A221C06FC300F3A4A5 /* AppDelegate.swift in Sources */,
+				7CFED87421E92562000B4021 /* MuscleReport.swift in Sources */,
 				7C0EA7B821C0739F00F3A4A5 /* TextFieldWithImage.swift in Sources */,
 				7C919C3021DD806E000D6CB7 /* RollerTracker.swift in Sources */,
 				7C140FBE21C873D800D16F47 /* SpinnerViewController.swift in Sources */,

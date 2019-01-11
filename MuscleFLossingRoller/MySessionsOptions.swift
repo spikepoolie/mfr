@@ -25,11 +25,22 @@ class MySessionsOptions: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(Int(UIScreen.main.nativeBounds.height))
         centerX = Double(self.myView.center.x * 1)
         centerY = Double(self.myView.center.y * 1)
         self.getDevice()
        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Show the Navigation Bar
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Show the Navigation Bar
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
   
@@ -75,7 +86,8 @@ class MySessionsOptions: UIViewController {
     @IBAction func workedMuscles(_ sender: Any) {
         self.goToReports(option: "workedmuscles")
     }
-    
+
+ 
     func goToReports(option: String){
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: option) as UIViewController

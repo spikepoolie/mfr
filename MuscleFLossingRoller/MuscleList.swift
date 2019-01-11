@@ -1,19 +1,21 @@
 //
-//  WorkedMuscles.swift
+//  MuscleList.swift
 //  MuscleFLossingRoller
 //
-//  Created by Rodrigo Schreiner on 1/10/19.
+//  Created by Rodrigo Schreiner on 1/11/19.
 //  Copyright © 2019 MFR. All rights reserved.
 //
 
 import UIKit
 import FirebaseFirestore
 
-class WorkedMuscles: UITableViewController {
+class MuscleList: ViewController, UITableViewDelegate, UITableViewDataSource {
+    
     let cellId = "cellId"
     var sessionsList = [Sessions]()
     
-    @IBOutlet weak var myNavigation: UINavigationItem!
+    @IBOutlet weak var tableView: UITableView!
+    
     lazy var refresher: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.tintColor = UIColor.red
@@ -21,14 +23,15 @@ class WorkedMuscles: UITableViewController {
         return refreshControl
     }()
     
-    @IBAction func backToSessionsOptions(_ sender: Any) {
-        let vc:UIViewController = storyboard!.instantiateViewController(withIdentifier: "mysessionsoptions") as UIViewController
-        self.present(vc,animated:true,completion: nil)
-    }
     override func viewDidLoad() {
-      
         super.viewDidLoad()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
+        navigationItem.largeTitleDisplayMode = .always
+        navigationItem.title = "Muscles"
+        
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        
         tableView.refreshControl = refresher
         let db = Firestore.firestore()
         db.collection("sessions").order(by: "bodypartname").getDocuments {(snapshot, error) in
@@ -48,17 +51,17 @@ class WorkedMuscles: UITableViewController {
                         let painbefore = sessionObject?["painbefore"]
                         let painafter = sessionObject?["painafter"]
                         let reps = sessionObject?["resps"]
-                        let sessiondate = sessionObject?["sessiondate"]
                         let username = sessionObject?["username"]
-                       
+                        
                         
                         let session = Sessions(bodypartid: bodypartid as! Int?, bodypartname: bodypartname as! String?, cooloff: cooloff as! Int?, isfavorite: isfavorite as! Int?, miutes: minutes as! Int?,notes: notes as! String?, painafter: painafter as! Int?, painbefore: painbefore as! Int?, reps: reps as! Int?, username: username as! String?  )
                         self.sessionsList.append(session)
                         
-                       
+                        
                     }
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
+                        //self.dismiss(animated: true, completion: nil)
                     }
                 } else {
                     print("No data")
@@ -68,24 +71,18 @@ class WorkedMuscles: UITableViewController {
         tableView.register(SessionCell.self, forCellReuseIdentifier: cellId)
     }
     
-    @objc func addTapped(){
-        print("button works")
-    }
-
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return sessionsList.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         
         let sessionInfo = sessionsList[indexPath.row]
@@ -106,12 +103,31 @@ class WorkedMuscles: UITableViewController {
         }
     }
     
-   
+    
+    @IBAction func goBack(_ sender: Any) {
+        print("back")
+    }
     
     @objc func refreshList(){
         tableView.reloadData()
         refresher.endRefreshing()
-      
+        
     }
-
+   
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let muscle_info = sessionsList[indexPath.row]
+        let bodypartid = muscle_info.bodypartid!
+        let username = muscle_info.username!
+        let bodypartname = muscle_info.bodypartname!
+        //let vc = storyboard?.instantiateViewController(withIdentifier: "musclereport") as? MuscleReport
+        let vc = MuscleVC()
+        vc.bodypartid = bodypartid
+        vc.username = username
+        vc.bodypartname = bodypartname
+        self.navigationController?.pushViewController(vc, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
+       // self.present(vc!,animated:true,completion: nil)
+    }
+   
 }
