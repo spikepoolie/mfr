@@ -3,18 +3,18 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "LogMeIn.btnLogin(_:):LogMeIn.swift">
+         contextName = "ViewOptions.goBackToThePreviousScreen():ViewOptions.swift">
          <PersistentStrings>
             <PersistentString
-               value = "txtPassword.text">
+               value = "self.myImageData">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "MyProfile.viewDidLoad():MyProfile.swift">
+         contextName = "MySessionsOptions.getDevice():MySessionsOptions.swift">
          <PersistentStrings>
             <PersistentString
-               value = "profileImage">
+               value = "UIDevice().userInterfaceIdiom">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -30,18 +30,26 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in NewLogin.checkIfLoginExists(email:):NewLogin.swift">
+         contextName = "MyProfile.viewDidLoad():MyProfile.swift">
          <PersistentStrings>
             <PersistentString
-               value = "dictionary[&quot;user_key&quot;].val()">
+               value = "profileImage">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ViewOptions.goBackToThePreviousScreen():ViewOptions.swift">
+         contextName = "LogMeIn.btnLogin(_:):LogMeIn.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.myImageData">
+               value = "txtPassword.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in NewLogin.checkIfLoginExists(email:):NewLogin.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "dictionary[&quot;user_key&quot;].val()">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

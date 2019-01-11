@@ -155,6 +155,8 @@
 		7CDA847C21D041BA00DFE9DB /* MyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDA847B21D041BA00DFE9DB /* MyProfile.swift */; };
 		7CFED86821E7BA82000B4021 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFED86721E7BA82000B4021 /* Users.swift */; };
 		7CFED86A21E7C196000B4021 /* Sessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFED86921E7C196000B4021 /* Sessions.swift */; };
+		7CFED86C21E7CBA8000B4021 /* MySessionsOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFED86B21E7CBA8000B4021 /* MySessionsOptions.swift */; };
+		7CFED86E21E7CF71000B4021 /* mysessions.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7CFED86D21E7CF70000B4021 /* mysessions.jpeg */; };
 		B61FD8839D2D15E9015B44AC /* Pods_MuscleFLossingRoller.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CC727AACDCF460E1E874F6 /* Pods_MuscleFLossingRoller.framework */; };
 /* End PBXBuildFile section */
 
@@ -310,6 +312,8 @@
 		7CDA847B21D041BA00DFE9DB /* MyProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfile.swift; sourceTree = "<group>"; };
 		7CFED86721E7BA82000B4021 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		7CFED86921E7C196000B4021 /* Sessions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sessions.swift; sourceTree = "<group>"; };
+		7CFED86B21E7CBA8000B4021 /* MySessionsOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySessionsOptions.swift; sourceTree = "<group>"; };
+		7CFED86D21E7CF70000B4021 /* mysessions.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mysessions.jpeg; sourceTree = "<group>"; };
 		88CC727AACDCF460E1E874F6 /* Pods_MuscleFLossingRoller.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuscleFLossingRoller.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A68CDE8349018C3DF5E9143D /* Pods-MuscleFLossingRoller.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuscleFLossingRoller.release.xcconfig"; path = "Pods/Target Support Files/Pods-MuscleFLossingRoller/Pods-MuscleFLossingRoller.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -357,6 +361,7 @@
 				7C140FBD21C873D700D16F47 /* SpinnerViewController.swift */,
 				7C0EA6A321C06FC300F3A4A5 /* ViewController.swift */,
 				7C0EA6A521C06FC300F3A4A5 /* Main.storyboard */,
+				7CFED86B21E7CBA8000B4021 /* MySessionsOptions.swift */,
 				7C95592821E1E5DE000424FC /* QuickSessions.swift */,
 				7C919C2F21DD806E000D6CB7 /* RollerTracker.swift */,
 				7CC081E021D42C3300050256 /* ViewOptions.swift */,
@@ -384,6 +389,7 @@
 				7C0EA6D721C071F300F3A4A5 /* bg_full.png */,
 				7C0EA6FC21C071F300F3A4A5 /* bodyfront.png */,
 				7C0EA6FB21C071F300F3A4A5 /* box_horizontal.png */,
+				7CFED86D21E7CF70000B4021 /* mysessions.jpeg */,
 				7C0EA6BE21C071F300F3A4A5 /* box_verticle.png */,
 				7C0EA6DB21C071F300F3A4A5 /* box-HR_right.png */,
 				7C0EA72221C071F300F3A4A5 /* box-HR(left).png */,
@@ -681,6 +687,7 @@
 				7C0EA73821C071F300F3A4A5 /* RightLatBack.png in Resources */,
 				7C0EA75A21C071F300F3A4A5 /* RightCalf.png in Resources */,
 				7C0EA79521C071F300F3A4A5 /* right_mid_back.png in Resources */,
+				7CFED86E21E7CF71000B4021 /* mysessions.jpeg in Resources */,
 				7C0EA77A21C071F300F3A4A5 /* RightWrist.png in Resources */,
 				7C0EA7A721C071F300F3A4A5 /* My_Tracker.png in Resources */,
 				7C0EA78821C071F300F3A4A5 /* signup.png in Resources */,
@@ -814,6 +821,7 @@
 				7C0EA7B821C0739F00F3A4A5 /* TextFieldWithImage.swift in Sources */,
 				7C919C3021DD806E000D6CB7 /* RollerTracker.swift in Sources */,
 				7C140FBE21C873D800D16F47 /* SpinnerViewController.swift in Sources */,
+				7CFED86C21E7CBA8000B4021 /* MySessionsOptions.swift in Sources */,
 				7CC081E121D42C3300050256 /* ViewOptions.swift in Sources */,
 				7C0EA6B421C06FE100F3A4A5 /* CustomButton.swift in Sources */,
 			);
