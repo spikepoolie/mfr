@@ -14,6 +14,10 @@ class MuscleList: ViewController, UITableViewDelegate, UITableViewDataSource {
     let cellId = "cellId"
     var sessionsList = [Sessions]()
     
+    @objc func goBack(){
+       self.dismiss(animated: true, completion: nil)
+    }
+    
     @IBOutlet weak var tableView: UITableView!
     
     lazy var refresher: UIRefreshControl = {
@@ -27,7 +31,12 @@ class MuscleList: ViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
         navigationItem.largeTitleDisplayMode = .always
         navigationItem.title = "Muscles"
+        let backbutton = UIButton(type: .custom)
+        backbutton.setTitle("Back", for: .normal)
+        backbutton.setTitleColor(backbutton.tintColor, for: .normal) // You can change the TitleColor
+        backbutton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
         
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backbutton)
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -104,9 +113,6 @@ class MuscleList: ViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     
-    @IBAction func goBack(_ sender: Any) {
-        print("back")
-    }
     
     @objc func refreshList(){
         tableView.reloadData()
@@ -120,12 +126,12 @@ class MuscleList: ViewController, UITableViewDelegate, UITableViewDataSource {
         let bodypartid = muscle_info.bodypartid!
         let username = muscle_info.username!
         let bodypartname = muscle_info.bodypartname!
-        //let vc = storyboard?.instantiateViewController(withIdentifier: "musclereport") as? MuscleReport
-        let vc = MuscleVC()
-        vc.bodypartid = bodypartid
-        vc.username = username
-        vc.bodypartname = bodypartname
-        self.navigationController?.pushViewController(vc, animated: true)
+        let vc = storyboard?.instantiateViewController(withIdentifier: "musclereport") as? MuscleReport
+        //let vc = MuscleVC()
+        vc?.bodypartid = bodypartid
+        vc?.username = username
+        vc?.bodypartname = bodypartname
+        self.navigationController?.pushViewController(vc!, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
        // self.present(vc!,animated:true,completion: nil)
     }

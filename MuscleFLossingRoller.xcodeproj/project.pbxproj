@@ -147,6 +147,8 @@
 		7C0EA7BE21C2D90100F3A4A5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA7BD21C2D90100F3A4A5 /* GoogleService-Info.plist */; };
 		7C140FBE21C873D800D16F47 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C140FBD21C873D700D16F47 /* SpinnerViewController.swift */; };
 		7C140FC021C875F400D16F47 /* LogMeIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C140FBF21C875F400D16F47 /* LogMeIn.swift */; };
+		7C8C928D21EDA4F100B4A629 /* SessionCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8C928C21EDA4F100B4A629 /* SessionCustomCell.swift */; };
+		7C8C928F21EDA60600B4A629 /* SessionObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8C928E21EDA60600B4A629 /* SessionObject.swift */; };
 		7C919C3021DD806E000D6CB7 /* RollerTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C919C2F21DD806E000D6CB7 /* RollerTracker.swift */; };
 		7C919C3221DDC79D000D6CB7 /* SaveSessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C919C3121DDC79D000D6CB7 /* SaveSessions.swift */; };
 		7C95592921E1E5DE000424FC /* QuickSessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C95592821E1E5DE000424FC /* QuickSessions.swift */; };
@@ -311,6 +313,8 @@
 		7C0EA7BD21C2D90100F3A4A5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7C140FBD21C873D700D16F47 /* SpinnerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		7C140FBF21C875F400D16F47 /* LogMeIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogMeIn.swift; sourceTree = "<group>"; };
+		7C8C928C21EDA4F100B4A629 /* SessionCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionCustomCell.swift; sourceTree = "<group>"; };
+		7C8C928E21EDA60600B4A629 /* SessionObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionObject.swift; sourceTree = "<group>"; };
 		7C919C2F21DD806E000D6CB7 /* RollerTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RollerTracker.swift; path = ../../MyFitLabSolutions/MyFitLabSolutions/RollerTracker.swift; sourceTree = "<group>"; };
 		7C919C3121DDC79D000D6CB7 /* SaveSessions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveSessions.swift; sourceTree = "<group>"; };
 		7C95592821E1E5DE000424FC /* QuickSessions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickSessions.swift; sourceTree = "<group>"; };
@@ -544,6 +548,7 @@
 			children = (
 				7CFED86721E7BA82000B4021 /* Users.swift */,
 				7CFED86921E7C196000B4021 /* Sessions.swift */,
+				7C8C928E21EDA60600B4A629 /* SessionObject.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -551,6 +556,7 @@
 		7CFED87921E93F2E000B4021 /* customcells */ = {
 			isa = PBXGroup;
 			children = (
+				7C8C928C21EDA4F100B4A629 /* SessionCustomCell.swift */,
 				7CFED87A21E93F4F000B4021 /* muscleCell.swift */,
 				7CFED87B21E93F4F000B4021 /* muscleCell.xib */,
 				7CFED87E21E93FFF000B4021 /* MuscleVC.swift */,
@@ -838,6 +844,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CFED87221E91576000B4021 /* MuscleList.swift in Sources */,
+				7C8C928D21EDA4F100B4A629 /* SessionCustomCell.swift in Sources */,
 				7CFED87C21E93F4F000B4021 /* muscleCell.swift in Sources */,
 				7C0EA7BC21C083BC00F3A4A5 /* LoginAlert.swift in Sources */,
 				7CFED88021E93FFF000B4021 /* MuscleVC.swift in Sources */,
@@ -854,6 +861,7 @@
 				7C0EA6A221C06FC300F3A4A5 /* AppDelegate.swift in Sources */,
 				7CFED87421E92562000B4021 /* MuscleReport.swift in Sources */,
 				7C0EA7B821C0739F00F3A4A5 /* TextFieldWithImage.swift in Sources */,
+				7C8C928F21EDA60600B4A629 /* SessionObject.swift in Sources */,
 				7C919C3021DD806E000D6CB7 /* RollerTracker.swift in Sources */,
 				7C140FBE21C873D800D16F47 /* SpinnerViewController.swift in Sources */,
 				7CFED87021E86576000B4021 /* WorkedMuscles.swift in Sources */,

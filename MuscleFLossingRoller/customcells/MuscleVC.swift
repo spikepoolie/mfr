@@ -92,7 +92,9 @@ class MuscleVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let muscleInfo = muscleList[indexPath.row]
         //  cell.accessoryType = .disclosureIndicator
         //    cell.detailTextLabel!.numberOfLines = 0
-        cell.textLabel!.text = muscleInfo.username
+        cell.lblTitle.text = "rodrigo schreiner"
+        //cell.btnTitle. = "my Button"
+      //  cell.textLabel!.text = muscleInfo.username
         //cell.detailTextLabel?.text = ("\(String(describing: coachInfo.coach_phone!))\n\(String(describing: coachInfo.coach_email!))")
         return cell
     }

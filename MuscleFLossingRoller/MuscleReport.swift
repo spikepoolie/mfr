@@ -87,12 +87,17 @@ class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellMuscleId, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SessionCustomCell", for: indexPath) as! SessionCustomCell
         
         let muscleInfo = muscleList[indexPath.row]
+        let myImage = UIImage(named: "ios_more");
+        //cell.imgCell.image = myImage
+        cell.lblTitle.text = muscleInfo.username
+        cell.lblSubTitle.text=muscleInfo.notes
+        cell.lblDetails.text="details"
         //  cell.accessoryType = .disclosureIndicator
         //    cell.detailTextLabel!.numberOfLines = 0
-        cell.textLabel!.text = muscleInfo.username
+       // cell.textLabel!.text = muscleInfo.username
         //cell.detailTextLabel?.text = ("\(String(describing: coachInfo.coach_phone!))\n\(String(describing: coachInfo.coach_email!))")
         return cell
     }
@@ -115,20 +120,20 @@ class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: true)
-//        let muscle_info = muscleList[indexPath.row]
-//        let bodypartid = muscle_info.bodypartid!
-//        let username = muscle_info.username!
-//
-//
-//        let vc = storyboard?.instantiateViewController(withIdentifier: "musclereports") as? MuscleReport
-////        vc?.coach_name = coachName
-////        vc?.coach_email = coachEmail
-////        vc?.coach_phone = coachPhone
-////        vc?.coach_invited = coachInvited
-//
-//        self.present(vc!,animated:true,completion: nil)
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let muscle_info = muscleList[indexPath.row]
+        let bodypartid = muscle_info.bodypartid!
+        let username = muscle_info.username!
+
+
+        let vc = storyboard?.instantiateViewController(withIdentifier: "musclereports") as? MuscleReport
+//        vc?.coach_name = coachName
+//        vc?.coach_email = coachEmail
+//        vc?.coach_phone = coachPhone
+//        vc?.coach_invited = coachInvited
+
+        self.present(vc!,animated:true,completion: nil)
+    }
 
 }

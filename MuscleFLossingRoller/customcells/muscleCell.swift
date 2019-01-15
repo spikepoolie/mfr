@@ -9,7 +9,11 @@
 import UIKit
 
 class muscleCell: UITableViewCell {
-
+    
+    @IBOutlet weak var lblTitle: UILabel!
+    
+    @IBOutlet weak var btnTitle: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
