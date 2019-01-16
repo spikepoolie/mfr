@@ -3,6 +3,20 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "MuscleList.viewDidLoad():MuscleList.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.pageFrom">
+            </PersistentString>
+            <PersistentString
+               value = "pageFrom">
+            </PersistentString>
+            <PersistentString
+               value = "self.reportType">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "ViewOptions.goBackToThePreviousScreen():ViewOptions.swift">
          <PersistentStrings>
             <PersistentString
@@ -11,10 +25,13 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "MySessionsOptions.getDevice():MySessionsOptions.swift">
+         contextName = "MuscleList.tableView(_:cellForRowAt:):MuscleList.swift">
+      </ContextState>
+      <ContextState
+         contextName = "LogMeIn.btnLogin(_:):LogMeIn.swift">
          <PersistentStrings>
             <PersistentString
-               value = "UIDevice().userInterfaceIdiom">
+               value = "txtPassword.text">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -30,18 +47,18 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "MyProfile.viewDidLoad():MyProfile.swift">
+         contextName = "MySessionsOptions.getDevice():MySessionsOptions.swift">
          <PersistentStrings>
             <PersistentString
-               value = "profileImage">
+               value = "UIDevice().userInterfaceIdiom">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "LogMeIn.btnLogin(_:):LogMeIn.swift">
+         contextName = "MyProfile.viewDidLoad():MyProfile.swift">
          <PersistentStrings>
             <PersistentString
-               value = "txtPassword.text">
+               value = "profileImage">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

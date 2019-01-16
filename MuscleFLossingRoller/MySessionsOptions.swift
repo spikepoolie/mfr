@@ -15,6 +15,7 @@ class MySessionsOptions: UIViewController {
     
     var centerX = 0.00
     var centerY = 0.00
+    var pageToGo = ""
     
     @IBOutlet weak var myView: UIImageView!
     
@@ -84,14 +85,35 @@ class MySessionsOptions: UIViewController {
     }
 
     @IBAction func workedMuscles(_ sender: Any) {
-        self.goToReports(option: "workedmuscles")
+        self.pageToGo = "workedmuscles"
+        self.goToReports(option: self.pageToGo)
+        
     }
 
- 
+    @IBAction func favoriteMuscles(_ sender: Any) {
+        self.pageToGo = "favorites"
+        self.goToReports(option: self.pageToGo)
+    }
+    
+    @IBAction func dateMuscles(_ sender: Any) {
+        self.pageToGo = "date"
+        self.goToReports(option: self.pageToGo)
+    }
+    
     func goToReports(option: String){
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: option) as UIViewController
+        var vc = storyboard?.instantiateViewController(withIdentifier: "dateslist") as! UIViewController
+        if option == "workedmuscles" {
+           UserDefaults.standard.set("muscles", forKey: "pagefrom")
+           vc = storyboard?.instantiateViewController(withIdentifier: "musclelist") as! MuscleList
+        } else if option == "favorites" {
+           UserDefaults.standard.set("muscles", forKey: "pagefrom")
+            vc = storyboard?.instantiateViewController(withIdentifier: "musclelist") as! MuscleList
+        } else {
+            UserDefaults.standard.set("date", forKey: "pagefrom")
+            vc = storyboard?.instantiateViewController(withIdentifier: "dateslist") as! DatesList
+        }
         self.present(vc,animated:true,completion: nil)
+        
     }
 
 }

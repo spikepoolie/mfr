@@ -13,7 +13,6 @@ class WorkedMuscles: UITableViewController {
     let cellId = "cellId"
     var sessionsList = [Sessions]()
 
-    
     @IBOutlet weak var myNavigation: UINavigationItem!
     lazy var refresher: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -51,6 +50,7 @@ class WorkedMuscles: UITableViewController {
                         let reps = sessionObject?["reps"]
                         let sessiondate = sessionObject?["sessiondate"]
                         let username = sessionObject?["username"]
+                        let pagecamefrom = sessionObject!["pagefrom"]
                         
                         let session_date = convertTimeStampToString(dt: sessiondate as! Date)
                         

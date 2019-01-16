@@ -15,9 +15,9 @@ class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
     var bodypartid = 0
     var bodypartname = ""
     var muscleList = [Sessions]()
-    @IBOutlet weak var myNavigation: UINavigationBar!
+    var pageFrom = ""
+    
 
-    @IBOutlet weak var btnGo: CustomButton!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -58,10 +58,10 @@ class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
                         let painafter = muscle["painafter"]
                         let reps = muscle["reps"]
                         let username = muscle["username"]
-                        let musclename = muscle["bodypartname"]
                         let sessiondate = muscle["sessiondate"]
                         
                        let session_date = convertTimeStampToString(dt: sessiondate as! Date)
+                        print(session_date)
                         
                         let muscle = Sessions(bodypartid: bodypartid as! Int?, bodypartname: bodypartname as! String?, cooloff: cooloff as! Int?, isfavorite: isfavorite as! Int?, minutes: minutes as! Int?,notes: notes as! String?, painafter: painafter as! Int?, painbefore: painbefore as! Int?, reps: reps as! Int?, username: username as! String?, musclename: bodypartname as! String?, sessiondate: session_date as! String?)
                         self.muscleList.append(muscle)
@@ -151,6 +151,7 @@ class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
             vc!.myRepetitions=muscle_info.reps!
             vc!.myCoolOff=muscle_info.cooloff!
             vc!.bodypartid = muscle_info.bodypartid!
+          //  vc!.pageFrom =
             
             self.present(vc!,animated:true,completion: nil)
            // tableView.deselectRow(at: [IndexPath], animated: true)

@@ -152,6 +152,8 @@
 		7C919C3021DD806E000D6CB7 /* RollerTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C919C2F21DD806E000D6CB7 /* RollerTracker.swift */; };
 		7C919C3221DDC79D000D6CB7 /* SaveSessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C919C3121DDC79D000D6CB7 /* SaveSessions.swift */; };
 		7C95592921E1E5DE000424FC /* QuickSessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C95592821E1E5DE000424FC /* QuickSessions.swift */; };
+		7CB4FDB321EFB35D00FBE66D /* backbuttom.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CB4FDB221EFB35C00FBE66D /* backbuttom.png */; };
+		7CB4FDB721EFCE7600FBE66D /* DatesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB4FDB621EFCE7600FBE66D /* DatesList.swift */; };
 		7CC081E121D42C3300050256 /* ViewOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC081E021D42C3300050256 /* ViewOptions.swift */; };
 		7CC081E321D5638A00050256 /* FrontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC081E221D5638900050256 /* FrontView.swift */; };
 		7CDA847C21D041BA00DFE9DB /* MyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDA847B21D041BA00DFE9DB /* MyProfile.swift */; };
@@ -162,7 +164,6 @@
 		7CFED87021E86576000B4021 /* WorkedMuscles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFED86F21E86576000B4021 /* WorkedMuscles.swift */; };
 		7CFED87221E91576000B4021 /* MuscleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFED87121E91576000B4021 /* MuscleList.swift */; };
 		7CFED87421E92562000B4021 /* MuscleReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFED87321E92562000B4021 /* MuscleReport.swift */; };
-		7CFED87D21E93F4F000B4021 /* muscleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CFED87B21E93F4F000B4021 /* muscleCell.xib */; };
 		B61FD8839D2D15E9015B44AC /* Pods_MuscleFLossingRoller.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CC727AACDCF460E1E874F6 /* Pods_MuscleFLossingRoller.framework */; };
 /* End PBXBuildFile section */
 
@@ -315,6 +316,8 @@
 		7C919C2F21DD806E000D6CB7 /* RollerTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RollerTracker.swift; path = ../../MyFitLabSolutions/MyFitLabSolutions/RollerTracker.swift; sourceTree = "<group>"; };
 		7C919C3121DDC79D000D6CB7 /* SaveSessions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveSessions.swift; sourceTree = "<group>"; };
 		7C95592821E1E5DE000424FC /* QuickSessions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickSessions.swift; sourceTree = "<group>"; };
+		7CB4FDB221EFB35C00FBE66D /* backbuttom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backbuttom.png; sourceTree = "<group>"; };
+		7CB4FDB621EFCE7600FBE66D /* DatesList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatesList.swift; sourceTree = "<group>"; };
 		7CC081E021D42C3300050256 /* ViewOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewOptions.swift; sourceTree = "<group>"; };
 		7CC081E221D5638900050256 /* FrontView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontView.swift; sourceTree = "<group>"; };
 		7CDA847B21D041BA00DFE9DB /* MyProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfile.swift; sourceTree = "<group>"; };
@@ -325,7 +328,6 @@
 		7CFED86F21E86576000B4021 /* WorkedMuscles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkedMuscles.swift; sourceTree = "<group>"; };
 		7CFED87121E91576000B4021 /* MuscleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleList.swift; sourceTree = "<group>"; };
 		7CFED87321E92562000B4021 /* MuscleReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleReport.swift; sourceTree = "<group>"; };
-		7CFED87B21E93F4F000B4021 /* muscleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = muscleCell.xib; sourceTree = "<group>"; };
 		88CC727AACDCF460E1E874F6 /* Pods_MuscleFLossingRoller.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuscleFLossingRoller.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A68CDE8349018C3DF5E9143D /* Pods-MuscleFLossingRoller.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuscleFLossingRoller.release.xcconfig"; path = "Pods/Target Support Files/Pods-MuscleFLossingRoller/Pods-MuscleFLossingRoller.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -369,6 +371,7 @@
 				7C0EA73421C071F300F3A4A5 /* fonts */,
 				7C0EA6B521C071F300F3A4A5 /* Images */,
 				7C0EA6B321C06FE100F3A4A5 /* CustomButton.swift */,
+				7CB4FDB621EFCE7600FBE66D /* DatesList.swift */,
 				7C0EA6A121C06FC300F3A4A5 /* AppDelegate.swift */,
 				7C919C3121DDC79D000D6CB7 /* SaveSessions.swift */,
 				7C140FBF21C875F400D16F47 /* LogMeIn.swift */,
@@ -420,6 +423,7 @@
 				7C0EA72021C071F300F3A4A5 /* favorites.png */,
 				7C0EA6F621C071F300F3A4A5 /* fitlabblurry.png */,
 				7C0EA70221C071F300F3A4A5 /* frontback.png */,
+				7CB4FDB221EFB35C00FBE66D /* backbuttom.png */,
 				7C0EA72521C071F300F3A4A5 /* GluteMedius.png */,
 				7C0EA6C721C071F300F3A4A5 /* ios_back.png */,
 				7C0EA72621C071F300F3A4A5 /* ios_close.png */,
@@ -559,7 +563,6 @@
 			isa = PBXGroup;
 			children = (
 				7C8C928C21EDA4F100B4A629 /* SessionCustomCell.swift */,
-				7CFED87B21E93F4F000B4021 /* muscleCell.xib */,
 			);
 			path = customcells;
 			sourceTree = "<group>";
@@ -662,6 +665,7 @@
 				7C0EA74E21C071F300F3A4A5 /* LeftCalf.png in Resources */,
 				7C0EA74F21C071F300F3A4A5 /* my_sessions.png in Resources */,
 				7C0EA75F21C071F300F3A4A5 /* shop.png in Resources */,
+				7CB4FDB321EFB35D00FBE66D /* backbuttom.png in Resources */,
 				7C0EA7AB21C071F300F3A4A5 /* mfricon120x120.png in Resources */,
 				7C0EA75121C071F300F3A4A5 /* LeftInnerThigh.png in Resources */,
 				7C0EA74521C071F300F3A4A5 /* mysessions.png in Resources */,
@@ -707,7 +711,6 @@
 				7C0EA7AC21C071F300F3A4A5 /* back.png in Resources */,
 				7C0EA76C21C071F300F3A4A5 /* RightElbow.png in Resources */,
 				7C0EA78E21C071F300F3A4A5 /* phone.png in Resources */,
-				7CFED87D21E93F4F000B4021 /* muscleCell.xib in Resources */,
 				7C0EA76721C071F300F3A4A5 /* RightAbs.png in Resources */,
 				7C0EA7B121C071F300F3A4A5 /* Login_button.png in Resources */,
 				7C0EA76421C071F300F3A4A5 /* LeftElbow.png in Resources */,
@@ -856,6 +859,7 @@
 				7C919C3221DDC79D000D6CB7 /* SaveSessions.swift in Sources */,
 				7CFED86A21E7C196000B4021 /* Sessions.swift in Sources */,
 				7C0EA6A221C06FC300F3A4A5 /* AppDelegate.swift in Sources */,
+				7CB4FDB721EFCE7600FBE66D /* DatesList.swift in Sources */,
 				7CFED87421E92562000B4021 /* MuscleReport.swift in Sources */,
 				7C0EA7B821C0739F00F3A4A5 /* TextFieldWithImage.swift in Sources */,
 				7C919C3021DD806E000D6CB7 /* RollerTracker.swift in Sources */,

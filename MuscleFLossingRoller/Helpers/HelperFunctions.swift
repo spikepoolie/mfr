@@ -10,7 +10,7 @@ import Foundation
 
 func convertTimeStampToString(dt: Date) -> String{
     let dateformatter = DateFormatter()
-    dateformatter.dateFormat = "E, MMM d yyyy h:mm a"
-    let session_date = dateformatter.string(from: NSDate() as Date)
+    dateformatter.dateFormat = "E, mm/dd/yyyy h:mm a"
+    let session_date = dateformatter.string(from: dt as Date)
     return session_date
 }
