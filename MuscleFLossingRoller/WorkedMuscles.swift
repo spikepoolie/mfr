@@ -12,6 +12,7 @@ import FirebaseFirestore
 class WorkedMuscles: UITableViewController {
     let cellId = "cellId"
     var sessionsList = [Sessions]()
+
     
     @IBOutlet weak var myNavigation: UINavigationItem!
     lazy var refresher: UIRefreshControl = {
@@ -47,12 +48,13 @@ class WorkedMuscles: UITableViewController {
                         let notes = sessionObject?["notes"]
                         let painbefore = sessionObject?["painbefore"]
                         let painafter = sessionObject?["painafter"]
-                        let reps = sessionObject?["resps"]
+                        let reps = sessionObject?["reps"]
                         let sessiondate = sessionObject?["sessiondate"]
                         let username = sessionObject?["username"]
-                       
                         
-                        let session = Sessions(bodypartid: bodypartid as! Int?, bodypartname: bodypartname as! String?, cooloff: cooloff as! Int?, isfavorite: isfavorite as! Int?, miutes: minutes as! Int?,notes: notes as! String?, painafter: painafter as! Int?, painbefore: painbefore as! Int?, reps: reps as! Int?, username: username as! String?  )
+                        let session_date = convertTimeStampToString(dt: sessiondate as! Date)
+                        
+                        let session = Sessions(bodypartid: bodypartid as! Int?, bodypartname: bodypartname as! String?, cooloff: cooloff as! Int?, isfavorite: isfavorite as! Int?, minutes: minutes as! Int?,notes: notes as! String?, painafter: painafter as! Int?, painbefore: painbefore as! Int?, reps: reps as! Int?, username: username as! String?, musclename: bodypartname as! String?, sessiondate: session_date as! String?)
                         self.sessionsList.append(session)
                         
                        

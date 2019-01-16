@@ -10,8 +10,11 @@ import UIKit
 
 class SessionCustomCell: UITableViewCell {
 
-    @IBOutlet weak var imgCell: UIImageView!
-    @IBOutlet weak var lblTitle: UILabel!
-    @IBOutlet weak var lblSubTitle: UILabel!
-    @IBOutlet weak var lblDetails: UILabel!
+    @IBOutlet weak var lblBodyPartName: UILabel!
+    @IBOutlet weak var lblSessionDuration: UILabel!
+    @IBOutlet weak var lblSessionReps: UILabel!
+    @IBOutlet weak var lblPainBefore: UILabel!
+    @IBOutlet weak var lblPainAfter: UILabel!
+    @IBOutlet weak var lblCoolOffTime: UILabel!
+    @IBOutlet weak var lblSessionDate: UILabel!
 }

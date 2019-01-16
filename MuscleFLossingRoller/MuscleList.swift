@@ -29,10 +29,12 @@ class MuscleList: ViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         navigationItem.largeTitleDisplayMode = .always
         navigationItem.title = "Muscles"
         let backbutton = UIButton(type: .custom)
         backbutton.setTitle("Back", for: .normal)
+
         backbutton.setTitleColor(backbutton.tintColor, for: .normal) // You can change the TitleColor
         backbutton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
         
@@ -59,11 +61,14 @@ class MuscleList: ViewController, UITableViewDelegate, UITableViewDataSource {
                         let notes = sessionObject?["notes"]
                         let painbefore = sessionObject?["painbefore"]
                         let painafter = sessionObject?["painafter"]
-                        let reps = sessionObject?["resps"]
+                        let reps = sessionObject?["reps"]
+                        let sessiondate = sessionObject?["sessiondate"]
                         let username = sessionObject?["username"]
                         
                         
-                        let session = Sessions(bodypartid: bodypartid as! Int?, bodypartname: bodypartname as! String?, cooloff: cooloff as! Int?, isfavorite: isfavorite as! Int?, miutes: minutes as! Int?,notes: notes as! String?, painafter: painafter as! Int?, painbefore: painbefore as! Int?, reps: reps as! Int?, username: username as! String?  )
+                        let session_date = convertTimeStampToString(dt: sessiondate as! Date)
+                        
+                        let session = Sessions(bodypartid: bodypartid as! Int?, bodypartname: bodypartname as! String?, cooloff: cooloff as! Int?, isfavorite: isfavorite as! Int?, minutes: minutes as! Int?,notes: notes as! String?, painafter: painafter as! Int?, painbefore: painbefore as! Int?, reps: reps as! Int?, username: username as! String?, musclename: bodypartname as! String?, sessiondate: session_date as! String?  )
                         self.sessionsList.append(session)
                         
                         
@@ -126,6 +131,7 @@ class MuscleList: ViewController, UITableViewDelegate, UITableViewDataSource {
         let bodypartid = muscle_info.bodypartid!
         let username = muscle_info.username!
         let bodypartname = muscle_info.bodypartname!
+        let sessiondate = muscle_info.sessiondate!
         let vc = storyboard?.instantiateViewController(withIdentifier: "musclereport") as? MuscleReport
         //let vc = MuscleVC()
         vc?.bodypartid = bodypartid

@@ -16,6 +16,7 @@ class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
     var bodypartname = ""
     var muscleList = [Sessions]()
     @IBOutlet weak var myNavigation: UINavigationBar!
+
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -54,11 +55,14 @@ class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
                         let notes = muscle["notes"]
                         let painbefore = muscle["painbefore"]
                         let painafter = muscle["painafter"]
-                        let reps = muscle["resps"]
+                        let reps = muscle["reps"]
                         let username = muscle["username"]
+                        let musclename = muscle["bodypartname"]
+                        let sessiondate = muscle["sessiondate"]
                         
+                       let session_date = convertTimeStampToString(dt: sessiondate as! Date)
                         
-                        let muscle = Sessions(bodypartid: bodypartid as! Int?, bodypartname: bodypartname as! String?, cooloff: cooloff as! Int?, isfavorite: isfavorite as! Int?, miutes: minutes as! Int?,notes: notes as! String?, painafter: painafter as! Int?, painbefore: painbefore as! Int?, reps: reps as! Int?, username: username as! String?  )
+                        let muscle = Sessions(bodypartid: bodypartid as! Int?, bodypartname: bodypartname as! String?, cooloff: cooloff as! Int?, isfavorite: isfavorite as! Int?, minutes: minutes as! Int?,notes: notes as! String?, painafter: painafter as! Int?, painbefore: painbefore as! Int?, reps: reps as! Int?, username: username as! String?, musclename: bodypartname as! String?, sessiondate: session_date as! String?)
                         self.muscleList.append(muscle)
                         
                         
@@ -90,15 +94,19 @@ class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SessionCustomCell", for: indexPath) as! SessionCustomCell
         
         let muscleInfo = muscleList[indexPath.row]
-        let myImage = UIImage(named: "ios_more");
-        //cell.imgCell.image = myImage
-        cell.lblTitle.text = muscleInfo.username
-        cell.lblSubTitle.text=muscleInfo.notes
-        cell.lblDetails.text="details"
-        //  cell.accessoryType = .disclosureIndicator
-        //    cell.detailTextLabel!.numberOfLines = 0
-       // cell.textLabel!.text = muscleInfo.username
-        //cell.detailTextLabel?.text = ("\(String(describing: coachInfo.coach_phone!))\n\(String(describing: coachInfo.coach_email!))")
+//        let myImage = UIImage(named: "ios_more");
+//        cell.imgCell.image = muscleInfo.musclename
+        
+        cell.lblBodyPartName.text = muscleInfo.bodypartname
+        cell.lblSessionDuration.text = "\(String(describing: muscleInfo.minutes!))"
+        cell.lblSessionReps.text = "\(String(describing: muscleInfo.reps!))"
+        cell.lblPainBefore.text = "\(String(describing: muscleInfo.painbefore!))"
+        cell.lblPainAfter.text = "\(String(describing: muscleInfo.painafter!))"
+        cell.lblSessionDate.text = muscleInfo.sessiondate
+        cell.lblCoolOffTime.text = "\(String(describing: muscleInfo.cooloff!))"
+        
+   
+      
         return cell
     }
     

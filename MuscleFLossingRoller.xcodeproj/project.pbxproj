@@ -148,7 +148,7 @@
 		7C140FBE21C873D800D16F47 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C140FBD21C873D700D16F47 /* SpinnerViewController.swift */; };
 		7C140FC021C875F400D16F47 /* LogMeIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C140FBF21C875F400D16F47 /* LogMeIn.swift */; };
 		7C8C928D21EDA4F100B4A629 /* SessionCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8C928C21EDA4F100B4A629 /* SessionCustomCell.swift */; };
-		7C8C928F21EDA60600B4A629 /* SessionObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8C928E21EDA60600B4A629 /* SessionObject.swift */; };
+		7C8C929221EEA25800B4A629 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8C929121EEA25800B4A629 /* HelperFunctions.swift */; };
 		7C919C3021DD806E000D6CB7 /* RollerTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C919C2F21DD806E000D6CB7 /* RollerTracker.swift */; };
 		7C919C3221DDC79D000D6CB7 /* SaveSessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C919C3121DDC79D000D6CB7 /* SaveSessions.swift */; };
 		7C95592921E1E5DE000424FC /* QuickSessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C95592821E1E5DE000424FC /* QuickSessions.swift */; };
@@ -162,10 +162,7 @@
 		7CFED87021E86576000B4021 /* WorkedMuscles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFED86F21E86576000B4021 /* WorkedMuscles.swift */; };
 		7CFED87221E91576000B4021 /* MuscleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFED87121E91576000B4021 /* MuscleList.swift */; };
 		7CFED87421E92562000B4021 /* MuscleReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFED87321E92562000B4021 /* MuscleReport.swift */; };
-		7CFED87C21E93F4F000B4021 /* muscleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFED87A21E93F4F000B4021 /* muscleCell.swift */; };
 		7CFED87D21E93F4F000B4021 /* muscleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CFED87B21E93F4F000B4021 /* muscleCell.xib */; };
-		7CFED88021E93FFF000B4021 /* MuscleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFED87E21E93FFF000B4021 /* MuscleVC.swift */; };
-		7CFED88121E93FFF000B4021 /* MuscleVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CFED87F21E93FFF000B4021 /* MuscleVC.xib */; };
 		B61FD8839D2D15E9015B44AC /* Pods_MuscleFLossingRoller.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CC727AACDCF460E1E874F6 /* Pods_MuscleFLossingRoller.framework */; };
 /* End PBXBuildFile section */
 
@@ -314,7 +311,7 @@
 		7C140FBD21C873D700D16F47 /* SpinnerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		7C140FBF21C875F400D16F47 /* LogMeIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogMeIn.swift; sourceTree = "<group>"; };
 		7C8C928C21EDA4F100B4A629 /* SessionCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionCustomCell.swift; sourceTree = "<group>"; };
-		7C8C928E21EDA60600B4A629 /* SessionObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionObject.swift; sourceTree = "<group>"; };
+		7C8C929121EEA25800B4A629 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		7C919C2F21DD806E000D6CB7 /* RollerTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RollerTracker.swift; path = ../../MyFitLabSolutions/MyFitLabSolutions/RollerTracker.swift; sourceTree = "<group>"; };
 		7C919C3121DDC79D000D6CB7 /* SaveSessions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveSessions.swift; sourceTree = "<group>"; };
 		7C95592821E1E5DE000424FC /* QuickSessions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickSessions.swift; sourceTree = "<group>"; };
@@ -328,10 +325,7 @@
 		7CFED86F21E86576000B4021 /* WorkedMuscles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkedMuscles.swift; sourceTree = "<group>"; };
 		7CFED87121E91576000B4021 /* MuscleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleList.swift; sourceTree = "<group>"; };
 		7CFED87321E92562000B4021 /* MuscleReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleReport.swift; sourceTree = "<group>"; };
-		7CFED87A21E93F4F000B4021 /* muscleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = muscleCell.swift; sourceTree = "<group>"; };
 		7CFED87B21E93F4F000B4021 /* muscleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = muscleCell.xib; sourceTree = "<group>"; };
-		7CFED87E21E93FFF000B4021 /* MuscleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleVC.swift; sourceTree = "<group>"; };
-		7CFED87F21E93FFF000B4021 /* MuscleVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MuscleVC.xib; sourceTree = "<group>"; };
 		88CC727AACDCF460E1E874F6 /* Pods_MuscleFLossingRoller.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuscleFLossingRoller.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A68CDE8349018C3DF5E9143D /* Pods-MuscleFLossingRoller.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuscleFLossingRoller.release.xcconfig"; path = "Pods/Target Support Files/Pods-MuscleFLossingRoller/Pods-MuscleFLossingRoller.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -369,6 +363,7 @@
 		7C0EA6A021C06FC300F3A4A5 /* MuscleFLossingRoller */ = {
 			isa = PBXGroup;
 			children = (
+				7C8C929021EEA23700B4A629 /* Helpers */,
 				7CFED87921E93F2E000B4021 /* customcells */,
 				7CFED86621E7BA63000B4021 /* Modules */,
 				7C0EA73421C071F300F3A4A5 /* fonts */,
@@ -543,12 +538,19 @@
 			path = fonts;
 			sourceTree = "<group>";
 		};
+		7C8C929021EEA23700B4A629 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7C8C929121EEA25800B4A629 /* HelperFunctions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		7CFED86621E7BA63000B4021 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
 				7CFED86721E7BA82000B4021 /* Users.swift */,
 				7CFED86921E7C196000B4021 /* Sessions.swift */,
-				7C8C928E21EDA60600B4A629 /* SessionObject.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -557,10 +559,7 @@
 			isa = PBXGroup;
 			children = (
 				7C8C928C21EDA4F100B4A629 /* SessionCustomCell.swift */,
-				7CFED87A21E93F4F000B4021 /* muscleCell.swift */,
 				7CFED87B21E93F4F000B4021 /* muscleCell.xib */,
-				7CFED87E21E93FFF000B4021 /* MuscleVC.swift */,
-				7CFED87F21E93FFF000B4021 /* MuscleVC.xib */,
 			);
 			path = customcells;
 			sourceTree = "<group>";
@@ -757,7 +756,6 @@
 				7C0EA73621C071F300F3A4A5 /* straching.png in Resources */,
 				7C0EA73D21C071F300F3A4A5 /* LeftThigh.png in Resources */,
 				7C0EA76A21C071F300F3A4A5 /* LeftChest.png in Resources */,
-				7CFED88121E93FFF000B4021 /* MuscleVC.xib in Resources */,
 				7C0EA78D21C071F300F3A4A5 /* bg_full_720x1280.png in Resources */,
 				7C0EA7AE21C071F300F3A4A5 /* refresh.png in Resources */,
 				7C0EA79D21C071F300F3A4A5 /* left_lat_back.png in Resources */,
@@ -845,14 +843,13 @@
 			files = (
 				7CFED87221E91576000B4021 /* MuscleList.swift in Sources */,
 				7C8C928D21EDA4F100B4A629 /* SessionCustomCell.swift in Sources */,
-				7CFED87C21E93F4F000B4021 /* muscleCell.swift in Sources */,
 				7C0EA7BC21C083BC00F3A4A5 /* LoginAlert.swift in Sources */,
-				7CFED88021E93FFF000B4021 /* MuscleVC.swift in Sources */,
 				7CDA847C21D041BA00DFE9DB /* MyProfile.swift in Sources */,
 				7CC081E321D5638A00050256 /* FrontView.swift in Sources */,
 				7C0EA7BA21C0816B00F3A4A5 /* WaitingToLoad.swift in Sources */,
 				7C95592921E1E5DE000424FC /* QuickSessions.swift in Sources */,
 				7C140FC021C875F400D16F47 /* LogMeIn.swift in Sources */,
+				7C8C929221EEA25800B4A629 /* HelperFunctions.swift in Sources */,
 				7C0EA7B621C0733000F3A4A5 /* NewLogin.swift in Sources */,
 				7C0EA6A421C06FC300F3A4A5 /* ViewController.swift in Sources */,
 				7CFED86821E7BA82000B4021 /* Users.swift in Sources */,
@@ -861,7 +858,6 @@
 				7C0EA6A221C06FC300F3A4A5 /* AppDelegate.swift in Sources */,
 				7CFED87421E92562000B4021 /* MuscleReport.swift in Sources */,
 				7C0EA7B821C0739F00F3A4A5 /* TextFieldWithImage.swift in Sources */,
-				7C8C928F21EDA60600B4A629 /* SessionObject.swift in Sources */,
 				7C919C3021DD806E000D6CB7 /* RollerTracker.swift in Sources */,
 				7C140FBE21C873D800D16F47 /* SpinnerViewController.swift in Sources */,
 				7CFED87021E86576000B4021 /* WorkedMuscles.swift in Sources */,
