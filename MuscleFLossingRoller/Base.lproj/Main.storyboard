@@ -1652,7 +1652,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SessionCustomCell" rowHeight="232" id="lJT-JG-f1k" customClass="SessionCustomCell" customModule="MuscleFLossingRoller" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SessionCustomCell" rowHeight="232" id="lJT-JG-f1k" customClass="SessionCustomCell" customModule="MuscleFLossingRoller" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="232"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lJT-JG-f1k" id="rEJ-YC-OFN">
@@ -1780,7 +1780,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JIY-Uj-vrf" customClass="CustomButton" customModule="MuscleFLossingRoller" customModuleProvider="target">
+                                                <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JIY-Uj-vrf" customClass="CustomButton" customModule="MuscleFLossingRoller" customModuleProvider="target">
                                                     <rect key="frame" x="299" y="80" width="70" height="70"/>
                                                     <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
@@ -1799,6 +1799,9 @@
                                                             <real key="value" value="1"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="goToRollerTracker:" destination="1PM-2A-OcK" eventType="touchUpInside" id="DXN-Rc-qXC"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -1844,6 +1847,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="btnGo" destination="JIY-Uj-vrf" id="ahN-by-JDL"/>
                                             <outlet property="lblBodyPartName" destination="pIV-Mn-NYa" id="Cdd-CV-31R"/>
                                             <outlet property="lblCoolOffTime" destination="OrB-iU-iRq" id="Dvt-Hu-37a"/>
                                             <outlet property="lblPainAfter" destination="2z0-m4-vYO" id="SLM-1Z-DlZ"/>

@@ -17,6 +17,7 @@ class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
     var muscleList = [Sessions]()
     @IBOutlet weak var myNavigation: UINavigationBar!
 
+    @IBOutlet weak var btnGo: CustomButton!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -104,9 +105,8 @@ class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
         cell.lblPainAfter.text = "\(String(describing: muscleInfo.painafter!))"
         cell.lblSessionDate.text = muscleInfo.sessiondate
         cell.lblCoolOffTime.text = "\(String(describing: muscleInfo.cooloff!))"
-        
-   
-      
+        cell.btnGo.tag = indexPath.row
+    
         return cell
     }
     
@@ -120,28 +120,42 @@ class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    
     @objc func refreshList(){
         tableView.reloadData()
         refresher.endRefreshing()
     }
     
-    
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        let muscle_info = muscleList[indexPath.row]
-        let bodypartid = muscle_info.bodypartid!
-        let username = muscle_info.username!
-
-
-        let vc = storyboard?.instantiateViewController(withIdentifier: "musclereports") as? MuscleReport
-//        vc?.coach_name = coachName
-//        vc?.coach_email = coachEmail
-//        vc?.coach_phone = coachPhone
-//        vc?.coach_invited = coachInvited
-
-        self.present(vc!,animated:true,completion: nil)
+//        tableView.deselectRow(at: indexPath, animated: true)
+//        let muscle_info = muscleList[indexPath.row]
+//        let vc = storyboard?.instantiateViewController(withIdentifier: "rollertracker") as? RollerTracker
+//        
+//        vc!.bodypartname = muscle_info.bodypartname
+//        vc!.myMinutes=muscle_info.minutes!
+//        vc!.myRepetitions=muscle_info.reps!
+//        vc!.myCoolOff=muscle_info.cooloff!
+//        vc!.bodypartid = muscle_info.bodypartid!
+//
+//        self.present(vc!,animated:true,completion: nil)
+//        tableView.deselectRow(at: indexPath, animated: true)
     }
-
+    
+    @IBAction func goToRollerTracker(_ sender: Any) {
+        if let btn = sender as? UIButton {
+            let row = btn.tag
+            let muscle_info = muscleList[row]
+            let vc = storyboard?.instantiateViewController(withIdentifier: "rollertracker") as? RollerTracker
+            
+            vc!.bodypartname = muscle_info.bodypartname
+            vc!.myMinutes=muscle_info.minutes!
+            vc!.myRepetitions=muscle_info.reps!
+            vc!.myCoolOff=muscle_info.cooloff!
+            vc!.bodypartid = muscle_info.bodypartid!
+            
+            self.present(vc!,animated:true,completion: nil)
+           // tableView.deselectRow(at: [IndexPath], animated: true)
+            
+        }
+    }
+    
 }
