@@ -10,7 +10,7 @@ import FirebaseFirestore
 
 class DatesList: UIViewController, UITableViewDelegate, UITableViewDataSource  {
    
-    let cellId = "cellId"
+    let dateCellId = "dateCellId"
     var sessionsList = [Sessions]()
     var pageFrom = ""
     
@@ -83,7 +83,7 @@ class DatesList: UIViewController, UITableViewDelegate, UITableViewDataSource  {
                 }
             }
         }
-        tableView.register(SessionCell.self, forCellReuseIdentifier: cellId)
+        tableView.register(SessionCell.self, forCellReuseIdentifier: dateCellId)
     }
     
     class SessionCell: UITableViewCell {
@@ -108,7 +108,7 @@ class DatesList: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: dateCellId, for: indexPath)
         
         let sessionInfo = sessionsList[indexPath.row]
         let pagefrom = UserDefaults.standard.string(forKey: "pagefrom")
@@ -130,7 +130,7 @@ class DatesList: UIViewController, UITableViewDelegate, UITableViewDataSource  {
         vc?.username = username
         vc?.bodypartname = bodypartname
         vc?.pageFrom = self.pageFrom
-        self.navigationController?.pushViewController(vc!, animated: true)
+        self.present(vc!,animated:true,completion: nil)
     //    tableView.deselectRow(at: indexPath, animated: true)
     }
     

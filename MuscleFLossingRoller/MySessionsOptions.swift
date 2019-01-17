@@ -101,18 +101,21 @@ class MySessionsOptions: UIViewController {
     }
     
     func goToReports(option: String){
-        var vc = storyboard?.instantiateViewController(withIdentifier: "dateslist") as! UIViewController
+       // var vc = storyboard?.instantiateViewController(withIdentifier: "dateslist") as! UIViewController
         if option == "workedmuscles" {
            UserDefaults.standard.set("muscles", forKey: "pagefrom")
-           vc = storyboard?.instantiateViewController(withIdentifier: "musclelist") as! MuscleList
+         //  vc = storyboard?.instantiateViewController(withIdentifier: "musclelist") as! MuscleList
         } else if option == "favorites" {
            UserDefaults.standard.set("muscles", forKey: "pagefrom")
-            vc = storyboard?.instantiateViewController(withIdentifier: "musclelist") as! MuscleList
+         //   vc = storyboard?.instantiateViewController(withIdentifier: "musclelist") as! MuscleList
         } else {
             UserDefaults.standard.set("date", forKey: "pagefrom")
-            vc = storyboard?.instantiateViewController(withIdentifier: "dateslist") as! DatesList
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: "dateslist") as UIViewController
+            self.present(vc,animated:true,completion: nil)
+           // vc = storyboard?.instantiateViewController(withIdentifier: "dateslist") as! DatesList
         }
-        self.present(vc,animated:true,completion: nil)
+      //  self.present(vc,animated:true,completion: nil)
         
     }
 
