@@ -18,4 +18,5 @@ class SessionCustomCell: UITableViewCell {
     @IBOutlet weak var lblCoolOffTime: UILabel!
     @IBOutlet weak var lblSessionDate: UILabel!
     @IBOutlet weak var btnGo: CustomButton!
+    @IBOutlet weak var lblGeneric: UILabel!
 }

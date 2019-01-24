@@ -152,6 +152,7 @@
 		7C919C3021DD806E000D6CB7 /* RollerTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C919C2F21DD806E000D6CB7 /* RollerTracker.swift */; };
 		7C919C3221DDC79D000D6CB7 /* SaveSessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C919C3121DDC79D000D6CB7 /* SaveSessions.swift */; };
 		7C95592921E1E5DE000424FC /* QuickSessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C95592821E1E5DE000424FC /* QuickSessions.swift */; };
+		7C9C582A21F9938700AB7D80 /* Muscles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9C582921F9938700AB7D80 /* Muscles.swift */; };
 		7CB4FDB321EFB35D00FBE66D /* backbuttom.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CB4FDB221EFB35C00FBE66D /* backbuttom.png */; };
 		7CB4FDB721EFCE7600FBE66D /* DatesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB4FDB621EFCE7600FBE66D /* DatesList.swift */; };
 		7CC081E121D42C3300050256 /* ViewOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC081E021D42C3300050256 /* ViewOptions.swift */; };
@@ -316,6 +317,7 @@
 		7C919C2F21DD806E000D6CB7 /* RollerTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RollerTracker.swift; path = ../../MyFitLabSolutions/MyFitLabSolutions/RollerTracker.swift; sourceTree = "<group>"; };
 		7C919C3121DDC79D000D6CB7 /* SaveSessions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveSessions.swift; sourceTree = "<group>"; };
 		7C95592821E1E5DE000424FC /* QuickSessions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickSessions.swift; sourceTree = "<group>"; };
+		7C9C582921F9938700AB7D80 /* Muscles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Muscles.swift; sourceTree = "<group>"; };
 		7CB4FDB221EFB35C00FBE66D /* backbuttom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backbuttom.png; sourceTree = "<group>"; };
 		7CB4FDB621EFCE7600FBE66D /* DatesList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatesList.swift; sourceTree = "<group>"; };
 		7CC081E021D42C3300050256 /* ViewOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewOptions.swift; sourceTree = "<group>"; };
@@ -555,6 +557,7 @@
 			children = (
 				7CFED86721E7BA82000B4021 /* Users.swift */,
 				7CFED86921E7C196000B4021 /* Sessions.swift */,
+				7C9C582921F9938700AB7D80 /* Muscles.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -844,6 +847,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C9C582A21F9938700AB7D80 /* Muscles.swift in Sources */,
 				7CFED87221E91576000B4021 /* MuscleList.swift in Sources */,
 				7C8C928D21EDA4F100B4A629 /* SessionCustomCell.swift in Sources */,
 				7C0EA7BC21C083BC00F3A4A5 /* LoginAlert.swift in Sources */,

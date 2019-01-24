@@ -12,10 +12,12 @@ import FirebaseFirestore
 class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
     let cellMuscleId = "cellMuscleId"
     var username = ""
+    var sessiondate = ""
     var bodypartid = 0
     var bodypartname = ""
     var muscleList = [Sessions]()
     var pageFrom = ""
+    var bartitle = ""
     
 
     
@@ -31,16 +33,19 @@ class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
-        self.navigationController?.navigationBar.topItem!.title = bodypartname
+        self.navigationController?.navigationBar.topItem!.title = bartitle
      
-        
         tableView.dataSource = self
         tableView.delegate = self
-      
         tableView.refreshControl = refresher
+        
+        
+        tableView.register(SessionCell.self, forCellReuseIdentifier: cellMuscleId)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         let db = Firestore.firestore()
-        db.collection("sessions").whereField("username", isEqualTo: username).whereField("bodypartid", isEqualTo: bodypartid).order(by: "sessiondate", descending: true).getDocuments {(snapshot, error) in
+        db.collection("sessions").whereField("username", isEqualTo: self.username).whereField("bodypartid", isEqualTo: self.bodypartid).order(by: "sessiondate", descending: true).getDocuments {(snapshot, error) in
             if error != nil {
                 print(error as Any)
             } else {
@@ -60,8 +65,7 @@ class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
                         let username = muscle["username"]
                         let sessiondate = muscle["sessiondate"]
                         
-                       let session_date = convertTimeStampToString(dt: sessiondate as! Date)
-                        print(session_date)
+                        let session_date = convertTimeStampToString(dt: sessiondate as! Date)
                         
                         let muscle = Sessions(bodypartid: bodypartid as! Int?, bodypartname: bodypartname as! String?, cooloff: cooloff as! Int?, isfavorite: isfavorite as! Int?, minutes: minutes as! Int?,notes: notes as! String?, painafter: painafter as! Int?, painbefore: painbefore as! Int?, reps: reps as! Int?, username: username as! String?, musclename: bodypartname as! String?, sessiondate: session_date as! String?)
                         self.muscleList.append(muscle)
@@ -70,14 +74,13 @@ class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
                     }
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
-                      
+                        
                     }
                 } else {
                     print("No data")
                 }
             }
         }
-        tableView.register(SessionCell.self, forCellReuseIdentifier: cellMuscleId)
     }
     
 
@@ -93,17 +96,27 @@ class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SessionCustomCell", for: indexPath) as! SessionCustomCell
-        
+        cell.btnGo.layer.cornerRadius = cell.btnGo.frame.width / 2
+        cell.btnGo.layer.borderColor = UIColor.black.cgColor
+        cell.btnGo.layer.borderWidth = 1
         let muscleInfo = muscleList[indexPath.row]
 //        let myImage = UIImage(named: "ios_more");
 //        cell.imgCell.image = muscleInfo.musclename
         
-        cell.lblBodyPartName.text = muscleInfo.bodypartname
+        if self.pageFrom == "muscles" {
+            cell.lblGeneric.text = "Date"
+            cell.lblBodyPartName.text = muscleInfo.sessiondate
+        } else {
+            cell.lblGeneric.text = "Body Part"
+            cell.lblBodyPartName.text = muscleInfo.bodypartname
+        }
+        
+        
         cell.lblSessionDuration.text = "\(String(describing: muscleInfo.minutes!))"
         cell.lblSessionReps.text = "\(String(describing: muscleInfo.reps!))"
         cell.lblPainBefore.text = "\(String(describing: muscleInfo.painbefore!))"
         cell.lblPainAfter.text = "\(String(describing: muscleInfo.painafter!))"
-        cell.lblSessionDate.text = muscleInfo.sessiondate
+        //cell.lblSessionDate.text = muscleInfo.sessiondate
         cell.lblCoolOffTime.text = "\(String(describing: muscleInfo.cooloff!))"
         cell.btnGo.tag = indexPath.row
     

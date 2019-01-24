@@ -36,6 +36,7 @@ class SaveSessions: UIViewController, UITextViewDelegate {
     var bodyPartName = ""
     var coolOff = 0
     var dateString = ""
+    var myUserId = ""
     
     
     let defaults = UserDefaults.standard
@@ -55,10 +56,12 @@ class SaveSessions: UIViewController, UITextViewDelegate {
         super.viewDidLoad()
         notes.text=""
         notes.delegate = self
+        self.myUserId = defaults.string(forKey: "myuserid")!
         savesession.layer.cornerRadius=5
         savesession.layer.shadowOpacity=0.3
         savesession.layer.borderWidth=1.5
         savesession.layer.borderColor = UIColor.white.cgColor
+        
         
 //        let timestamp = Date().timeIntervalSince1970
 //
@@ -98,9 +101,10 @@ class SaveSessions: UIViewController, UITextViewDelegate {
     
     
     @IBAction func SaveRollSession(_ sender: Any) {
+       
         
         let defaults = UserDefaults.standard
-        if let myUsename = defaults.string(forKey: "myuserid") {
+       
             let myPainBefore = Int(sliderPainBefore.value)
             let myPainAfter =  Int(sliderPainAfter.value)
             let myNotes = notes.text!
@@ -111,11 +115,11 @@ class SaveSessions: UIViewController, UITextViewDelegate {
             else{
                 myFavorite = 0
             }
-            
+
             let db = Firestore.firestore()
 
-            db.collection("sessions").document(myUsename).setData([
-                "username" : myUsename,
+            db.collection("sessions").document().setData([
+                "username" : self.myUserId,
                 "minutes" : minutesRolling,
                 "reps" : repsDone,
                 "bodypartname" : bodyPartName,
@@ -135,11 +139,37 @@ class SaveSessions: UIViewController, UITextViewDelegate {
                     self.dismiss(animated: true, completion: nil)
                     UserDefaults.standard.set("session saved", forKey: "issessionsaved")
                     UserDefaults.standard.set("Session Saved", forKey: "loginMessage")
+                    self.checkMuscleId(muscleid: self.bodyPartId, userid: self.myUserId)
+                }
+            }
+       
+    }
+    
+    func checkMuscleId(muscleid: Int, userid: String) {
+        let db = Firestore.firestore()
+        db.collection("muscles").whereField("muscleid", isEqualTo: muscleid).whereField("userid", isEqualTo: self.myUserId).getDocuments {(snapshot, error) in
+            if error != nil {
+                print(error as Any)
+            } else {
+                if (snapshot?.documents.count)! == 0 {
+                    db.collection("muscles").document().setData([
+                        "musclename" : self.bodyPartName,
+                        "muscleid" : muscleid,
+                        "userid" : userid
+                    ]) { err in
+                        if err != nil {
+                            UserDefaults.standard.set("Error Saving Session", forKey: "loginMessage")
+                           // self.SendInfo()
+                            
+                        } else {
+                            return
+                        }
+                    }
                 }
             }
         }
     }
-
+    
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let resultRange = text.rangeOfCharacter(from: CharacterSet.newlines, options: .backwards)

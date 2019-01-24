@@ -25,26 +25,7 @@ class DatesList: UIViewController, UITableViewDelegate, UITableViewDataSource  {
         return refreshControl
     }()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        let page_from = UserDefaults.standard.string(forKey: "pagefrom")
-//        let font = UIFont.systemFont(ofSize: 35)
-//        barButtonItem.setTitleTextAttributes([NSAttributedString.Key(rawValue: NSAttributedString.Key.font.rawValue): font], for: .normal)
-//        navigationItem.largeTitleDisplayMode = .always
-//        navigationItem.title = "Muscles"
-//        let backbutton = UIButton(type: .custom)
-//        backbutton.titleLabel?.font = backbutton.titleLabel?.font.withSize(30)
-//        backbutton.setTitle("<", for: .normal)
-//
-//        backbutton.setTitleColor(backbutton.tintColor, for: .normal) // You can change the TitleColor
-//        backbutton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
-//
-//        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backbutton)
-
-        tableView.dataSource = self
-        tableView.delegate = self
-       
-
+    override func viewDidAppear(_ animated: Bool) {
         let db = Firestore.firestore()
         db.collection("sessions").order(by: "sessiondate", descending: true).getDocuments {(snapshot, error) in
             if error != nil {
@@ -83,6 +64,27 @@ class DatesList: UIViewController, UITableViewDelegate, UITableViewDataSource  {
                 }
             }
         }
+        print("ha")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let page_from = UserDefaults.standard.string(forKey: "pagefrom")
+        navigationItem.largeTitleDisplayMode = .always
+        navigationItem.title = "Session Dates"
+        let backbutton = UIButton(type: .custom)
+        backbutton.titleLabel?.font = backbutton.titleLabel?.font.withSize(30)
+        backbutton.setTitle("<", for: .normal)
+        
+        backbutton.setTitleColor(backbutton.tintColor, for: .normal) // You can change the TitleColor
+        backbutton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backbutton)
+        tableView.dataSource = self
+        tableView.delegate = self
+       
+
+        
         tableView.register(SessionCell.self, forCellReuseIdentifier: dateCellId)
     }
     
@@ -125,17 +127,30 @@ class DatesList: UIViewController, UITableViewDelegate, UITableViewDataSource  {
         let bodypartid = muscle_info.bodypartid!
         let username = muscle_info.username!
         let bodypartname = muscle_info.bodypartname!
+        let sessiondate =  muscle_info.sessiondate!
+        
+        let formatter1 = DateFormatter()
+        formatter1.dateFormat = "E, mm/dd/yyyy h:mm a"
+        let date1 = formatter1.date(from: sessiondate)
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let myString = formatter.string(from: date1!)
+        let yourDate = formatter.date(from: myString)
+        formatter.dateFormat = "E, d MMM yyyy"
+        let session_date_label = formatter.string(from: yourDate!)
         let vc = storyboard?.instantiateViewController(withIdentifier: "musclereport") as? MuscleReport
         vc?.bodypartid = bodypartid
         vc?.username = username
         vc?.bodypartname = bodypartname
         vc?.pageFrom = self.pageFrom
-        self.present(vc!,animated:true,completion: nil)
-    //    tableView.deselectRow(at: indexPath, animated: true)
+        vc?.bartitle = session_date_label
+        self.navigationController?.pushViewController(vc!, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     @objc func refreshList(){
-        tableView.reloadData()
+        self.tableView.reloadData()
         refresher.endRefreshing()
         
     }
