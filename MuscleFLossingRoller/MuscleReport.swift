@@ -40,11 +40,18 @@ class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
 //        } else {
 //            self.navigationController?.navigationBar.topItem!.title = "Favorites"
 //        }
+        self.pageFrom = UserDefaults.standard.string(forKey: "pagefrom")!
+        
         if self.bartitle != "" {
             navigationItem.title = bartitle
         } else {
-            navigationItem.title = "Favorites"
+            if self.pageFrom == "favorites" {
+                navigationItem.title = "Favorites"
+            } else {
+                navigationItem.title = "Last 3 Sessions"
+            }
         }
+        
         let backbutton = UIButton(type: .custom)
         backbutton.titleLabel?.font = backbutton.titleLabel?.font.withSize(30)
         backbutton.setTitle("<", for: .normal)
@@ -58,7 +65,7 @@ class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.delegate = self
         tableView.refreshControl = refresher
         self.username = UserDefaults.standard.string(forKey: "myuserid")!
-        self.pageFrom = UserDefaults.standard.string(forKey: "pagefrom")!
+        
         tableView.register(SessionCell.self, forCellReuseIdentifier: cellMuscleId)
     }
     
@@ -69,8 +76,10 @@ class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
            query_string = db.whereField("username", field_value:self.username, field1:"bodypartid", file2_value:self.bodypartid).order(by: "bodypartname", descending: false)
         } else if self.pageFrom == "date" {
             query_string = db.whereField("username", field_value:self.username, field1:"datestring", file2_value:self.datestring).order(by: "sessiondate", descending: true)
+        } else if self.pageFrom == "favorites" {
+             query_string = db.whereField("username", field_value:self.username, field1:"isfavorite", file2_value:1).order(by: "sessiondate", descending: true)
         } else {
-            query_string = db.whereField("username", field_value:self.username, field1:"isfavorite", file2_value:1).order(by: "sessiondate", descending: true)
+            query_string = db.whereField("username", field_value:self.username, field1:"lastthree", file2_value:3).order(by: "sessiondate", descending: true).limit(to: 3)
         }
       
                 
@@ -95,7 +104,7 @@ class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
                         let sessiondate = muscle["sessiondate"]
                         let datestring = muscle["datestring"]
                         
-                        let session_date = convertTimeStampToString(dt: sessiondate as! Date, formatdate: "E, mm/dd/yyyy h:mm a")
+                        let session_date = convertTimeStampToString(dt: sessiondate as! Date, formatdate: "E, d MMM yyyy HH:mm: a")
                         
                         let muscle = Sessions(bodypartid: bodypartid as! Int?, bodypartname: bodypartname as! String?, cooloff: cooloff as! Int?, isfavorite: isfavorite as! Int?, minutes: minutes as! Int?,notes: notes as! String?, painafter: painafter as! Int?, painbefore: painbefore as! Int?, reps: reps as! Int?, username: username as! String?, musclename: bodypartname as! String?, sessiondate: session_date as! String?, datestring: datestring as! String?)
                         self.muscleList.append(muscle)

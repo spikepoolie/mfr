@@ -58,6 +58,16 @@ class QuickSessions: UIViewController {
          self.dismiss(animated: true, completion: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "lastThree" {
+            UserDefaults.standard.set("lastthree", forKey: "pagefrom")
+            let destinationVC = storyboard?.instantiateViewController(withIdentifier: "musclereport") as? MuscleReport
+            destinationVC?.bartitle = "favorites"
+            UserDefaults.standard.string(forKey: "myuserid")!
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

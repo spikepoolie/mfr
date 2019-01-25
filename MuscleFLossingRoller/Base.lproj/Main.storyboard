@@ -1622,6 +1622,9 @@
                                         <rect key="frame" x="51" y="357" width="80" height="80"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                         <state key="normal" image="last3workouts.png"/>
+                                        <connections>
+                                            <segue destination="O09-HP-Dwl" kind="show" identifier="lastThree" id="CBg-Nb-eBB"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last 3 workouts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRN-ZR-t1Q">
                                         <rect key="frame" x="138" y="357" width="131" height="80"/>
@@ -2035,7 +2038,7 @@
         <image name="youtube.png" width="1200" height="1200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iJJ-Gb-wXC"/>
+        <segue reference="CBg-Nb-eBB"/>
         <segue reference="GPc-K2-ltJ"/>
         <segue reference="Kg1-XM-s2O"/>
     </inferredMetricsTieBreakers>
