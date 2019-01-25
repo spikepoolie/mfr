@@ -107,8 +107,12 @@ class MySessionsOptions: UIViewController {
            UserDefaults.standard.set("muscles", forKey: "pagefrom")
          //  vc = storyboard?.instantiateViewController(withIdentifier: "musclelist") as! MuscleList
         } else if option == "favorites" {
-           UserDefaults.standard.set("muscles", forKey: "pagefrom")
-         //   vc = storyboard?.instantiateViewController(withIdentifier: "musclelist") as! MuscleList
+            let vc = storyboard?.instantiateViewController(withIdentifier: "musclereport") as? MuscleReport
+            UserDefaults.standard.set("favorites", forKey: "pagefrom")
+            vc?.pageFrom = "favorites"
+            vc?.bartitle = "Favorites"
+            vc?.username = UserDefaults.standard.string(forKey: "myuserid")!
+            self.present(vc!, animated: true, completion: nil)
         } else {
             UserDefaults.standard.set("date", forKey: "pagefrom")
             //let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)

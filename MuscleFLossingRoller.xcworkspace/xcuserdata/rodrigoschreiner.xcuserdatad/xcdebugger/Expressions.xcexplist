@@ -28,6 +28,14 @@
          contextName = "MuscleList.tableView(_:cellForRowAt:):MuscleList.swift">
       </ContextState>
       <ContextState
+         contextName = "MuscleReport.viewDidAppear(_:):MuscleReport.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.userId">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "LogMeIn.btnLogin(_:):LogMeIn.swift">
          <PersistentStrings>
             <PersistentString
@@ -59,6 +67,14 @@
          <PersistentStrings>
             <PersistentString
                value = "profileImage">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MuscleReport.viewDidLoad():MuscleReport.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.pageFrom">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

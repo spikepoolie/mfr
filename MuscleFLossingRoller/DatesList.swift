@@ -11,8 +11,9 @@ import FirebaseFirestore
 class DatesList: UIViewController, UITableViewDelegate, UITableViewDataSource  {
    
     let dateCellId = "dateCellId"
-    var sessionsList = [Sessions]()
+    var datesList = [Dates]()
     var pageFrom = ""
+    var myUserId = ""
     
     @IBOutlet weak var myNavigation: UINavigationItem!
     @IBOutlet weak var tableView: UITableView!
@@ -25,67 +26,46 @@ class DatesList: UIViewController, UITableViewDelegate, UITableViewDataSource  {
         return refreshControl
     }()
     
-    override func viewDidAppear(_ animated: Bool) {
-        let db = Firestore.firestore()
-        db.collection("sessions").order(by: "sessiondate", descending: true).getDocuments {(snapshot, error) in
-            if error != nil {
-                print(error as Any)
-            } else {
-                if (snapshot?.documents.count)! > 0 {
-                    self.sessionsList.removeAll()
-                    for sessions in (snapshot?.documents)! {
-                        let sessionObject = sessions.data() as? [String: AnyObject]
-                        let bodypartname = sessionObject?["bodypartname"]
-                        let bodypartid = sessionObject?["bodypartid"]
-                        let cooloff = sessionObject?["cooloff"]
-                        let isfavorite = sessionObject?["isfavorite"]
-                        let minutes = sessionObject?["minutes"]
-                        let notes = sessionObject?["notes"]
-                        let painbefore = sessionObject?["painbefore"]
-                        let painafter = sessionObject?["painafter"]
-                        let reps = sessionObject?["reps"]
-                        let sessiondate = sessionObject?["sessiondate"]
-                        let username = sessionObject?["username"]
-                        
-                        
-                        let session_date = convertTimeStampToString(dt: sessiondate as! Date)
-                        
-                        let session = Sessions(bodypartid: bodypartid as! Int?, bodypartname: bodypartname as! String?, cooloff: cooloff as! Int?, isfavorite: isfavorite as! Int?, minutes: minutes as! Int?,notes: notes as! String?, painafter: painafter as! Int?, painbefore: painbefore as! Int?, reps: reps as! Int?, username: username as! String?, musclename: bodypartname as! String?, sessiondate: session_date as String?)
-                        self.sessionsList.append(session)
-                        
-                        
-                    }
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                        //self.dismiss(animated: true, completion: nil)
-                    }
-                } else {
-                    print("No data")
-                }
-            }
-        }
-        print("ha")
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let page_from = UserDefaults.standard.string(forKey: "pagefrom")
+        self.myUserId = UserDefaults.standard.string(forKey: "myuserid")!
         navigationItem.largeTitleDisplayMode = .always
         navigationItem.title = "Session Dates"
         let backbutton = UIButton(type: .custom)
         backbutton.titleLabel?.font = backbutton.titleLabel?.font.withSize(30)
         backbutton.setTitle("<", for: .normal)
         
-        backbutton.setTitleColor(backbutton.tintColor, for: .normal) // You can change the TitleColor
+        backbutton.setTitleColor(backbutton.tintColor, for: .normal)
         backbutton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backbutton)
         tableView.dataSource = self
         tableView.delegate = self
-       
-
-        
         tableView.register(SessionCell.self, forCellReuseIdentifier: dateCellId)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let db = Firestore.firestore()
+        db.collection("datesessions").whereField("userid", isEqualTo: self.myUserId).order(by: "datestring", descending: true).getDocuments {(snapshot, error) in
+            if error != nil {
+                print(error as Any)
+            } else {
+                if (snapshot?.documents.count)! > 0 {
+                    self.datesList.removeAll()
+                    for sessions in (snapshot?.documents)! {
+                        let dateObject = sessions.data()
+                        let datestring = dateObject["datestring"]
+                        let datesession = Dates(datestring: datestring as! String?, userid: self.myUserId as String?)
+                        if datestring as! String != "" {
+                            self.datesList.append(datesession)
+                        }
+                    }
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                } 
+            }
+        }
     }
     
     class SessionCell: UITableViewCell {
@@ -106,16 +86,16 @@ class DatesList: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return sessionsList.count
+        return datesList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: dateCellId, for: indexPath)
         
-        let sessionInfo = sessionsList[indexPath.row]
+        let dateInfo = datesList[indexPath.row]
         let pagefrom = UserDefaults.standard.string(forKey: "pagefrom")
         
-        cell.textLabel!.text = sessionInfo.sessiondate
+        cell.textLabel!.text = dateInfo.datestring
         cell.accessoryType = .disclosureIndicator
         
         return cell
@@ -123,28 +103,25 @@ class DatesList: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let muscle_info = sessionsList[indexPath.row]
-        let bodypartid = muscle_info.bodypartid!
-        let username = muscle_info.username!
-        let bodypartname = muscle_info.bodypartname!
-        let sessiondate =  muscle_info.sessiondate!
+        let date_info = datesList[indexPath.row]
+        let datestring = date_info.datestring!
         
-        let formatter1 = DateFormatter()
-        formatter1.dateFormat = "E, mm/dd/yyyy h:mm a"
-        let date1 = formatter1.date(from: sessiondate)
-        
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        let myString = formatter.string(from: date1!)
-        let yourDate = formatter.date(from: myString)
-        formatter.dateFormat = "E, d MMM yyyy"
-        let session_date_label = formatter.string(from: yourDate!)
+//        let formatter1 = DateFormatter()
+//        formatter1.dateFormat = "E, mm/dd/yyyy h:mm a"
+//        let date1 = formatter1.date(from: sessiondate)
+//
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+//        let myString = formatter.string(from: date1!)
+//        let yourDate = formatter.date(from: myString)
+//        formatter.dateFormat = "E, d MMM yyyy"
+//        let session_date_label = formatter.string(from: yourDate!)
         let vc = storyboard?.instantiateViewController(withIdentifier: "musclereport") as? MuscleReport
-        vc?.bodypartid = bodypartid
-        vc?.username = username
-        vc?.bodypartname = bodypartname
+        //vc?.bodypartid = bodypartid
+        vc?.username = self.myUserId
         vc?.pageFrom = self.pageFrom
-        vc?.bartitle = session_date_label
+        vc?.bartitle = date_info.datestring!
+        vc?.datestring = date_info.datestring!
         self.navigationController?.pushViewController(vc!, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
     }

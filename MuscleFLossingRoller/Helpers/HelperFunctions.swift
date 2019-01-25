@@ -8,9 +8,9 @@
 
 import Foundation
 
-func convertTimeStampToString(dt: Date) -> String{
+func convertTimeStampToString(dt: Date, formatdate: String) -> String{
     let dateformatter = DateFormatter()
-    dateformatter.dateFormat = "E, mm/dd/yyyy h:mm a"
+    dateformatter.dateFormat = formatdate
     let session_date = dateformatter.string(from: dt as Date)
     return session_date
 }

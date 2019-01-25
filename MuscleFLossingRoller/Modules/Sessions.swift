@@ -21,8 +21,9 @@ class Sessions: NSObject {
     var username: String?
     var musclename: String?
     var sessiondate: String?
+    var datestring: String?
     
-    init(bodypartid:Int?,bodypartname:String?,cooloff:Int?,isfavorite:Int?,minutes:Int?,notes:String?,painafter:Int?,painbefore:Int?,reps:Int?,username: String?, musclename: String?, sessiondate:String?){
+    init(bodypartid:Int?,bodypartname:String?,cooloff:Int?,isfavorite:Int?,minutes:Int?,notes:String?,painafter:Int?,painbefore:Int?,reps:Int?,username: String?, musclename: String?, sessiondate:String?, datestring: String?){
         self.bodypartid = bodypartid
         self.bodypartname = bodypartname
         self.cooloff = cooloff
@@ -35,5 +36,6 @@ class Sessions: NSObject {
         self.username = username
         self.musclename = musclename
         self.sessiondate = sessiondate
+        self.datestring = datestring
     }
 }

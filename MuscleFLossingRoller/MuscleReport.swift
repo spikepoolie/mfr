@@ -18,6 +18,7 @@ class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
     var muscleList = [Sessions]()
     var pageFrom = ""
     var bartitle = ""
+    var datestring = ""
     
 
     
@@ -39,13 +40,25 @@ class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.delegate = self
         tableView.refreshControl = refresher
         
-        
+        self.pageFrom = UserDefaults.standard.string(forKey: "pagefrom")!
         tableView.register(SessionCell.self, forCellReuseIdentifier: cellMuscleId)
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        let db = Firestore.firestore()
-        db.collection("sessions").whereField("username", isEqualTo: self.username).whereField("bodypartid", isEqualTo: self.bodypartid).order(by: "sessiondate", descending: true).getDocuments {(snapshot, error) in
+        //let db = Firestore.firestore()
+        let db = Firestore.firestore().collection("sessions")
+        var query_string: Query
+        print(self.pageFrom)
+        if self.pageFrom == "muscles" {
+           query_string = db.whereField("username", field_value:self.username, field1:"bodypartid", file2_value:self.bodypartid).order(by: "bodypartname", descending: false)
+        } else if self.pageFrom == "date" {
+            query_string = db.whereField("username", field_value:self.username, field1:"datestring", file2_value:self.datestring).order(by: "sessiondate", descending: true)
+        } else {
+            query_string = db.whereField("username", field_value:self.username, field1:"isfavorite", file2_value:1).order(by: "sessiondate", descending: true)
+        }
+      
+                
+        query_string.getDocuments {(snapshot, error) in
             if error != nil {
                 print(error as Any)
             } else {
@@ -64,10 +77,11 @@ class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
                         let reps = muscle["reps"]
                         let username = muscle["username"]
                         let sessiondate = muscle["sessiondate"]
+                        let datestring = muscle["datestring"]
                         
-                        let session_date = convertTimeStampToString(dt: sessiondate as! Date)
+                        let session_date = convertTimeStampToString(dt: sessiondate as! Date, formatdate: "E, mm/dd/yyyy h:mm a")
                         
-                        let muscle = Sessions(bodypartid: bodypartid as! Int?, bodypartname: bodypartname as! String?, cooloff: cooloff as! Int?, isfavorite: isfavorite as! Int?, minutes: minutes as! Int?,notes: notes as! String?, painafter: painafter as! Int?, painbefore: painbefore as! Int?, reps: reps as! Int?, username: username as! String?, musclename: bodypartname as! String?, sessiondate: session_date as! String?)
+                        let muscle = Sessions(bodypartid: bodypartid as! Int?, bodypartname: bodypartname as! String?, cooloff: cooloff as! Int?, isfavorite: isfavorite as! Int?, minutes: minutes as! Int?,notes: notes as! String?, painafter: painafter as! Int?, painbefore: painbefore as! Int?, reps: reps as! Int?, username: username as! String?, musclename: bodypartname as! String?, sessiondate: session_date as! String?, datestring: datestring as! String?)
                         self.muscleList.append(muscle)
                         
                         
@@ -171,5 +185,4 @@ class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
             
         }
     }
-    
 }

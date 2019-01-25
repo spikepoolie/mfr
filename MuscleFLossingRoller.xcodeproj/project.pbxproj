@@ -153,10 +153,12 @@
 		7C919C3221DDC79D000D6CB7 /* SaveSessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C919C3121DDC79D000D6CB7 /* SaveSessions.swift */; };
 		7C95592921E1E5DE000424FC /* QuickSessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C95592821E1E5DE000424FC /* QuickSessions.swift */; };
 		7C9C582A21F9938700AB7D80 /* Muscles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9C582921F9938700AB7D80 /* Muscles.swift */; };
+		7C9C582E21FA406900AB7D80 /* Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9C582D21FA406900AB7D80 /* Dates.swift */; };
 		7CB4FDB321EFB35D00FBE66D /* backbuttom.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CB4FDB221EFB35C00FBE66D /* backbuttom.png */; };
 		7CB4FDB721EFCE7600FBE66D /* DatesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB4FDB621EFCE7600FBE66D /* DatesList.swift */; };
 		7CC081E121D42C3300050256 /* ViewOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC081E021D42C3300050256 /* ViewOptions.swift */; };
 		7CC081E321D5638A00050256 /* FrontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC081E221D5638900050256 /* FrontView.swift */; };
+		7CD450FB21FA8A4D00268FE6 /* firestore_where_query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD450FA21FA8A4D00268FE6 /* firestore_where_query.swift */; };
 		7CDA847C21D041BA00DFE9DB /* MyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDA847B21D041BA00DFE9DB /* MyProfile.swift */; };
 		7CFED86821E7BA82000B4021 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFED86721E7BA82000B4021 /* Users.swift */; };
 		7CFED86A21E7C196000B4021 /* Sessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFED86921E7C196000B4021 /* Sessions.swift */; };
@@ -318,10 +320,12 @@
 		7C919C3121DDC79D000D6CB7 /* SaveSessions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveSessions.swift; sourceTree = "<group>"; };
 		7C95592821E1E5DE000424FC /* QuickSessions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickSessions.swift; sourceTree = "<group>"; };
 		7C9C582921F9938700AB7D80 /* Muscles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Muscles.swift; sourceTree = "<group>"; };
+		7C9C582D21FA406900AB7D80 /* Dates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dates.swift; sourceTree = "<group>"; };
 		7CB4FDB221EFB35C00FBE66D /* backbuttom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backbuttom.png; sourceTree = "<group>"; };
 		7CB4FDB621EFCE7600FBE66D /* DatesList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatesList.swift; sourceTree = "<group>"; };
 		7CC081E021D42C3300050256 /* ViewOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewOptions.swift; sourceTree = "<group>"; };
 		7CC081E221D5638900050256 /* FrontView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontView.swift; sourceTree = "<group>"; };
+		7CD450FA21FA8A4D00268FE6 /* firestore_where_query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firestore_where_query.swift; sourceTree = "<group>"; };
 		7CDA847B21D041BA00DFE9DB /* MyProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfile.swift; sourceTree = "<group>"; };
 		7CFED86721E7BA82000B4021 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		7CFED86921E7C196000B4021 /* Sessions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sessions.swift; sourceTree = "<group>"; };
@@ -367,6 +371,7 @@
 		7C0EA6A021C06FC300F3A4A5 /* MuscleFLossingRoller */ = {
 			isa = PBXGroup;
 			children = (
+				7CD450F921FA8A2A00268FE6 /* extensions */,
 				7C8C929021EEA23700B4A629 /* Helpers */,
 				7CFED87921E93F2E000B4021 /* customcells */,
 				7CFED86621E7BA63000B4021 /* Modules */,
@@ -552,12 +557,21 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		7CD450F921FA8A2A00268FE6 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7CD450FA21FA8A4D00268FE6 /* firestore_where_query.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
 		7CFED86621E7BA63000B4021 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
 				7CFED86721E7BA82000B4021 /* Users.swift */,
 				7CFED86921E7C196000B4021 /* Sessions.swift */,
 				7C9C582921F9938700AB7D80 /* Muscles.swift */,
+				7C9C582D21FA406900AB7D80 /* Dates.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -868,8 +882,10 @@
 				7C0EA7B821C0739F00F3A4A5 /* TextFieldWithImage.swift in Sources */,
 				7C919C3021DD806E000D6CB7 /* RollerTracker.swift in Sources */,
 				7C140FBE21C873D800D16F47 /* SpinnerViewController.swift in Sources */,
+				7C9C582E21FA406900AB7D80 /* Dates.swift in Sources */,
 				7CFED87021E86576000B4021 /* WorkedMuscles.swift in Sources */,
 				7CFED86C21E7CBA8000B4021 /* MySessionsOptions.swift in Sources */,
+				7CD450FB21FA8A4D00268FE6 /* firestore_where_query.swift in Sources */,
 				7CC081E121D42C3300050256 /* ViewOptions.swift in Sources */,
 				7C0EA6B421C06FE100F3A4A5 /* CustomButton.swift in Sources */,
 			);

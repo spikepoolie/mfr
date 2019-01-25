@@ -101,51 +101,48 @@ class SaveSessions: UIViewController, UITextViewDelegate {
     
     
     @IBAction func SaveRollSession(_ sender: Any) {
-       
-        
-        let defaults = UserDefaults.standard
-       
-            let myPainBefore = Int(sliderPainBefore.value)
-            let myPainAfter =  Int(sliderPainAfter.value)
-            let myNotes = notes.text!
-            var myFavorite = 0
-            if currentImageName != "favorites"{
-                myFavorite = 1
-            }
-            else{
-                myFavorite = 0
-            }
+      
+        let myPainBefore = Int(sliderPainBefore.value)
+        let myPainAfter =  Int(sliderPainAfter.value)
+        let myNotes = notes.text!
+        var myFavorite = 0
+        if currentImageName != "favorites"{
+            myFavorite = 1
+        }
+        else{
+            myFavorite = 0
+        }
+        let datestring = convertTimeStampToString(dt: Date(), formatdate: "E, MMM d, yyyy")
+        let db = Firestore.firestore()
+    
+        db.collection("sessions").document().setData([
+            "username" : self.myUserId,
+            "minutes" : minutesRolling,
+            "reps" : repsDone,
+            "bodypartname" : bodyPartName,
+            "bodypartid" : bodyPartId,
+            "cooloff" : coolOff,
+            "painbefore": myPainBefore,
+            "painafter" :myPainAfter,
+            "notes" : myNotes,
+            "isfavorite" : myFavorite,
+            "sessiondate" : Date(),
+            "datestring" : datestring
+        ]) { err in
+            if err != nil {
+                UserDefaults.standard.set("Error Saving Session", forKey: "loginMessage")
+                self.SendInfo()
 
-            let db = Firestore.firestore()
-
-            db.collection("sessions").document().setData([
-                "username" : self.myUserId,
-                "minutes" : minutesRolling,
-                "reps" : repsDone,
-                "bodypartname" : bodyPartName,
-                "bodypartid" : bodyPartId,
-                "cooloff" : coolOff,
-                "painbefore": myPainBefore,
-                "painafter" :myPainAfter,
-                "notes" : myNotes,
-                "isfavorite" : myFavorite,
-                "sessiondate" : Date()
-            ]) { err in
-                if err != nil {
-                    UserDefaults.standard.set("Error Saving Session", forKey: "loginMessage")
-                    self.SendInfo()
-
-                } else {
-                    self.dismiss(animated: true, completion: nil)
-                    UserDefaults.standard.set("session saved", forKey: "issessionsaved")
-                    UserDefaults.standard.set("Session Saved", forKey: "loginMessage")
-                    self.checkMuscleId(muscleid: self.bodyPartId, userid: self.myUserId)
-                }
+            } else {
+                self.dismiss(animated: true, completion: nil)
+                UserDefaults.standard.set("session saved", forKey: "issessionsaved")
+                UserDefaults.standard.set("Session Saved", forKey: "loginMessage")
+                self.checkMuscleId(muscleid: self.bodyPartId, userid: self.myUserId, datestring: datestring)
             }
-       
+        }
     }
     
-    func checkMuscleId(muscleid: Int, userid: String) {
+    func checkMuscleId(muscleid: Int, userid: String, datestring: String) {
         let db = Firestore.firestore()
         db.collection("muscles").whereField("muscleid", isEqualTo: muscleid).whereField("userid", isEqualTo: self.myUserId).getDocuments {(snapshot, error) in
             if error != nil {
@@ -159,7 +156,29 @@ class SaveSessions: UIViewController, UITextViewDelegate {
                     ]) { err in
                         if err != nil {
                             UserDefaults.standard.set("Error Saving Session", forKey: "loginMessage")
-                           // self.SendInfo()
+                        } else {
+                            self.checkDateSession(datestring: datestring, userid: self.myUserId)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func checkDateSession(datestring: String, userid: String) {
+        let db = Firestore.firestore()
+        db.collection("datesessions").whereField("datestring", isEqualTo: datestring).whereField("userid", isEqualTo: self.myUserId).getDocuments {(snapshot, error) in
+            if error != nil {
+                print(error as Any)
+            } else {
+                if (snapshot?.documents.count)! == 0 {
+                    db.collection("datesessions").document().setData([
+                        "datestring" : datestring,
+                        "userid" : userid
+                    ]) { err in
+                        if err != nil {
+                            UserDefaults.standard.set("Error Saving Session", forKey: "loginMessage")
+                            // self.SendInfo()
                             
                         } else {
                             return
