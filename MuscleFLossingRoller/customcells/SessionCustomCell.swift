@@ -19,4 +19,6 @@ class SessionCustomCell: UITableViewCell {
     @IBOutlet weak var lblSessionDate: UILabel!
     @IBOutlet weak var btnGo: CustomButton!
     @IBOutlet weak var lblGeneric: UILabel!
+    @IBOutlet weak var lblDate: UILabel!
+    @IBOutlet weak var lblDateValue: UILabel!
 }

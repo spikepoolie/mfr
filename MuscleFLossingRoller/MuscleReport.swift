@@ -22,6 +22,7 @@ class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
     
 
     
+    @IBOutlet weak var navBackButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     
     lazy var refresher: UIRefreshControl = {
@@ -33,22 +34,37 @@ class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.navigationController?.navigationBar.topItem!.title = bartitle
+//        if self.bartitle != "" {
+//            navBackButton.title = "<"
+//            self.navigationController?.navigationBar.topItem!.title = bartitle
+//        } else {
+//            self.navigationController?.navigationBar.topItem!.title = "Favorites"
+//        }
+        if self.bartitle != "" {
+            navigationItem.title = bartitle
+        } else {
+            navigationItem.title = "Favorites"
+        }
+        let backbutton = UIButton(type: .custom)
+        backbutton.titleLabel?.font = backbutton.titleLabel?.font.withSize(30)
+        backbutton.setTitle("<", for: .normal)
+        
+        backbutton.setTitleColor(backbutton.tintColor, for: .normal) // You can change the TitleColor
+        backbutton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backbutton)
      
         tableView.dataSource = self
         tableView.delegate = self
         tableView.refreshControl = refresher
-        
+        self.username = UserDefaults.standard.string(forKey: "myuserid")!
         self.pageFrom = UserDefaults.standard.string(forKey: "pagefrom")!
         tableView.register(SessionCell.self, forCellReuseIdentifier: cellMuscleId)
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        //let db = Firestore.firestore()
         let db = Firestore.firestore().collection("sessions")
         var query_string: Query
-        print(self.pageFrom)
         if self.pageFrom == "muscles" {
            query_string = db.whereField("username", field_value:self.username, field1:"bodypartid", file2_value:self.bodypartid).order(by: "bodypartname", descending: false)
         } else if self.pageFrom == "date" {
@@ -119,11 +135,21 @@ class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
         
         if self.pageFrom == "muscles" {
             cell.lblGeneric.text = "Date"
+            cell.lblDate.isHidden = true
+            cell.lblDateValue.isHidden = true
             cell.lblBodyPartName.text = muscleInfo.sessiondate
-        } else {
+        } else if  self.pageFrom == "date" {
             cell.lblGeneric.text = "Body Part"
+            cell.lblDate.isHidden = true
+            cell.lblDateValue.isHidden = true
             cell.lblBodyPartName.text = muscleInfo.bodypartname
-        }
+        } else {
+                cell.lblGeneric.text = "Body Part"
+                cell.lblBodyPartName.text = muscleInfo.bodypartname
+                cell.lblDate.isHidden = false
+                cell.lblDateValue.isHidden = false
+                cell.lblDateValue.text = muscleInfo.sessiondate
+            }
         
         
         cell.lblSessionDuration.text = "\(String(describing: muscleInfo.minutes!))"
@@ -184,5 +210,9 @@ class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
            // tableView.deselectRow(at: [IndexPath], animated: true)
             
         }
+    }
+    
+    @objc func goBack(){
+        self.dismiss(animated: true, completion: nil)
     }
 }

@@ -549,7 +549,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <action selector="favoriteMuscles:" destination="Xz2-1g-czA" eventType="touchUpInside" id="CBj-eS-6KG"/>
+                                    <segue destination="O09-HP-Dwl" kind="show" identifier="favoritesegue" id="hes-Tl-89T"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKH-Ak-mSK">
@@ -590,7 +590,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8X5-hb-Gg2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-46" y="-2770"/>
+            <point key="canvasLocation" x="-443" y="-3644"/>
         </scene>
         <!--Muscle List-->
         <scene sceneID="VFE-2Z-6Cz">
@@ -631,7 +631,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gaG-gV-oAK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1672" y="-2808"/>
+            <point key="canvasLocation" x="1646" y="-3603"/>
         </scene>
         <!--My Profile-->
         <scene sceneID="fBn-Uu-P5W">
@@ -1319,10 +1319,10 @@
                                 </subviews>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vn6-KQ-Qyq">
-                                <rect key="frame" x="0.0" y="17" width="42" height="25"/>
+                                <rect key="frame" x="0.0" y="23" width="42" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Back">
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <state key="normal" title="&lt;">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1607,6 +1607,9 @@
                                         <rect key="frame" x="51" y="261" width="80" height="80"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                         <state key="normal" image="favorites.png"/>
+                                        <connections>
+                                            <segue destination="O09-HP-Dwl" kind="show" id="iJJ-Gb-wXC"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="By Favorites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGG-OS-ovM">
                                         <rect key="frame" x="138" y="261" width="131" height="80"/>
@@ -1636,7 +1639,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NLM-AF-52O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-815.94202898550736" y="-1974.1071428571427"/>
+            <point key="canvasLocation" x="-814" y="-2007"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WZh-yh-Ek3">
@@ -1654,7 +1657,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GCN-n1-AaB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-814.49275362318849" y="-2672.5446428571427"/>
+            <point key="canvasLocation" x="-1345" y="-3663"/>
         </scene>
         <!--Muscle Report-->
         <scene sceneID="qwd-nT-w3o">
@@ -1867,6 +1870,8 @@
                                             <outlet property="btnGo" destination="JIY-Uj-vrf" id="ahN-by-JDL"/>
                                             <outlet property="lblBodyPartName" destination="pIV-Mn-NYa" id="Cdd-CV-31R"/>
                                             <outlet property="lblCoolOffTime" destination="OrB-iU-iRq" id="Dvt-Hu-37a"/>
+                                            <outlet property="lblDate" destination="YRz-tN-LEn" id="bO1-11-O7R"/>
+                                            <outlet property="lblDateValue" destination="VLN-YI-q6K" id="Paa-n6-ptS"/>
                                             <outlet property="lblGeneric" destination="Htg-7a-Wcz" id="lTg-gS-jnb"/>
                                             <outlet property="lblPainAfter" destination="2z0-m4-vYO" id="SLM-1Z-DlZ"/>
                                             <outlet property="lblPainBefore" destination="MtA-lW-6MQ" id="3Sw-Ex-qT2"/>
@@ -1881,18 +1886,21 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="m98-no-oqH"/>
                     </view>
+                    <navigationItem key="navigationItem" id="JmE-iH-4NX">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="AiX-R6-m4h"/>
+                    </navigationItem>
                     <connections>
+                        <outlet property="navBackButton" destination="AiX-R6-m4h" id="CyN-UT-qQG"/>
                         <outlet property="tableView" destination="kDD-Wt-AQu" id="nEb-CR-25X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qlp-YS-iCc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2544.9275362318845" y="-2808.4821428571427"/>
+            <point key="canvasLocation" x="2625" y="-2778"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Bme-OR-Psz">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hBe-b9-8ep" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0sy-hd-sh0" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gjf-Mk-OgH">
@@ -1904,8 +1912,9 @@
                         <segue destination="gOE-Uk-pj2" kind="relationship" relationship="rootViewController" id="TSm-ZC-sse"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hBe-b9-8ep" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="804" y="-2808"/>
+            <point key="canvasLocation" x="864" y="-3603"/>
         </scene>
         <!--Dates List-->
         <scene sceneID="Pgu-6j-XMZ">
@@ -1946,7 +1955,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s9d-wy-L3Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1720" y="-2121"/>
+            <point key="canvasLocation" x="686" y="-2545"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nae-ZS-CW2">
@@ -1964,7 +1973,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jVt-mJ-bFU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="823" y="-2121"/>
+            <point key="canvasLocation" x="-109" y="-2544"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Yai-kR-paO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="O09-HP-Dwl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hlO-iO-179">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1PM-2A-OcK" kind="relationship" relationship="rootViewController" id="vM8-HV-Z15"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CGa-hD-NJX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1872" y="-2778"/>
         </scene>
     </scenes>
     <resources>
@@ -2008,6 +2035,7 @@
         <image name="youtube.png" width="1200" height="1200"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="iJJ-Gb-wXC"/>
         <segue reference="GPc-K2-ltJ"/>
         <segue reference="Kg1-XM-s2O"/>
     </inferredMetricsTieBreakers>

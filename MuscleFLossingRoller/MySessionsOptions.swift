@@ -112,6 +112,7 @@ class MySessionsOptions: UIViewController {
             vc?.pageFrom = "favorites"
             vc?.bartitle = "Favorites"
             vc?.username = UserDefaults.standard.string(forKey: "myuserid")!
+            UserDefaults.standard.set("favorites", forKey: "pagefrom")
             self.present(vc!, animated: true, completion: nil)
         } else {
             UserDefaults.standard.set("date", forKey: "pagefrom")
@@ -122,6 +123,16 @@ class MySessionsOptions: UIViewController {
         }
       //  self.present(vc,animated:true,completion: nil)
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "favoritesegue" {
+            UserDefaults.standard.set("favorites", forKey: "pagefrom")
+            let destinationVC = storyboard?.instantiateViewController(withIdentifier: "musclereport") as? MuscleReport
+            destinationVC?.bartitle = "favorites"
+            UserDefaults.standard.string(forKey: "myuserid")!
+        }
     }
 
 }
