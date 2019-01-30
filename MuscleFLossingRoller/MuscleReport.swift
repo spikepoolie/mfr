@@ -90,7 +90,7 @@ class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
                 if (snapshot?.documents.count)! > 0 {
                     self.muscleList.removeAll()
                     for muscle in (snapshot?.documents)! {
-                        let sessionObject = muscle.data() as? [String: AnyObject]
+                        _ = muscle.data()
                         let bodypartname = muscle["bodypartname"]
                         let bodypartid = muscle["bodypartid"]
                         let cooloff = muscle["cooloff"]
@@ -106,7 +106,7 @@ class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
                         
                         let session_date = convertTimeStampToString(dt: sessiondate as! Date, formatdate: "E, d MMM yyyy HH:mm: a")
                         
-                        let muscle = Sessions(bodypartid: bodypartid as! Int?, bodypartname: bodypartname as! String?, cooloff: cooloff as! Int?, isfavorite: isfavorite as! Int?, minutes: minutes as! Int?,notes: notes as! String?, painafter: painafter as! Int?, painbefore: painbefore as! Int?, reps: reps as! Int?, username: username as! String?, musclename: bodypartname as! String?, sessiondate: session_date as! String?, datestring: datestring as! String?)
+                        let muscle = Sessions(bodypartid: bodypartid as! Int?, bodypartname: bodypartname as! String?, cooloff: cooloff as! Int?, isfavorite: isfavorite as! Int?, minutes: minutes as! Int?,notes: notes as! String?, painafter: painafter as! Int?, painbefore: painbefore as! Int?, reps: reps as! Int?, username: username as! String?, musclename: bodypartname as! String?, sessiondate: session_date as String?, datestring: datestring as! String?)
                         self.muscleList.append(muscle)
                         
                         
@@ -137,36 +137,41 @@ class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SessionCustomCell", for: indexPath) as! SessionCustomCell
         cell.btnGo.layer.cornerRadius = cell.btnGo.frame.width / 2
         cell.btnGo.layer.borderColor = UIColor.black.cgColor
-        cell.btnGo.layer.borderWidth = 1
+        cell.btnGo.layer.borderWidth = 2
         let muscleInfo = muscleList[indexPath.row]
 //        let myImage = UIImage(named: "ios_more");
 //        cell.imgCell.image = muscleInfo.musclename
         
-        if self.pageFrom == "muscles" {
-            cell.lblGeneric.text = "Date"
-            cell.lblDate.isHidden = true
-            cell.lblDateValue.isHidden = true
-            cell.lblBodyPartName.text = muscleInfo.sessiondate
-        } else if  self.pageFrom == "date" {
-            cell.lblGeneric.text = "Body Part"
-            cell.lblDate.isHidden = true
-            cell.lblDateValue.isHidden = true
-            cell.lblBodyPartName.text = muscleInfo.bodypartname
-        } else {
-                cell.lblGeneric.text = "Body Part"
-                cell.lblBodyPartName.text = muscleInfo.bodypartname
-                cell.lblDate.isHidden = false
-                cell.lblDateValue.isHidden = false
-                cell.lblDateValue.text = muscleInfo.sessiondate
-            }
+//        if self.pageFrom == "muscles" {
+//            cell.lblGeneric.text = "Date"
+//            cell.lblDate.isHidden = true
+//            cell.lblDateValue.isHidden = true
+//            cell.lblBodyPartName.text = muscleInfo.sessiondate
+//        } else if  self.pageFrom == "date" {
+//            cell.lblGeneric.text = "Body Part"
+//            cell.lblDate.isHidden = true
+//            cell.lblDateValue.isHidden = true
+//            cell.lblBodyPartName.text = muscleInfo.bodypartname
+//        } else {
+//            cell.lblGeneric.text = "Body Part"
+//            cell.lblBodyPartName.text = muscleInfo.bodypartname
+//            cell.lblDate.isHidden = false
+//            cell.lblDateValue.isHidden = false
+//            cell.lblDateValue.text = muscleInfo.sessiondate
+//        }
         
-        
-        cell.lblSessionDuration.text = "\(String(describing: muscleInfo.minutes!))"
+        cell.lblDateValue.text = muscleInfo.sessiondate
+        cell.lblBodyPartName.text = muscleInfo.bodypartname
+        cell.lblSessionDuration.text = "\(String(describing: muscleInfo.minutes!)) min"
         cell.lblSessionReps.text = "\(String(describing: muscleInfo.reps!))"
         cell.lblPainBefore.text = "\(String(describing: muscleInfo.painbefore!))"
         cell.lblPainAfter.text = "\(String(describing: muscleInfo.painafter!))"
         //cell.lblSessionDate.text = muscleInfo.sessiondate
-        cell.lblCoolOffTime.text = "\(String(describing: muscleInfo.cooloff!))"
+        if muscleInfo.cooloff! == 0 {
+            cell.lblCoolOffTime.text = "30 secs"
+        } else {
+            cell.lblCoolOffTime.text = "\(String(describing: muscleInfo.cooloff!)) min"
+        }
         cell.btnGo.tag = indexPath.row
     
         return cell

@@ -102,10 +102,8 @@ class MySessionsOptions: UIViewController {
     }
     
     func goToReports(option: String){
-       // var vc = storyboard?.instantiateViewController(withIdentifier: "dateslist") as! UIViewController
         if option == "workedmuscles" {
            UserDefaults.standard.set("muscles", forKey: "pagefrom")
-         //  vc = storyboard?.instantiateViewController(withIdentifier: "musclelist") as! MuscleList
         } else if option == "favorites" {
             let vc = storyboard?.instantiateViewController(withIdentifier: "musclereport") as? MuscleReport
             UserDefaults.standard.set("favorites", forKey: "pagefrom")
@@ -116,13 +114,7 @@ class MySessionsOptions: UIViewController {
             self.present(vc!, animated: true, completion: nil)
         } else {
             UserDefaults.standard.set("date", forKey: "pagefrom")
-            //let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-           // let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: "dateslist") as UIViewController
-           // self.present(vc,animated:true,completion: nil)
-           // vc = storyboard?.instantiateViewController(withIdentifier: "dateslist") as! DatesList
         }
-      //  self.present(vc,animated:true,completion: nil)
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -131,7 +123,7 @@ class MySessionsOptions: UIViewController {
             UserDefaults.standard.set("favorites", forKey: "pagefrom")
             let destinationVC = storyboard?.instantiateViewController(withIdentifier: "musclereport") as? MuscleReport
             destinationVC?.bartitle = "favorites"
-            UserDefaults.standard.string(forKey: "myuserid")!
+            _ = UserDefaults.standard.string(forKey: "myuserid")!
         }
     }
 
