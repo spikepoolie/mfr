@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseFirestore
 
 class MuscleList: ViewController, UITableViewDelegate, UITableViewDataSource {
@@ -49,11 +50,14 @@ class MuscleList: ViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.delegate = self
         tableView.refreshControl = refresher
         tableView.register(SessionCell.self, forCellReuseIdentifier: cellId)
+        tableView.tableFooterView = UIView()
+        
+     
     }
     
     override func viewDidAppear(_ animated: Bool) {
         let db = Firestore.firestore()
-        db.collection("muscles").whereField("userid", isEqualTo: self.myUserId).order(by: "musclename").getDocuments {(snapshot, error) in
+        db.collection("muscles").whereField("userid", isEqualTo: self.myUserId).order(by: "musclename").addSnapshotListener({ (snapshot, error) in
             if error != nil {
                 print(error as Any)
             } else {
@@ -75,7 +79,13 @@ class MuscleList: ViewController, UITableViewDelegate, UITableViewDataSource {
                     print("No data")
                 }
             }
-        }
+        })
+ 
+        
+    }
+    
+    func viewData() {
+        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

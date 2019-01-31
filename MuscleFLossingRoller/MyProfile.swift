@@ -94,8 +94,8 @@ class MyProfile: UIViewController{
     
 
     @IBAction func myTracker(_ sender: Any) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "viewsideoptions") as! ViewOptions
-        vc.myImageData = self.mydata
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "mysessionsoptions") as! MySessionsOptions
+        //vc.myImageData = self.mydata
         self.present(vc, animated: true, completion: nil)
     }
     

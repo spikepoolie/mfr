@@ -3,18 +3,7 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "MuscleList.viewDidLoad():MuscleList.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.pageFrom">
-            </PersistentString>
-            <PersistentString
-               value = "pageFrom">
-            </PersistentString>
-            <PersistentString
-               value = "self.reportType">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "MuscleList.tableView(_:cellForRowAt:):MuscleList.swift">
       </ContextState>
       <ContextState
          contextName = "ViewOptions.goBackToThePreviousScreen():ViewOptions.swift">
@@ -25,9 +14,6 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "MuscleList.tableView(_:cellForRowAt:):MuscleList.swift">
-      </ContextState>
-      <ContextState
          contextName = "MySessionsOptions.prepare(for:sender:):MySessionsOptions.swift">
          <PersistentStrings>
             <PersistentString
@@ -36,21 +22,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "MuscleReport.viewDidAppear(_:):MuscleReport.swift">
+         contextName = "MyProfile.viewDidLoad():MyProfile.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.userId">
-            </PersistentString>
-            <PersistentString
-               value = "self.username">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "LogMeIn.btnLogin(_:):LogMeIn.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "txtPassword.text">
+               value = "profileImage">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -74,14 +49,6 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "MyProfile.viewDidLoad():MyProfile.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "profileImage">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "MuscleReport.viewDidLoad():MuscleReport.swift">
          <PersistentStrings>
             <PersistentString
@@ -93,10 +60,54 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "MuscleList.viewDidLoad():MuscleList.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.pageFrom">
+            </PersistentString>
+            <PersistentString
+               value = "pageFrom">
+            </PersistentString>
+            <PersistentString
+               value = "self.reportType">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in NewLogin.checkIfLoginExists(email:):NewLogin.swift">
          <PersistentStrings>
             <PersistentString
                value = "dictionary[&quot;user_key&quot;].val()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MuscleReport.viewDidAppear(_:):MuscleReport.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.userId">
+            </PersistentString>
+            <PersistentString
+               value = "self.username">
+            </PersistentString>
+            <PersistentString
+               value = "self.pageFrom">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LogMeIn.btnLogin(_:):LogMeIn.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "txtPassword.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "QuickSessions.prepare(for:sender:):QuickSessions.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "segue.identifier">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

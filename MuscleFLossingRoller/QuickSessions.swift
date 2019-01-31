@@ -60,14 +60,25 @@ class QuickSessions: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "lastThree" {
-            UserDefaults.standard.set("lastthree", forKey: "pagefrom")
+        if segue.identifier == "favorites" {
+            UserDefaults.standard.set("favorites", forKey: "pagefrom")
             let destinationVC = storyboard?.instantiateViewController(withIdentifier: "musclereport") as? MuscleReport
-            destinationVC?.bartitle = "favorites"
-            UserDefaults.standard.string(forKey: "myuserid")!
+                destinationVC?.bartitle = "Favorites"
+        } else if segue.identifier == "muscles" {
+            UserDefaults.standard.set("muscles", forKey: "pagefrom")
+        } else if segue.identifier == "dates" {
+            UserDefaults.standard.set("dates", forKey: "pagefrom")
+        } else {
+            UserDefaults.standard.set("lastrhee", forKey: "pagefrom")
+            let destinationVC = storyboard?.instantiateViewController(withIdentifier: "musclereport") as? MuscleReport
+            destinationVC?.bartitle = "Last 3 Sessions"
         }
+//            let destinationVC = storyboard?.instantiateViewController(withIdentifier: "musclereport") as? MuscleReport
+//            destinationVC?.bartitle = "favorites"
+            UserDefaults.standard.string(forKey: "myuserid")!
+        
     }
-    
+
     /*
     // MARK: - Navigation
 
@@ -77,5 +88,4 @@ class QuickSessions: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
