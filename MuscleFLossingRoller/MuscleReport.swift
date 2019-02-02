@@ -68,6 +68,7 @@ class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
         self.username = UserDefaults.standard.string(forKey: "myuserid")!
         
         tableView.register(SessionCell.self, forCellReuseIdentifier: cellMuscleId)
+        tableView.tableFooterView = UIView()
     }
     
     override func viewDidAppear(_ animated: Bool) {

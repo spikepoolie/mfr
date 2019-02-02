@@ -183,12 +183,12 @@ class NewLogin: UIViewController, UITextFieldDelegate, UIImagePickerControllerDe
        // ref = Database.database().reference().child("Users")
         super.viewDidLoad()
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        myUserImage.layer.cornerRadius=10
-        myUserImage.clipsToBounds = true
-        userImageButton.layer.cornerRadius=10
-        userImageButton.clipsToBounds=true
-        myUserImage.layer.borderColor=UIColor.lightGray.cgColor
-        myUserImage.layer.borderWidth=1
+//        myUserImage.layer.cornerRadius=10
+//        myUserImage.clipsToBounds = true
+//        userImageButton.layer.cornerRadius=10
+//        userImageButton.clipsToBounds=true
+//        myUserImage.layer.borderColor=UIColor.lightGray.cgColor
+//        myUserImage.layer.borderWidth=1
         
         fullname.delegate=self
         password.delegate=self

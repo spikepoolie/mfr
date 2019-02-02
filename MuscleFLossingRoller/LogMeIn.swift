@@ -84,14 +84,14 @@ class LogMeIn: UIViewController , UITextFieldDelegate{
         super.viewDidLoad()
         //ref = Database.database().reference().child("Users")
        
-        btnLogin.layer.cornerRadius=10
-        btnLogin.layer.masksToBounds=true
+       // btnLogin.layer.cornerRadius=10
+       // btnLogin.layer.masksToBounds=true
         txtPassword.delegate=self
         txtEmailAddress.delegate=self
        // txtEmailAddress.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         //txtPassword.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        txtPassword.text="a"
-        txtEmailAddress.text="a@a.com"
+        txtPassword.text="ddddd"
+        txtEmailAddress.text="f@f.com"
     }
     
     override func didReceiveMemoryWarning() {

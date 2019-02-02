@@ -42,6 +42,7 @@ class DatesList: UIViewController, UITableViewDelegate, UITableViewDataSource  {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(SessionCell.self, forCellReuseIdentifier: dateCellId)
+        tableView.tableFooterView = UIView()
     }
     
     override func viewDidAppear(_ animated: Bool) {

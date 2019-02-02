@@ -10,6 +10,8 @@ import UIKit
 
 class ViewOptions: UIViewController {
     
+    @IBOutlet weak var lblNav: UILabel!
+    @IBOutlet weak var toNavigation: UINavigationBar!
     @IBOutlet weak var sideviewoptions: UIImageView!
   
     var myImageData = Data()
@@ -25,6 +27,7 @@ class ViewOptions: UIViewController {
         rightSwipe.direction = .right
        
         view.addGestureRecognizer(rightSwipe)
+      lblNav.text = "Select your view"
        
         // Do any additional setup after loading the view.
     }
