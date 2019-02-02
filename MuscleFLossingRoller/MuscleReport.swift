@@ -214,7 +214,7 @@ class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
             let muscle_info = muscleList[row]
             let vc = storyboard?.instantiateViewController(withIdentifier: "rollertracker") as? RollerTracker
             
-            vc!.bodypartname = muscle_info.bodypartname
+            vc!.bodypartname = muscle_info.bodypartname!
             vc!.myMinutes=muscle_info.minutes!
             vc!.myRepetitions=muscle_info.reps!
             vc!.myCoolOff=muscle_info.cooloff!

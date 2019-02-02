@@ -33,10 +33,13 @@
          contextName = "RollerTracker.viewDidLoad():RollerTracker.swift">
          <PersistentStrings>
             <PersistentString
-               value = "bodyImageName">
+               value = "bodypartname">
             </PersistentString>
             <PersistentString
                value = "self.bodypartname">
+            </PersistentString>
+            <PersistentString
+               value = "bodyImageName">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -94,6 +97,9 @@
                value = "self.pageFrom">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FrontView.prepare(for:sender:):FrontView.swift">
       </ContextState>
       <ContextState
          contextName = "LogMeIn.btnLogin(_:):LogMeIn.swift">
