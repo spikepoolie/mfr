@@ -148,6 +148,7 @@
 		7C140FBE21C873D800D16F47 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C140FBD21C873D700D16F47 /* SpinnerViewController.swift */; };
 		7C140FC021C875F400D16F47 /* LogMeIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C140FBF21C875F400D16F47 /* LogMeIn.swift */; };
 		7C758284220E025400DF77A3 /* LastThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C758283220E025400DF77A3 /* LastThree.swift */; };
+		7C758286220E0B4C00DF77A3 /* BackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C758285220E0B4C00DF77A3 /* BackView.swift */; };
 		7C8C928D21EDA4F100B4A629 /* SessionCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8C928C21EDA4F100B4A629 /* SessionCustomCell.swift */; };
 		7C8C929221EEA25800B4A629 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8C929121EEA25800B4A629 /* HelperFunctions.swift */; };
 		7C919C3021DD806E000D6CB7 /* RollerTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C919C2F21DD806E000D6CB7 /* RollerTracker.swift */; };
@@ -317,6 +318,7 @@
 		7C140FBD21C873D700D16F47 /* SpinnerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		7C140FBF21C875F400D16F47 /* LogMeIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogMeIn.swift; sourceTree = "<group>"; };
 		7C758283220E025400DF77A3 /* LastThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastThree.swift; sourceTree = "<group>"; };
+		7C758285220E0B4C00DF77A3 /* BackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackView.swift; sourceTree = "<group>"; };
 		7C8C928C21EDA4F100B4A629 /* SessionCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionCustomCell.swift; sourceTree = "<group>"; };
 		7C8C929121EEA25800B4A629 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		7C919C2F21DD806E000D6CB7 /* RollerTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RollerTracker.swift; path = ../../MyFitLabSolutions/MyFitLabSolutions/RollerTracker.swift; sourceTree = "<group>"; };
@@ -408,6 +410,7 @@
 				7C0EA7BD21C2D90100F3A4A5 /* GoogleService-Info.plist */,
 				7C0EA7B521C0733000F3A4A5 /* NewLogin.swift */,
 				7C0EA7BB21C083BC00F3A4A5 /* LoginAlert.swift */,
+				7C758285220E0B4C00DF77A3 /* BackView.swift */,
 			);
 			path = MuscleFLossingRoller;
 			sourceTree = "<group>";
@@ -641,6 +644,7 @@
 				TargetAttributes = {
 					7C0EA69D21C06FC300F3A4A5 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -894,6 +898,7 @@
 				7CFED87021E86576000B4021 /* WorkedMuscles.swift in Sources */,
 				7CFED86C21E7CBA8000B4021 /* MySessionsOptions.swift in Sources */,
 				7CD450FB21FA8A4D00268FE6 /* firestore_where_query.swift in Sources */,
+				7C758286220E0B4C00DF77A3 /* BackView.swift in Sources */,
 				7CC081E121D42C3300050256 /* ViewOptions.swift in Sources */,
 				7C0EA6B421C06FE100F3A4A5 /* CustomButton.swift in Sources */,
 			);
@@ -1052,7 +1057,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.goemobile.mfr.MuscleFLossingRoller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1072,7 +1077,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.goemobile.mfr.MuscleFLossingRoller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

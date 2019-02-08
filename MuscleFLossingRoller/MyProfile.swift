@@ -75,8 +75,8 @@ class MyProfile: UIViewController{
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        let duration: Double = 1.0
-        let delay: Double = 1.0
+        let duration: Double = 0.2
+        let delay: Double = 0.0
        // UIButton.animate(withDuration: duration,delay: delay, usingSpringWithDamping: 3.0, initialSpringVelocity: 1.5, options: .curveEaseIn, animations: {
 //            self.moveIcons(btn: self.btnExercise)
 //            self.moveIcons(btn: self.btnPerson)
@@ -89,22 +89,22 @@ class MyProfile: UIViewController{
             self.btnExercise.alpha = 1.0
         }, completion: nil)
 
-        UIButton.animate(withDuration: duration, delay: 0.4, options: UIButton.AnimationOptions.curveEaseIn, animations: {
+        UIButton.animate(withDuration: duration, delay: 0.2, options: UIButton.AnimationOptions.curveEaseIn, animations: {
             self.btnPerson.alpha = 1.0
             self.lblRoller.alpha = 1.0
         }, completion: nil)
     
-        UIButton.animate(withDuration: duration, delay: 0.8, options: UIButton.AnimationOptions.curveEaseIn, animations: {
+        UIButton.animate(withDuration: duration, delay: 0.4, options: UIButton.AnimationOptions.curveEaseIn, animations: {
             self.btnStreching.alpha = 1.0
             self.lblStreching.alpha = 1.0
         }, completion: nil)
     
-        UIButton.animate(withDuration: duration, delay: 1.2, options: UIButton.AnimationOptions.curveEaseIn, animations: {
+        UIButton.animate(withDuration: duration, delay: 0.6, options: UIButton.AnimationOptions.curveEaseIn, animations: {
             self.lblTracker.alpha = 1.0
             self.btnChart.alpha = 1.0
         }, completion: nil)
     
-        UIButton.animate(withDuration: 0.5, delay: 1.6, options: UIButton.AnimationOptions.curveEaseIn, animations: {
+        UIButton.animate(withDuration: 0.5, delay: 0.8, options: UIButton.AnimationOptions.curveEaseIn, animations: {
             self.verticalLine.alpha = 1.0
             self.horizontalLine.alpha = 1.0
         }, completion: nil)

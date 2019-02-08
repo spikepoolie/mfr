@@ -22,7 +22,9 @@ class FrontView: UIViewController {
         super.viewDidLoad()
         let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
         rightSwipe.direction = .right
-        
+        bodyView.layer.shadowOpacity=0.3
+        bodyView.layer.borderWidth=1.5
+        bodyView.layer.borderColor = UIColor.red.cgColor
         view.addGestureRecognizer(rightSwipe)
     }
     
@@ -171,7 +173,7 @@ class FrontView: UIViewController {
     }
 
     @IBAction func back(_ sender: Any) {
-       goBack()
+      dismiss(animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {

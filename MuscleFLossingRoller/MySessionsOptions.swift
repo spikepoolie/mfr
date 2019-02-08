@@ -103,6 +103,10 @@ class MySessionsOptions: UIViewController {
              UserDefaults.standard.set("lastthree", forKey: "pagefrom")
         }
     }
+    
+    @IBAction func goBack(_ sender: Any) {
+         dismiss(animated: true, completion: nil)
+    }
 }
 
 

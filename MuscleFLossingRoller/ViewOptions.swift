@@ -25,9 +25,18 @@ class ViewOptions: UIViewController {
         
         let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
         rightSwipe.direction = .right
+        
+        let backbutton = UIButton(type: .custom)
+        backbutton.titleLabel?.font = backbutton.titleLabel?.font.withSize(30)
+        backbutton.setTitle("<", for: .normal)
+        
+        backbutton.setTitleColor(backbutton.tintColor, for: .normal) // You can change the TitleColor
+        backbutton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
+        navigationItem.title = "Select your view"
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backbutton)
        
         view.addGestureRecognizer(rightSwipe)
-      lblNav.text = "Select your view"
+     // lblNav.text = "Select your view"
        
         // Do any additional setup after loading the view.
     }
@@ -39,18 +48,14 @@ class ViewOptions: UIViewController {
     
 
     @IBAction func goToBackView(_ sender: Any) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        
-        
-        let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: "backview") as UIViewController
-        self.present(vc,animated:true,completion: nil)
-        
+         let vc = self.storyboard?.instantiateViewController(withIdentifier: "backview") as! BackView
+         self.present(vc, animated: true, completion: nil)
     }
     
     @IBAction func goToFrontView(_ sender: Any) {
         
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "frontview") as! FrontView
-        vc.myImage = myImageData
+       // vc.myImage = myImageData
         self.present(vc, animated: true, completion: nil)
     }
    
@@ -79,5 +84,9 @@ class ViewOptions: UIViewController {
         vc.hasProfileImage = true
         vc.mydata = self.myImageData
         self.present(vc, animated: true, completion: nil)
+    }
+    
+    @objc func goBack(){
+        self.dismiss(animated: true, completion: nil)
     }
 }
