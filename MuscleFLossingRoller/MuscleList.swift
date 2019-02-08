@@ -20,16 +20,7 @@ class MuscleList: ViewController, UITableViewDelegate, UITableViewDataSource {
     var myUserId = ""
     var bodypartid = 9999999999
     
-   
-    
     @IBOutlet weak var tableView: UITableView!
-    
-    lazy var refresher: UIRefreshControl = {
-        let refreshControl = UIRefreshControl()
-        refreshControl.tintColor = UIColor.red
-        refreshControl.addTarget(self, action: #selector(refreshList), for: .valueChanged)
-        return refreshControl
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,11 +39,8 @@ class MuscleList: ViewController, UITableViewDelegate, UITableViewDataSource {
         
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.refreshControl = refresher
         tableView.register(SessionCell.self, forCellReuseIdentifier: cellId)
         tableView.tableFooterView = UIView()
-        
-     
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -80,8 +68,6 @@ class MuscleList: ViewController, UITableViewDelegate, UITableViewDataSource {
                 }
             }
         })
- 
-        
     }
     
     func viewData() {
@@ -119,7 +105,6 @@ class MuscleList: ViewController, UITableViewDelegate, UITableViewDataSource {
     
     @objc func refreshList(){
         tableView.reloadData()
-        refresher.endRefreshing()
     }
    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -138,5 +123,4 @@ class MuscleList: ViewController, UITableViewDelegate, UITableViewDataSource {
     @objc func goBack(){
         self.dismiss(animated: true, completion: nil)
     }
-   
 }

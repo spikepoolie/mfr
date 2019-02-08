@@ -47,7 +47,7 @@ class DatesList: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
     override func viewDidAppear(_ animated: Bool) {
         let db = Firestore.firestore()
-        db.collection("datesessions").whereField("userid", isEqualTo: self.myUserId).order(by: "datestring", descending: true).getDocuments {(snapshot, error) in
+        db.collection("datesessions").whereField("userid", isEqualTo: self.myUserId).order(by: "datestring", descending: true).addSnapshotListener {(snapshot, error) in
             if error != nil {
                 print(error as Any)
             } else {

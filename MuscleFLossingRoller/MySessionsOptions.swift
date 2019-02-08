@@ -26,11 +26,7 @@ class MySessionsOptions: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        centerX = Double(self.myView.center.x * 1)
-        centerY = Double(self.myView.center.y * 1)
         UserDefaults.standard.set("f@f.com_ddddd", forKey: "myuserid")
-        self.getDevice()
-       
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,40 +41,7 @@ class MySessionsOptions: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
-  
-    func getDevice() {
-        if UIDevice().userInterfaceIdiom == .phone {
-            switch Int(UIScreen.main.nativeBounds.height){
-            case 1334: // 7 & 8
-                self.setButtomClicable(x: 0.58, y: 0.58, btn: btnMuscle)
-                self.setButtomClicable(x: 1.22, y: 0.58, btn: btnFavorite)
-                self.setButtomClicable(x: 0.58, y: 0.87, btn: btnDate)
-                self.setButtomClicable(x: 1.22, y: 0.87, btn: btnBack)
-            case 1920: // My Iphone
-                self.setButtomClicable(x: 0.60, y: 0.65, btn: btnMuscle)
-                self.setButtomClicable(x: 1.39, y: 0.65, btn: btnFavorite)
-                self.setButtomClicable(x: 0.60, y: 0.95, btn: btnDate)
-                self.setButtomClicable(x: 1.39, y: 0.95, btn: btnBack)
-            case 2208: // 7+ & 8+
-                self.setButtomClicable(x: 0.60, y: 0.64, btn: btnMuscle)
-                self.setButtomClicable(x: 1.38, y: 0.64, btn: btnFavorite)
-                self.setButtomClicable(x: 0.60, y: 0.95, btn: btnDate)
-                self.setButtomClicable(x: 1.38, y: 0.95, btn: btnBack)
-            case 2436: // X & XS
-                self.setButtomClicable(x: 0.59, y: 0.73, btn: btnMuscle)
-                self.setButtomClicable(x: 1.22, y: 0.73, btn: btnFavorite)
-                self.setButtomClicable(x: 0.59, y: 1.04, btn: btnDate)
-                self.setButtomClicable(x: 1.22, y: 1.04, btn: btnBack)
-            case 1792: // XR & XMAX
-                self.setButtomClicable(x: 0.59, y: 0.82, btn: btnMuscle)
-                self.setButtomClicable(x: 1.40, y: 0.82, btn: btnFavorite)
-                self.setButtomClicable(x: 0.59, y: 1.16, btn: btnDate)
-                self.setButtomClicable(x: 1.40, y: 1.16, btn: btnBack)
-            default:
-               return
-            }
-        }
-    }
+
     
     func setButtomClicable(x: Float, y: Float, btn: UIButton) {
         btn.center.x = CGFloat(Float(centerX) * Float(x))
@@ -101,16 +64,27 @@ class MySessionsOptions: UIViewController {
         self.goToReports(option: self.pageToGo)
     }
     
+    @IBAction func lastThree(_ sender: Any) {
+        self.pageToGo = "lastthree"
+        self.goToReports(option: self.pageToGo)
+    }
+    
     func goToReports(option: String){
         if option == "workedmuscles" {
            UserDefaults.standard.set("muscles", forKey: "pagefrom")
         } else if option == "favorites" {
-            let vc = storyboard?.instantiateViewController(withIdentifier: "musclereport") as? MuscleReport
+            let vc = storyboard?.instantiateViewController(withIdentifier: "noselections") as? NoSelections
             UserDefaults.standard.set("favorites", forKey: "pagefrom")
             vc?.pageFrom = "favorites"
             vc?.bartitle = "Favorites"
             vc?.username = UserDefaults.standard.string(forKey: "myuserid")!
-            UserDefaults.standard.set("favorites", forKey: "pagefrom")
+            self.present(vc!, animated: true, completion: nil)
+        } else if option == "lastthrees" {
+            let vc = storyboard?.instantiateViewController(withIdentifier: "noselections") as? NoSelections
+            UserDefaults.standard.set("lastthree", forKey: "pagefrom")
+            vc?.pageFrom = "lastthree"
+            vc?.bartitle = "Last Three Sessions"
+            vc?.username = UserDefaults.standard.string(forKey: "myuserid")!
             self.present(vc!, animated: true, completion: nil)
         } else {
             UserDefaults.standard.set("date", forKey: "pagefrom")
@@ -118,15 +92,17 @@ class MySessionsOptions: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        UserDefaults.standard.string(forKey: "myuserid")
+       
         
-        if segue.identifier == "favoritesegue" {
-            UserDefaults.standard.set("favorites", forKey: "pagefrom")
-            let destinationVC = storyboard?.instantiateViewController(withIdentifier: "musclereport") as? MuscleReport
-            destinationVC?.bartitle = "favorites"
-            _ = UserDefaults.standard.string(forKey: "myuserid")!
+        if segue.identifier == "favorites" {
+           UserDefaults.standard.set("Favorites", forKey: "bartitle")
+             UserDefaults.standard.set("favorites", forKey: "pagefrom")
+        } else {
+            UserDefaults.standard.set("Last 3 Sessions", forKey: "bartitle")
+             UserDefaults.standard.set("lastthree", forKey: "pagefrom")
         }
     }
-
 }
 
 

@@ -1,16 +1,15 @@
 //
-//  MuscleReport.swift
-//  MuscleFLossingRoller
+//  NoSelections
+//  NoSelections
 //
 //  Created by Rodrigo Schreiner on 1/11/19.
 //  Copyright © 2019 MFR. All rights reserved.
 //
 
 import UIKit
-import Firebase
 import FirebaseFirestore
 
-class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
+class NoSelections: ViewController, UITableViewDelegate, UITableViewDataSource {
     let cellMuscleId = "cellMuscleId"
     var username = ""
     var sessiondate = ""
@@ -24,33 +23,13 @@ class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var navBackButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     
-    lazy var refresher: UIRefreshControl = {
-        let refreshControl = UIRefreshControl()
-        refreshControl.tintColor = UIColor.red
-        refreshControl.addTarget(self, action: #selector(refreshList), for: .valueChanged)
-        return refreshControl
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        if self.bartitle != "" {
-//            navBackButton.title = "<"
-//            self.navigationController?.navigationBar.topItem!.title = bartitle
-//        } else {
-//            self.navigationController?.navigationBar.topItem!.title = "Favorites"
-//        }
-        //self.pageFrom = UserDefaults.standard.string(forKey: "pagefrom")!
-
-        if self.bartitle != "" {
-            navigationItem.title = bartitle
-        } else {
-            if self.pageFrom == "favorites" {
-                navigationItem.title = "Favorites"
-            } else {
-                navigationItem.title = "Last 3 Sessions"
-            }
-        }
-        
+       
+        navigationItem.title = UserDefaults.standard.string(forKey: "bartitle")!
+       
+        self.pageFrom = UserDefaults.standard.string(forKey: "bartitle")!
         let backbutton = UIButton(type: .custom)
         backbutton.titleLabel?.font = backbutton.titleLabel?.font.withSize(30)
         backbutton.setTitle("<", for: .normal)
@@ -59,10 +38,9 @@ class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
         backbutton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backbutton)
-     
+        
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.refreshControl = refresher
         self.username = UserDefaults.standard.string(forKey: "myuserid")!
         
         tableView.register(SessionCell.self, forCellReuseIdentifier: cellMuscleId)
@@ -72,16 +50,14 @@ class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidAppear(_ animated: Bool) {
         let db = Firestore.firestore().collection("sessions")
         var query_string: Query
-        if self.pageFrom == "muscles" {
-           query_string = db.whereField("username", field_value:self.username, field1:"bodypartid", file2_value:self.bodypartid).order(by: "bodypartname", descending: false)
-        } else if self.pageFrom == "date" {
-            query_string = db.whereField("username", field_value:self.username, field1:"datestring", file2_value:self.datestring).order(by: "sessiondate", descending: true)
-        } else if self.pageFrom == "favorites" {
-             query_string = db.whereField("username", field_value:self.username, field1:"isfavorite", file2_value:1).order(by: "sessiondate", descending: true)
+
+        
+        if self.pageFrom == "Favorites" {
+            query_string = db.whereField("username", field_value:self.username, field1:"isfavorite", file2_value:1).order(by: "sessiondate", descending: true)
         } else {
             query_string = db.whereField("username", field_value:self.username, field1:"lastthree", file2_value:3).order(by: "sessiondate", descending: true).limit(to: 3)
         }
-                
+
         query_string.addSnapshotListener {(snapshot, error) in
             if error != nil {
                 print(error as Any)
@@ -134,26 +110,26 @@ class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
         cell.btnGo.layer.borderColor = UIColor.black.cgColor
         cell.btnGo.layer.borderWidth = 2
         let muscleInfo = muscleList[indexPath.row]
-//        let myImage = UIImage(named: "ios_more");
-//        cell.imgCell.image = muscleInfo.musclename
+        //        let myImage = UIImage(named: "ios_more");
+        //        cell.imgCell.image = muscleInfo.musclename
         
-//        if self.pageFrom == "muscles" {
-//            cell.lblGeneric.text = "Date"
-//            cell.lblDate.isHidden = true
-//            cell.lblDateValue.isHidden = true
-//            cell.lblBodyPartName.text = muscleInfo.sessiondate
-//        } else if  self.pageFrom == "date" {
-//            cell.lblGeneric.text = "Body Part"
-//            cell.lblDate.isHidden = true
-//            cell.lblDateValue.isHidden = true
-//            cell.lblBodyPartName.text = muscleInfo.bodypartname
-//        } else {
-//            cell.lblGeneric.text = "Body Part"
-//            cell.lblBodyPartName.text = muscleInfo.bodypartname
-//            cell.lblDate.isHidden = false
-//            cell.lblDateValue.isHidden = false
-//            cell.lblDateValue.text = muscleInfo.sessiondate
-//        }
+        //        if self.pageFrom == "muscles" {
+        //            cell.lblGeneric.text = "Date"
+        //            cell.lblDate.isHidden = true
+        //            cell.lblDateValue.isHidden = true
+        //            cell.lblBodyPartName.text = muscleInfo.sessiondate
+        //        } else if  self.pageFrom == "date" {
+        //            cell.lblGeneric.text = "Body Part"
+        //            cell.lblDate.isHidden = true
+        //            cell.lblDateValue.isHidden = true
+        //            cell.lblBodyPartName.text = muscleInfo.bodypartname
+        //        } else {
+        //            cell.lblGeneric.text = "Body Part"
+        //            cell.lblBodyPartName.text = muscleInfo.bodypartname
+        //            cell.lblDate.isHidden = false
+        //            cell.lblDateValue.isHidden = false
+        //            cell.lblDateValue.text = muscleInfo.sessiondate
+        //        }
         
         cell.lblDateValue.text = muscleInfo.sessiondate
         cell.lblBodyPartName.text = muscleInfo.bodypartname
@@ -168,7 +144,7 @@ class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
             cell.lblCoolOffTime.text = "\(String(describing: muscleInfo.cooloff!)) min"
         }
         cell.btnGo.tag = indexPath.row
-    
+        
         return cell
     }
     
@@ -184,21 +160,20 @@ class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
     
     @objc func refreshList(){
         tableView.reloadData()
-        refresher.endRefreshing()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: true)
-//        let muscle_info = muscleList[indexPath.row]
-//        let vc = storyboard?.instantiateViewController(withIdentifier: "rollertracker") as? RollerTracker
-//        
-//        vc!.bodypartname = muscle_info.bodypartname
-//        vc!.myMinutes=muscle_info.minutes!
-//        vc!.myRepetitions=muscle_info.reps!
-//        vc!.myCoolOff=muscle_info.cooloff!
-//        vc!.bodypartid = muscle_info.bodypartid!
-//
-//        self.present(vc!,animated:true,completion: nil)
+        //        tableView.deselectRow(at: indexPath, animated: true)
+        //        let muscle_info = muscleList[indexPath.row]
+        //        let vc = storyboard?.instantiateViewController(withIdentifier: "rollertracker") as? RollerTracker
+        //
+        //        vc!.bodypartname = muscle_info.bodypartname
+        //        vc!.myMinutes=muscle_info.minutes!
+        //        vc!.myRepetitions=muscle_info.reps!
+        //        vc!.myCoolOff=muscle_info.cooloff!
+        //        vc!.bodypartid = muscle_info.bodypartid!
+        //
+        //        self.present(vc!,animated:true,completion: nil)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
@@ -216,7 +191,7 @@ class MuscleReport: ViewController, UITableViewDelegate, UITableViewDataSource {
             vc!.pageFrom = pageFrom
             
             self.present(vc!,animated:true,completion: nil)
-           // tableView.deselectRow(at: [IndexPath], animated: true)
+            // tableView.deselectRow(at: [IndexPath], animated: true)
             
         }
     }

@@ -181,6 +181,7 @@ class LogMeIn: UIViewController , UITextFieldDelegate{
                 print(error as Any)
             } else {
                 if (snapshot?.documents.count)! > 0 {
+                    UserDefaults.standard.set("\(username)_\(password)", forKey:  "myuserid")
                     let vc = self.storyboard?.instantiateViewController(withIdentifier: "myprofile") as! MyProfile
                     self.present(vc, animated: true, completion: nil)
                    

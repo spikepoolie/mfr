@@ -16,13 +16,24 @@ class MyProfile: UIViewController{
     var hasProfileImage = false
     var mydata = Data()
     
+    @IBOutlet weak var verticalLine: UIImageView!
+    @IBOutlet weak var horizontalLine: UIImageView!
+    @IBOutlet weak var btnChart: UIButton!
     @IBOutlet weak var myImageProfile: UIImageView!
+    @IBOutlet weak var btnStreching: UIButton!
+    @IBOutlet weak var btnPerson: UIButton!
+    @IBOutlet weak var btnExercise: UIButton!
+    
+    @IBOutlet weak var lblTracker: UILabel!
+    @IBOutlet weak var lblStreching: UILabel!
+    @IBOutlet weak var lblRoller: UILabel!
+    @IBOutlet weak var lblExercise: UILabel!
     
     override var prefersStatusBarHidden: Bool {
         return true
     }
     
-    
+   
     @IBAction func GoToMyOptions(_ sender: Any) {
         defaults.set("myprofile", forKey: "fromwhichview")
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
@@ -41,7 +52,18 @@ class MyProfile: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
- 
+
+        btnExercise.alpha = 0.0
+        btnPerson.alpha = 0.0
+        btnStreching.alpha = 0.0
+        btnChart.alpha = 0.0
+        lblExercise.alpha = 0.0
+        lblRoller.alpha = 0.0
+        lblStreching.alpha = 0.0
+        lblTracker.alpha = 0.0
+        verticalLine.alpha = 0.0
+        horizontalLine.alpha = 0.0
+        
         if((defaults.data(forKey: "imageProfile")) != nil){
             let imageProfile = defaults.data(forKey: "imageProfile")! as NSData
             self.myImageProfile.image = UIImage(data: imageProfile as Data)
@@ -50,6 +72,55 @@ class MyProfile: UIViewController{
             let myUserImageData: NSData = imageProfile!.pngData()! as NSData
             self.myImageProfile.image = UIImage(data: myUserImageData as Data)
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let duration: Double = 1.0
+        let delay: Double = 1.0
+       // UIButton.animate(withDuration: duration,delay: delay, usingSpringWithDamping: 3.0, initialSpringVelocity: 1.5, options: .curveEaseIn, animations: {
+//            self.moveIcons(btn: self.btnExercise)
+//            self.moveIcons(btn: self.btnPerson)
+//            self.moveIcons(btn: self.btnStreching)
+//            self.moveIcons(btn: self.btnChart)
+//        }) { (_) in
+            
+        UIButton.animate(withDuration: duration, delay: 0.0, options: UIButton.AnimationOptions.curveEaseIn, animations: {
+            self.lblExercise.alpha = 1.0
+            self.btnExercise.alpha = 1.0
+        }, completion: nil)
+
+        UIButton.animate(withDuration: duration, delay: 0.4, options: UIButton.AnimationOptions.curveEaseIn, animations: {
+            self.btnPerson.alpha = 1.0
+            self.lblRoller.alpha = 1.0
+        }, completion: nil)
+    
+        UIButton.animate(withDuration: duration, delay: 0.8, options: UIButton.AnimationOptions.curveEaseIn, animations: {
+            self.btnStreching.alpha = 1.0
+            self.lblStreching.alpha = 1.0
+        }, completion: nil)
+    
+        UIButton.animate(withDuration: duration, delay: 1.2, options: UIButton.AnimationOptions.curveEaseIn, animations: {
+            self.lblTracker.alpha = 1.0
+            self.btnChart.alpha = 1.0
+        }, completion: nil)
+    
+        UIButton.animate(withDuration: 0.5, delay: 1.6, options: UIButton.AnimationOptions.curveEaseIn, animations: {
+            self.verticalLine.alpha = 1.0
+            self.horizontalLine.alpha = 1.0
+        }, completion: nil)
+        
+        //}
+    }
+    
+    func moveIcons(btn: UIButton) {
+       // switch btn {
+       // case btnExercise, btnChart:
+           // btn.center.x = CGFloat(currentCoachtryoutPositon)
+            
+        //    break
+       // default:
+           // btn.center.x = CGFloat(currentPlayerResultsPositon)
+        //}
     }
     
     func downloadImage(from url: URL) {

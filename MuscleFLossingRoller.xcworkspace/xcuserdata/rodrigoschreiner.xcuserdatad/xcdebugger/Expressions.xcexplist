@@ -6,6 +6,9 @@
          contextName = "MuscleList.tableView(_:cellForRowAt:):MuscleList.swift">
       </ContextState>
       <ContextState
+         contextName = "NoSelections.viewDidAppear(_:):NoSelections.swift">
+      </ContextState>
+      <ContextState
          contextName = "ViewOptions.goBackToThePreviousScreen():ViewOptions.swift">
          <PersistentStrings>
             <PersistentString
@@ -36,10 +39,10 @@
                value = "bodypartname">
             </PersistentString>
             <PersistentString
-               value = "self.bodypartname">
+               value = "bodyImageName">
             </PersistentString>
             <PersistentString
-               value = "bodyImageName">
+               value = "self.bodypartname">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -77,12 +80,7 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in NewLogin.checkIfLoginExists(email:):NewLogin.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "dictionary[&quot;user_key&quot;].val()">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "FrontView.prepare(for:sender:):FrontView.swift">
       </ContextState>
       <ContextState
          contextName = "MuscleReport.viewDidAppear(_:):MuscleReport.swift">
@@ -99,7 +97,39 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "FrontView.prepare(for:sender:):FrontView.swift">
+         contextName = "closure #1 in NewLogin.checkIfLoginExists(email:):NewLogin.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "dictionary[&quot;user_key&quot;].val()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "NoSelections.viewDidLoad():NoSelections.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "bartitle">
+            </PersistentString>
+            <PersistentString
+               value = "self.bartitle">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "RollerTracker.returnToPopUpOptions(_:):RollerTracker.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.pageFrom">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MyProfile.moveIcons(btn:):MyProfile.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "currentCoachtryoutPositon">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "LogMeIn.btnLogin(_:):LogMeIn.swift">
