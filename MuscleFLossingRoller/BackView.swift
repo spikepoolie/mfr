@@ -17,6 +17,8 @@ class BackView: UIViewController {
     @IBOutlet var bodyView: UIView!
     
     let defaults = UserDefaults.standard
+    var bodyPartSelected = ""
+    var bodypartid = 0;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,212 +45,190 @@ class BackView: UIViewController {
     }
     
     @IBAction func btnNeck(_ sender: Any) {
-        defaults.set("Neck", forKey: "bodypartname")
-        defaults.set("24", forKey: "bodypart")
-        defaults.set("Neck", forKey: "mybodypartimage")
-        goToRollerView()
+        self.bodyPartSelected = "Neck"
+        self.bodypartid = 24
+        goToRollerView(bodypart: self.bodyPartSelected, bodypartid: self.bodypartid)
     }
     
     @IBAction func btnRightTrapezius(_ sender: Any) {
-        defaults.set("Right Trapezius", forKey: "bodypartname")
-        defaults.set("25", forKey: "bodypart")
-        defaults.set("RightTrapezius", forKey: "mybodypartimage")
-        goToRollerView()
+        self.bodyPartSelected = "Right Trapezius"
+        self.bodypartid = 25
+        goToRollerView(bodypart: self.bodyPartSelected, bodypartid: self.bodypartid)
     }
     
     @IBAction func btnLeftTrapezius(_ sender: Any) {
-        defaults.set("Left Trapezius", forKey: "bodypartname")
-        defaults.set("37", forKey: "bodypart")
-        defaults.set("LeftTrapezius", forKey: "mybodypartimage")
-        goToRollerView()
+        self.bodyPartSelected = "Left Trapezius"
+        self.bodypartid = 37
+        goToRollerView(bodypart: self.bodyPartSelected, bodypartid: self.bodypartid)
     }
     
     @IBAction func btnLeftBackShoulder(_ sender: Any) {
-        defaults.set("Left Shoulder", forKey: "bodypartname")
-        defaults.set("39", forKey: "bodypart")
-        defaults.set("LeftBackShoulder", forKey: "mybodypartimage")
-        goToRollerView()
+        self.bodyPartSelected = "Left Shoulder"
+        self.bodypartid = 39
+        goToRollerView(bodypart: self.bodyPartSelected, bodypartid: self.bodypartid)
     }
     
     @IBAction func btnRightBackShoulder(_ sender: Any) {
-        defaults.set("Right Shoulder", forKey: "bodypartname")
-        defaults.set("27", forKey: "bodypart")
-        defaults.set("RightBackShoulder", forKey: "mybodypartimage")
-        goToRollerView()
+        self.bodyPartSelected = "Right Shoulder"
+        self.bodypartid = 27
+        goToRollerView(bodypart: self.bodyPartSelected, bodypartid: self.bodypartid)
     }
+    
     @IBAction func btnLeftElbow(_ sender: Any) {
-        defaults.set("Left Elbow", forKey: "bodypartname")
-        defaults.set("41", forKey: "bodypart")
-        defaults.set("LeftElbow", forKey: "mybodypartimage")
-        goToRollerView()
+        self.bodyPartSelected = "Left Elbow"
+        self.bodypartid = 41
+        goToRollerView(bodypart: self.bodyPartSelected, bodypartid: self.bodypartid)
+    }
+    
+    @IBAction func btnUpperBback(_ sender: Any) {
+        self.bodyPartSelected = "Upper Back"
+        self.bodypartid = 99
+        goToRollerView(bodypart: self.bodyPartSelected, bodypartid: self.bodypartid)
     }
     
     @IBAction func btnLeftMidBack(_ sender: Any) {
-        defaults.set("Left Mid Back", forKey: "bodypartname")
-        defaults.set("38", forKey: "bodypart")
-        defaults.set("LeftMidBack", forKey: "mybodypartimage")
-        goToRollerView()
+        self.bodyPartSelected = "Left Mid Back"
+        self.bodypartid = 38
+        goToRollerView(bodypart: self.bodyPartSelected, bodypartid: self.bodypartid)
     }
     
     @IBAction func btnRightMidBack(_ sender: Any) {
-        defaults.set("Right Mid Back", forKey: "bodypartname")
-        defaults.set("26", forKey: "bodypart")
-        defaults.set("RightMidBack", forKey: "mybodypartimage")
-        goToRollerView()
+        self.bodyPartSelected = "Right Mid Back"
+        self.bodypartid = 26
+        goToRollerView(bodypart: self.bodyPartSelected, bodypartid: self.bodypartid)
     }
     
     @IBAction func btnLeftTricepsBack(_ sender: Any) {
-        defaults.set("Left Triceps", forKey: "bodypartname")
-        defaults.set("40", forKey: "bodypart")
-        defaults.set("LeftBackTriceps", forKey: "mybodypartimage")
-        goToRollerView()
+        self.bodyPartSelected = "Left Triceps"
+        self.bodypartid = 40
+        goToRollerView(bodypart: self.bodyPartSelected, bodypartid: self.bodypartid)
     }
     
     @IBAction func btnRightTricepsBack(_ sender: Any) {
-        defaults.set("Right Triceps", forKey: "bodypartname")
-        defaults.set("28", forKey: "bodypart")
-        defaults.set("RightBackTriceps", forKey: "mybodypartimage")
-        goToRollerView()
+        self.bodyPartSelected = "Right Triceps"
+        self.bodypartid = 28
+        goToRollerView(bodypart: self.bodyPartSelected, bodypartid: self.bodypartid)
     }
     
     @IBAction func btnLeftLatBack(_ sender: Any) {
-        defaults.set("Left Lat", forKey: "bodypartname")
-        defaults.set("42", forKey: "bodypart")
-        defaults.set("LeftLatBack", forKey: "mybodypartimage")
-        goToRollerView()
+        self.bodyPartSelected = "Left Lat"
+        self.bodypartid = 42
+        goToRollerView(bodypart: self.bodyPartSelected, bodypartid: self.bodypartid)
     }
     
     @IBAction func btnRightLatBack(_ sender: Any) {
-        defaults.set("Right Lat", forKey: "bodypartname")
-        defaults.set("30", forKey: "bodypart")
-        defaults.set("RightLatBack", forKey: "mybodypartimage")
-        goToRollerView()
+        self.bodyPartSelected = "Right Lat"
+        self.bodypartid = 30
+        goToRollerView(bodypart: self.bodyPartSelected, bodypartid: self.bodypartid)
     }
     
     @IBAction func btnRIghtElbow(_ sender: Any) {
-        defaults.set("Right Elbow", forKey: "bodypartname")
-        defaults.set("29", forKey: "bodypart")
-        defaults.set("RightElbow", forKey: "mybodypartimage")
-        goToRollerView()
+        self.bodyPartSelected = "Right Elbow"
+        self.bodypartid = 29
+        goToRollerView(bodypart: self.bodyPartSelected, bodypartid: self.bodypartid)
     }
     
     @IBAction func btnLeftLowerBack(_ sender: Any) {
-        defaults.set("Left Lower Back", forKey: "bodypartname")
-        defaults.set("31", forKey: "bodypart")
-        defaults.set("LeftLowerBack", forKey: "mybodypartimage")
-        goToRollerView()
+        self.bodyPartSelected = "Left Lower Back"
+        self.bodypartid = 31
+        goToRollerView(bodypart: self.bodyPartSelected, bodypartid: self.bodypartid)
     }
     
     @IBAction func btnRightLowerBack(_ sender: Any) {
-        defaults.set("Right Lower Back", forKey: "bodypartname")
-        defaults.set("43", forKey: "bodypart")
-        defaults.set("RightLowerBack", forKey: "mybodypartimage")
-        goToRollerView()
+        self.bodyPartSelected = "Right Lower Back"
+        self.bodypartid = 43
+        goToRollerView(bodypart: self.bodyPartSelected, bodypartid: self.bodypartid)
     }
     
     @IBAction func btnLeftForeArmBack(_ sender: Any) {
-        defaults.set("Left Forearm", forKey: "bodypartname")
-        defaults.set("44", forKey: "bodypart")
-        defaults.set("LeftForeArmBack", forKey: "mybodypartimage")
-        goToRollerView()
+        self.bodyPartSelected = "Left Forearm"
+        self.bodypartid = 44
+        goToRollerView(bodypart: self.bodyPartSelected, bodypartid: self.bodypartid)
     }
     
     @IBAction func btnRightForeArmBack(_ sender: Any) {
-        defaults.set("Right Forearm", forKey: "bodypartname")
-        defaults.set("45", forKey: "bodypart")
-        defaults.set("RightForeArmBack", forKey: "mybodypartimage")
-        goToRollerView()
+        self.bodyPartSelected = "Right Forearm"
+        self.bodypartid = 45
+        goToRollerView(bodypart: self.bodyPartSelected, bodypartid: self.bodypartid)
     }
     
     @IBAction func btnLeftWristBack(_ sender: Any) {
-        defaults.set("Left Wrist", forKey: "bodypartname")
-        defaults.set("46", forKey: "bodypart")
-        defaults.set("LeftWristBack", forKey: "mybodypartimage")
-        goToRollerView()
+        self.bodyPartSelected = "Left Wrist"
+        self.bodypartid = 46
+        goToRollerView(bodypart: self.bodyPartSelected, bodypartid: self.bodypartid)
     }
     
     @IBAction func btnRightWristBack(_ sender: Any) {
-        defaults.set("Right Wrist", forKey: "bodypartname")
-        defaults.set("47", forKey: "bodypart")
-        defaults.set("RightWristBack", forKey: "mybodypartimage")
-        goToRollerView()
+        self.bodyPartSelected = "Right Wrist"
+        self.bodypartid = 47
+        goToRollerView(bodypart: self.bodyPartSelected, bodypartid: self.bodypartid)
     }
     
     @IBAction func btnLeftGlut(_ sender: Any) {
-        defaults.set("Left Glut", forKey: "bodypartname")
-        defaults.set("32", forKey: "bodypart")
-        defaults.set("LeftGlut", forKey: "mybodypartimage")
-        goToRollerView()
+        self.bodyPartSelected = "Left Glut"
+        self.bodypartid = 32
+        goToRollerView(bodypart: self.bodyPartSelected, bodypartid: self.bodypartid)
     }
     
     @IBAction func btnRightGlut(_ sender: Any) {
-        defaults.set("Right Glut", forKey: "bodypartname")
-        defaults.set("48", forKey: "bodypart")
-        defaults.set("RightGlut", forKey: "mybodypartimage")
-        goToRollerView()
+        self.bodyPartSelected = "Right Glut"
+        self.bodypartid = 48
+        goToRollerView(bodypart: self.bodyPartSelected, bodypartid: self.bodypartid)
     }
     
     @IBAction func btnLeftHamString(_ sender: Any) {
-        defaults.set("Left Hamstring", forKey: "bodypartname")
-        defaults.set("33", forKey: "bodypart")
-        defaults.set("LeftHamString", forKey: "mybodypartimage")
-        goToRollerView()
+        self.bodyPartSelected = "Left Hamstring"
+        self.bodypartid = 33
+        goToRollerView(bodypart: self.bodyPartSelected, bodypartid: self.bodypartid)
     }
     
     @IBAction func btnRightHamString(_ sender: Any) {
-        defaults.set("Right Hamstring", forKey: "bodypartname")
-        defaults.set("49", forKey: "bodypart")
-        defaults.set("RightHamString", forKey: "mybodypartimage")
-        goToRollerView()
+        self.bodyPartSelected = "Right Hamstring"
+        self.bodypartid = 49
+        goToRollerView(bodypart: self.bodyPartSelected, bodypartid: self.bodypartid)
     }
     
     @IBAction func btnLeftKneeBack(_ sender: Any) {
-        defaults.set("Left Knee", forKey: "bodypartname")
-        defaults.set("50", forKey: "bodypart")
-        defaults.set("LeftBackKnee", forKey: "mybodypartimage")
-        goToRollerView()
+        self.bodyPartSelected = "Left Knee"
+        self.bodypartid = 50
+        goToRollerView(bodypart: self.bodyPartSelected, bodypartid: self.bodypartid)
     }
     
     @IBAction func btnRightKneeBack(_ sender: Any) {
-        defaults.set("Right Knee", forKey: "bodypartname")
-        defaults.set("51", forKey: "bodypart")
-        defaults.set("RightBackKnee", forKey: "mybodypartimage")
-        goToRollerView()
+        self.bodyPartSelected = "Right Knee"
+        self.bodypartid = 51
+        goToRollerView(bodypart: self.bodyPartSelected, bodypartid: self.bodypartid)
     }
     
     @IBAction func btnLeftCalf(_ sender: Any) {
-        defaults.set("Left Calf", forKey: "bodypartname")
-        defaults.set("52", forKey: "bodypart")
-        defaults.set("LeftCalf", forKey: "mybodypartimage")
-        goToRollerView()
+        self.bodyPartSelected = "Left Calf"
+        self.bodypartid = 52
+        goToRollerView(bodypart: self.bodyPartSelected, bodypartid: self.bodypartid)
     }
     @IBAction func btnRightCalf(_ sender: Any) {
-        defaults.set("Right Calf", forKey: "bodypartname")
-        defaults.set("34", forKey: "bodypart")
-        defaults.set("RightCalf", forKey: "mybodypartimage")
-        goToRollerView()
+        self.bodyPartSelected = "Right Calf"
+        self.bodypartid = 34
+        goToRollerView(bodypart: self.bodyPartSelected, bodypartid: self.bodypartid)
     }
     
     @IBAction func btnLeftAchilles(_ sender: Any) {
-        defaults.set("Left Achilles Tendon", forKey: "bodypartname")
-        defaults.set("53", forKey: "bodypart")
-        defaults.set("LeftAchillesTendon", forKey: "mybodypartimage")
-        goToRollerView()
+        self.bodyPartSelected = "Left Achilles Tendon"
+        self.bodypartid = 53
+        goToRollerView(bodypart: self.bodyPartSelected, bodypartid: self.bodypartid)
     }
     
     @IBAction func btnRightAchilles(_ sender: Any) {
-        defaults.set("Right Achilles Tendon", forKey: "bodypartname")
-        defaults.set("35", forKey: "bodypart")
-        defaults.set("RighAchillesTendon", forKey: "mybodypartimage")
-        goToRollerView()
-    }
-    
-    func goToRollerView(){
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        
-        let vc:UIViewController = storyBoard.instantiateViewController(withIdentifier: "rollertracker") as UIViewController
-        self.present(vc,animated:true,completion: nil)
+        self.bodyPartSelected = "Right Achilles Tendon"
+        self.bodypartid = 35
+        goToRollerView(bodypart: self.bodyPartSelected, bodypartid: self.bodypartid)
     }
     
     
+    func goToRollerView(bodypart: String, bodypartid: Int){
+        let vc = storyboard?.instantiateViewController(withIdentifier: "rollertracker") as? RollerTracker
+        vc?.pageFrom = "frontview"
+        vc?.bodypartname = self.bodyPartSelected
+        vc?.bodypartid = self.bodypartid
+        self.present(vc!, animated: true, completion: nil)
+    }
 }
