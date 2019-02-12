@@ -149,6 +149,7 @@
 		7C140FC021C875F400D16F47 /* LogMeIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C140FBF21C875F400D16F47 /* LogMeIn.swift */; };
 		7C758284220E025400DF77A3 /* LastThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C758283220E025400DF77A3 /* LastThree.swift */; };
 		7C758286220E0B4C00DF77A3 /* BackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C758285220E0B4C00DF77A3 /* BackView.swift */; };
+		7C7582882211E4BB00DF77A3 /* FreeTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7582872211E4BB00DF77A3 /* FreeTimer.swift */; };
 		7C8C928D21EDA4F100B4A629 /* SessionCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8C928C21EDA4F100B4A629 /* SessionCustomCell.swift */; };
 		7C8C929221EEA25800B4A629 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8C929121EEA25800B4A629 /* HelperFunctions.swift */; };
 		7C919C3021DD806E000D6CB7 /* RollerTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C919C2F21DD806E000D6CB7 /* RollerTracker.swift */; };
@@ -319,6 +320,7 @@
 		7C140FBF21C875F400D16F47 /* LogMeIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogMeIn.swift; sourceTree = "<group>"; };
 		7C758283220E025400DF77A3 /* LastThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastThree.swift; sourceTree = "<group>"; };
 		7C758285220E0B4C00DF77A3 /* BackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackView.swift; sourceTree = "<group>"; };
+		7C7582872211E4BB00DF77A3 /* FreeTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeTimer.swift; sourceTree = "<group>"; };
 		7C8C928C21EDA4F100B4A629 /* SessionCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionCustomCell.swift; sourceTree = "<group>"; };
 		7C8C929121EEA25800B4A629 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		7C919C2F21DD806E000D6CB7 /* RollerTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RollerTracker.swift; path = ../../MyFitLabSolutions/MyFitLabSolutions/RollerTracker.swift; sourceTree = "<group>"; };
@@ -411,6 +413,7 @@
 				7C0EA7B521C0733000F3A4A5 /* NewLogin.swift */,
 				7C0EA7BB21C083BC00F3A4A5 /* LoginAlert.swift */,
 				7C758285220E0B4C00DF77A3 /* BackView.swift */,
+				7C7582872211E4BB00DF77A3 /* FreeTimer.swift */,
 			);
 			path = MuscleFLossingRoller;
 			sourceTree = "<group>";
@@ -891,6 +894,7 @@
 				7CB4FDB721EFCE7600FBE66D /* DatesList.swift in Sources */,
 				7CFED87421E92562000B4021 /* MuscleReport.swift in Sources */,
 				7C0EA7B821C0739F00F3A4A5 /* TextFieldWithImage.swift in Sources */,
+				7C7582882211E4BB00DF77A3 /* FreeTimer.swift in Sources */,
 				7CE528E8220BB48B0082D7A1 /* NoSelections.swift in Sources */,
 				7C919C3021DD806E000D6CB7 /* RollerTracker.swift in Sources */,
 				7C140FBE21C873D800D16F47 /* SpinnerViewController.swift in Sources */,
