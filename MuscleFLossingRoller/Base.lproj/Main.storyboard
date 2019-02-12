@@ -2362,6 +2362,9 @@
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="bli-Tx-si1">
                                         <rect key="frame" x="145" y="120.66666666666666" width="191" height="31"/>
+                                        <connections>
+                                            <action selector="setReps:" destination="ex4-v8-Anh" eventType="valueChanged" id="6a6-ix-XDV"/>
+                                        </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMi-Jq-rTH">
                                         <rect key="frame" x="364" y="125" width="42" height="21"/>
@@ -2380,6 +2383,9 @@
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="Jmf-ch-kQX">
                                         <rect key="frame" x="145" y="21.666666666666671" width="191" height="31"/>
+                                        <connections>
+                                            <action selector="setDuration:" destination="ex4-v8-Anh" eventType="valueChanged" id="3tA-wI-SUI"/>
+                                        </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jks-99-rs6">
                                         <rect key="frame" x="364" y="26" width="42" height="21"/>
@@ -2395,6 +2401,9 @@
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="t8H-OI-18X">
                                         <rect key="frame" x="145" y="71.666666666666657" width="191" height="32"/>
+                                        <connections>
+                                            <action selector="setInterval:" destination="ex4-v8-Anh" eventType="valueChanged" id="yzX-99-i2W"/>
+                                        </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXv-YW-E9m">
                                         <rect key="frame" x="364" y="76.666666666666657" width="42" height="21"/>
@@ -2548,6 +2557,14 @@
                         <viewLayoutGuide key="safeArea" id="DqM-qa-VTD"/>
                     </view>
                     <navigationItem key="navigationItem" title="Timer" id="NKp-Og-aaY"/>
+                    <connections>
+                        <outlet property="durationSlider" destination="Jmf-ch-kQX" id="Me3-ab-yQt"/>
+                        <outlet property="intervalSlider" destination="t8H-OI-18X" id="E1l-Gi-87b"/>
+                        <outlet property="lblDuration" destination="Jks-99-rs6" id="T1H-iJ-UKF"/>
+                        <outlet property="lblInterval" destination="mXv-YW-E9m" id="9Yf-um-Xec"/>
+                        <outlet property="lblNumberReps" destination="qMi-Jq-rTH" id="CK5-jM-zWq"/>
+                        <outlet property="repsSlider" destination="bli-Tx-si1" id="zyy-2e-xP2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yoS-w9-THA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

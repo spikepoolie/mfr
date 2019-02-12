@@ -10,6 +10,12 @@ import UIKit
 
 class FreeTimer: UIViewController {
 
+    @IBOutlet weak var lblNumberReps: UILabel!
+    @IBOutlet weak var lblInterval: UILabel!
+    @IBOutlet weak var lblDuration: UILabel!
+    @IBOutlet weak var repsSlider: UISlider!
+    @IBOutlet weak var intervalSlider: UISlider!
+    @IBOutlet weak var durationSlider: UISlider!
     let shapeLayer = CAShapeLayer()
     
     let percentageLabel: UILabel = {
@@ -85,6 +91,16 @@ class FreeTimer: UIViewController {
         }
     }
 
-  
-
+    
+    @IBAction func setDuration(_ sender: Any) {
+        
+    }
+    
+    @IBAction func setInterval(_ sender: Any) {
+        
+    }
+    
+    @IBAction func setReps(_ sender: Any) {
+        
+    }
 }
