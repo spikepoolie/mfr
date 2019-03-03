@@ -150,6 +150,8 @@
 		7C758284220E025400DF77A3 /* LastThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C758283220E025400DF77A3 /* LastThree.swift */; };
 		7C758286220E0B4C00DF77A3 /* BackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C758285220E0B4C00DF77A3 /* BackView.swift */; };
 		7C7582882211E4BB00DF77A3 /* FreeTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7582872211E4BB00DF77A3 /* FreeTimer.swift */; };
+		7C75828A2214AAB700DF77A3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7582892214AAB700DF77A3 /* Extensions.swift */; };
+		7C75828D2214AE0400DF77A3 /* beep-07.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7C75828C2214AE0400DF77A3 /* beep-07.mp3 */; };
 		7C8C928D21EDA4F100B4A629 /* SessionCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8C928C21EDA4F100B4A629 /* SessionCustomCell.swift */; };
 		7C8C929221EEA25800B4A629 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8C929121EEA25800B4A629 /* HelperFunctions.swift */; };
 		7C919C3021DD806E000D6CB7 /* RollerTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C919C2F21DD806E000D6CB7 /* RollerTracker.swift */; };
@@ -159,8 +161,11 @@
 		7C9C582E21FA406900AB7D80 /* Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9C582D21FA406900AB7D80 /* Dates.swift */; };
 		7CB4FDB321EFB35D00FBE66D /* backbuttom.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CB4FDB221EFB35C00FBE66D /* backbuttom.png */; };
 		7CB4FDB721EFCE7600FBE66D /* DatesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB4FDB621EFCE7600FBE66D /* DatesList.swift */; };
+		7CC02D7F222C8B2900D0185F /* BodyPartDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC02D7E222C8B2900D0185F /* BodyPartDetails.swift */; };
 		7CC081E121D42C3300050256 /* ViewOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC081E021D42C3300050256 /* ViewOptions.swift */; };
 		7CC081E321D5638A00050256 /* FrontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC081E221D5638900050256 /* FrontView.swift */; };
+		7CCA37412224711000FC5CD9 /* TimeUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCA37402224711000FC5CD9 /* TimeUnits.swift */; };
+		7CCA37432229A36E00FC5CD9 /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCA37422229A36E00FC5CD9 /* Sounds.swift */; };
 		7CD450FB21FA8A4D00268FE6 /* firestore_where_query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD450FA21FA8A4D00268FE6 /* firestore_where_query.swift */; };
 		7CDA847C21D041BA00DFE9DB /* MyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDA847B21D041BA00DFE9DB /* MyProfile.swift */; };
 		7CE528E8220BB48B0082D7A1 /* NoSelections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE528E7220BB48B0082D7A1 /* NoSelections.swift */; };
@@ -321,6 +326,8 @@
 		7C758283220E025400DF77A3 /* LastThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastThree.swift; sourceTree = "<group>"; };
 		7C758285220E0B4C00DF77A3 /* BackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackView.swift; sourceTree = "<group>"; };
 		7C7582872211E4BB00DF77A3 /* FreeTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeTimer.swift; sourceTree = "<group>"; };
+		7C7582892214AAB700DF77A3 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		7C75828C2214AE0400DF77A3 /* beep-07.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "beep-07.mp3"; sourceTree = "<group>"; };
 		7C8C928C21EDA4F100B4A629 /* SessionCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionCustomCell.swift; sourceTree = "<group>"; };
 		7C8C929121EEA25800B4A629 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		7C919C2F21DD806E000D6CB7 /* RollerTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RollerTracker.swift; path = ../../MyFitLabSolutions/MyFitLabSolutions/RollerTracker.swift; sourceTree = "<group>"; };
@@ -330,8 +337,11 @@
 		7C9C582D21FA406900AB7D80 /* Dates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dates.swift; sourceTree = "<group>"; };
 		7CB4FDB221EFB35C00FBE66D /* backbuttom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backbuttom.png; sourceTree = "<group>"; };
 		7CB4FDB621EFCE7600FBE66D /* DatesList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatesList.swift; sourceTree = "<group>"; };
+		7CC02D7E222C8B2900D0185F /* BodyPartDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyPartDetails.swift; sourceTree = "<group>"; };
 		7CC081E021D42C3300050256 /* ViewOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewOptions.swift; sourceTree = "<group>"; };
 		7CC081E221D5638900050256 /* FrontView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontView.swift; sourceTree = "<group>"; };
+		7CCA37402224711000FC5CD9 /* TimeUnits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUnits.swift; sourceTree = "<group>"; };
+		7CCA37422229A36E00FC5CD9 /* Sounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sounds.swift; sourceTree = "<group>"; };
 		7CD450FA21FA8A4D00268FE6 /* firestore_where_query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firestore_where_query.swift; sourceTree = "<group>"; };
 		7CDA847B21D041BA00DFE9DB /* MyProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfile.swift; sourceTree = "<group>"; };
 		7CE528E7220BB48B0082D7A1 /* NoSelections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoSelections.swift; sourceTree = "<group>"; };
@@ -379,6 +389,7 @@
 		7C0EA6A021C06FC300F3A4A5 /* MuscleFLossingRoller */ = {
 			isa = PBXGroup;
 			children = (
+				7C75828B2214ADF700DF77A3 /* sounds */,
 				7CD450F921FA8A2A00268FE6 /* extensions */,
 				7C8C929021EEA23700B4A629 /* Helpers */,
 				7CFED87921E93F2E000B4021 /* customcells */,
@@ -395,6 +406,8 @@
 				7C140FBD21C873D700D16F47 /* SpinnerViewController.swift */,
 				7C0EA6A321C06FC300F3A4A5 /* ViewController.swift */,
 				7C0EA6A521C06FC300F3A4A5 /* Main.storyboard */,
+				7CC02D7E222C8B2900D0185F /* BodyPartDetails.swift */,
+				7CCA37422229A36E00FC5CD9 /* Sounds.swift */,
 				7CFED86B21E7CBA8000B4021 /* MySessionsOptions.swift */,
 				7CFED87121E91576000B4021 /* MuscleList.swift */,
 				7CFED87321E92562000B4021 /* MuscleReport.swift */,
@@ -414,6 +427,7 @@
 				7C0EA7BB21C083BC00F3A4A5 /* LoginAlert.swift */,
 				7C758285220E0B4C00DF77A3 /* BackView.swift */,
 				7C7582872211E4BB00DF77A3 /* FreeTimer.swift */,
+				7CCA37402224711000FC5CD9 /* TimeUnits.swift */,
 			);
 			path = MuscleFLossingRoller;
 			sourceTree = "<group>";
@@ -561,6 +575,14 @@
 			path = fonts;
 			sourceTree = "<group>";
 		};
+		7C75828B2214ADF700DF77A3 /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				7C75828C2214AE0400DF77A3 /* beep-07.mp3 */,
+			);
+			path = sounds;
+			sourceTree = "<group>";
+		};
 		7C8C929021EEA23700B4A629 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -572,6 +594,7 @@
 		7CD450F921FA8A2A00268FE6 /* extensions */ = {
 			isa = PBXGroup;
 			children = (
+				7C7582892214AAB700DF77A3 /* Extensions.swift */,
 				7CD450FA21FA8A4D00268FE6 /* firestore_where_query.swift */,
 			);
 			path = extensions;
@@ -723,6 +746,7 @@
 				7C0EA7A421C071F300F3A4A5 /* right_glut.png in Resources */,
 				7C0EA76021C071F300F3A4A5 /* RightChest.png in Resources */,
 				7C0EA75421C071F300F3A4A5 /* left_thigh.png in Resources */,
+				7C75828D2214AE0400DF77A3 /* beep-07.mp3 in Resources */,
 				7C0EA75821C071F300F3A4A5 /* messageBoard.png in Resources */,
 				7C0EA7A321C071F300F3A4A5 /* workouts.png in Resources */,
 				7C0EA78F21C071F300F3A4A5 /* RightHamString.png in Resources */,
@@ -881,12 +905,15 @@
 				7CDA847C21D041BA00DFE9DB /* MyProfile.swift in Sources */,
 				7CC081E321D5638A00050256 /* FrontView.swift in Sources */,
 				7C0EA7BA21C0816B00F3A4A5 /* WaitingToLoad.swift in Sources */,
+				7CC02D7F222C8B2900D0185F /* BodyPartDetails.swift in Sources */,
 				7C95592921E1E5DE000424FC /* QuickSessions.swift in Sources */,
 				7C140FC021C875F400D16F47 /* LogMeIn.swift in Sources */,
 				7C8C929221EEA25800B4A629 /* HelperFunctions.swift in Sources */,
 				7C0EA7B621C0733000F3A4A5 /* NewLogin.swift in Sources */,
+				7CCA37432229A36E00FC5CD9 /* Sounds.swift in Sources */,
 				7C0EA6A421C06FC300F3A4A5 /* ViewController.swift in Sources */,
 				7CFED86821E7BA82000B4021 /* Users.swift in Sources */,
+				7CCA37412224711000FC5CD9 /* TimeUnits.swift in Sources */,
 				7C919C3221DDC79D000D6CB7 /* SaveSessions.swift in Sources */,
 				7CFED86A21E7C196000B4021 /* Sessions.swift in Sources */,
 				7C0EA6A221C06FC300F3A4A5 /* AppDelegate.swift in Sources */,
@@ -901,6 +928,7 @@
 				7C9C582E21FA406900AB7D80 /* Dates.swift in Sources */,
 				7CFED87021E86576000B4021 /* WorkedMuscles.swift in Sources */,
 				7CFED86C21E7CBA8000B4021 /* MySessionsOptions.swift in Sources */,
+				7C75828A2214AAB700DF77A3 /* Extensions.swift in Sources */,
 				7CD450FB21FA8A4D00268FE6 /* firestore_where_query.swift in Sources */,
 				7C758286220E0B4C00DF77A3 /* BackView.swift in Sources */,
 				7CC081E121D42C3300050256 /* ViewOptions.swift in Sources */,
@@ -1054,7 +1082,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 24A26Z67PK;
 				INFOPLIST_FILE = MuscleFLossingRoller/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1074,7 +1102,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 24A26Z67PK;
 				INFOPLIST_FILE = MuscleFLossingRoller/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

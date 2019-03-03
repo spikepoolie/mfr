@@ -3,24 +3,10 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "MuscleList.tableView(_:cellForRowAt:):MuscleList.swift">
-      </ContextState>
-      <ContextState
-         contextName = "NoSelections.viewDidAppear(_:):NoSelections.swift">
-      </ContextState>
-      <ContextState
-         contextName = "ViewOptions.goBackToThePreviousScreen():ViewOptions.swift">
+         contextName = "closure #1 in NewLogin.checkIfLoginExists(email:):NewLogin.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.myImageData">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "MySessionsOptions.prepare(for:sender:):MySessionsOptions.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "segue.destination">
+               value = "dictionary[&quot;user_key&quot;].val()">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -33,26 +19,23 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "RollerTracker.viewDidLoad():RollerTracker.swift">
+         contextName = "MyProfile.moveIcons(btn:):MyProfile.swift">
          <PersistentStrings>
             <PersistentString
-               value = "bodypartname">
-            </PersistentString>
-            <PersistentString
-               value = "bodyImageName">
-            </PersistentString>
-            <PersistentString
-               value = "self.bodypartname">
+               value = "currentCoachtryoutPositon">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "MySessionsOptions.getDevice():MySessionsOptions.swift">
+         contextName = "RollerTracker.positionButton(btn:position:):RollerTracker.swift">
          <PersistentStrings>
             <PersistentString
-               value = "UIDevice().userInterfaceIdiom">
+               value = "btn.frame.mi">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MuscleList.tableView(_:cellForRowAt:):MuscleList.swift">
       </ContextState>
       <ContextState
          contextName = "MuscleReport.viewDidLoad():MuscleReport.swift">
@@ -66,6 +49,9 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "NoSelections.viewDidAppear(_:):NoSelections.swift">
+      </ContextState>
+      <ContextState
          contextName = "MuscleList.viewDidLoad():MuscleList.swift">
          <PersistentStrings>
             <PersistentString
@@ -76,31 +62,6 @@
             </PersistentString>
             <PersistentString
                value = "self.reportType">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "FrontView.prepare(for:sender:):FrontView.swift">
-      </ContextState>
-      <ContextState
-         contextName = "MuscleReport.viewDidAppear(_:):MuscleReport.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.userId">
-            </PersistentString>
-            <PersistentString
-               value = "self.username">
-            </PersistentString>
-            <PersistentString
-               value = "self.pageFrom">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in NewLogin.checkIfLoginExists(email:):NewLogin.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "dictionary[&quot;user_key&quot;].val()">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -124,14 +85,6 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "MyProfile.moveIcons(btn:):MyProfile.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "currentCoachtryoutPositon">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "LogMeIn.btnLogin(_:):LogMeIn.swift">
          <PersistentStrings>
             <PersistentString
@@ -140,10 +93,119 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "MySessionsOptions.prepare(for:sender:):MySessionsOptions.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "segue.destination">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FrontView.prepare(for:sender:):FrontView.swift">
+      </ContextState>
+      <ContextState
          contextName = "QuickSessions.prepare(for:sender:):QuickSessions.swift">
          <PersistentStrings>
             <PersistentString
                value = "segue.identifier">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MuscleReport.viewDidAppear(_:):MuscleReport.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.userId">
+            </PersistentString>
+            <PersistentString
+               value = "self.username">
+            </PersistentString>
+            <PersistentString
+               value = "self.pageFrom">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewOptions.goBackToThePreviousScreen():ViewOptions.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.myImageData">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in FreeTimer.startTimer():FreeTimer.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "trackerTimer">
+            </PersistentString>
+            <PersistentString
+               value = "self.currentTimer * 10">
+            </PersistentString>
+            <PersistentString
+               value = "String(format: &quot;%2d&quot;, self.currentTimer * 10)">
+            </PersistentString>
+            <PersistentString
+               value = "Int(self.repsSlider.value)">
+            </PersistentString>
+            <PersistentString
+               value = "String(format: &quot;%d&quot;, self.currentTimer * 10)">
+            </PersistentString>
+            <PersistentString
+               value = "currentTimer">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "RollerTracker.viewDidLoad():RollerTracker.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "buttonsConstraint.identifier">
+            </PersistentString>
+            <PersistentString
+               value = "self.bodypartname">
+            </PersistentString>
+            <PersistentString
+               value = "bodypartname">
+            </PersistentString>
+            <PersistentString
+               value = "bodyImageName">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MySessionsOptions.getDevice():MySessionsOptions.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "UIDevice().userInterfaceIdiom">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FreeTimer.updateTime():FreeTimer.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "timeLeft">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FreeTimer.startTimer():FreeTimer.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Int(durationSlider.value)">
+            </PersistentString>
+            <PersistentString
+               value = "currentTimer">
+            </PersistentString>
+            <PersistentString
+               value = "timeLeft">
+            </PersistentString>
+            <PersistentString
+               value = "trackerTimer">
+            </PersistentString>
+            <PersistentString
+               value = "durationSlider.value / 60">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
