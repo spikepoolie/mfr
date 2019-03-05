@@ -11,6 +11,9 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "MuscleReport.goToRollerTracker(_:):MuscleReport.swift">
+      </ContextState>
+      <ContextState
          contextName = "MyProfile.viewDidLoad():MyProfile.swift">
          <PersistentStrings>
             <PersistentString
@@ -19,18 +22,18 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "MyProfile.moveIcons(btn:):MyProfile.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "currentCoachtryoutPositon">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "RollerTracker.positionButton(btn:position:):RollerTracker.swift">
          <PersistentStrings>
             <PersistentString
                value = "btn.frame.mi">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MyProfile.moveIcons(btn:):MyProfile.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "currentCoachtryoutPositon">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -140,10 +143,10 @@
                value = "trackerTimer">
             </PersistentString>
             <PersistentString
-               value = "self.currentTimer * 10">
+               value = "String(format: &quot;%2d&quot;, self.currentTimer * 10)">
             </PersistentString>
             <PersistentString
-               value = "String(format: &quot;%2d&quot;, self.currentTimer * 10)">
+               value = "self.currentTimer * 10">
             </PersistentString>
             <PersistentString
                value = "Int(self.repsSlider.value)">
@@ -163,13 +166,16 @@
                value = "buttonsConstraint.identifier">
             </PersistentString>
             <PersistentString
-               value = "self.bodypartname">
-            </PersistentString>
-            <PersistentString
                value = "bodypartname">
             </PersistentString>
             <PersistentString
+               value = "self.bodypartname">
+            </PersistentString>
+            <PersistentString
                value = "bodyImageName">
+            </PersistentString>
+            <PersistentString
+               value = "myMinutes">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -190,22 +196,39 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "RollerTracker.startTimers(_:):RollerTracker.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Int(minuteSlider.value)">
+            </PersistentString>
+            <PersistentString
+               value = "trackerLayer">
+            </PersistentString>
+            <PersistentString
+               value = "strokeIt.duration">
+            </PersistentString>
+            <PersistentString
+               value = "initialPath">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "FreeTimer.startTimer():FreeTimer.swift">
          <PersistentStrings>
+            <PersistentString
+               value = "trackerTimer">
+            </PersistentString>
             <PersistentString
                value = "Int(durationSlider.value)">
             </PersistentString>
             <PersistentString
-               value = "currentTimer">
+               value = "durationSlider.value / 60">
             </PersistentString>
             <PersistentString
                value = "timeLeft">
             </PersistentString>
             <PersistentString
-               value = "trackerTimer">
-            </PersistentString>
-            <PersistentString
-               value = "durationSlider.value / 60">
+               value = "currentTimer">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

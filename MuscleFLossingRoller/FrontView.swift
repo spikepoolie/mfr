@@ -23,8 +23,8 @@ class FrontView: UIViewController {
         let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
         rightSwipe.direction = .right
         bodyView.layer.shadowOpacity=0.3
-        bodyView.layer.borderWidth=1.5
-        bodyView.layer.borderColor = UIColor.red.cgColor
+      //  bodyView.layer.borderWidth=1.5
+       // bodyView.layer.borderColor = UIColor.red.cgColor
         view.addGestureRecognizer(rightSwipe)
     }
     

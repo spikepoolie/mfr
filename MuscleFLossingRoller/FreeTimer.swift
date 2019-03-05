@@ -25,9 +25,7 @@ class FreeTimer: UIViewController {
     @IBOutlet weak var durationSlider: UISlider!
     @IBOutlet weak var btnResetTimer: CustomButton!
     @IBOutlet weak var btnStartTimer: CustomButton!
-    @IBOutlet weak var lblCoolOff: UILabel!
 
-    
     
     let percentageLabel: UILabel = {
         let label = UILabel()
@@ -57,6 +55,7 @@ class FreeTimer: UIViewController {
     var timeLabel =  UILabel()
     var durationMinutesSelected = true
     var intervalMinutesSelected = true
+    var initialPath = CAShapeLayer()
    
     func addTimeLabel() {
         timeLabel = UILabel(frame: CGRect(x: view.frame.midX-50 ,y: view.frame.midY-25, width: 100, height: 50))
@@ -132,6 +131,7 @@ class FreeTimer: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initialPath.path = circularPath.cgPath
         let myPosition = getSpecificPosition()
         percentageLabel.frame = CGRect(x: 0, y: 0, width: 180, height: 180)
         drawPulseLayer(myPosition: myPosition)
@@ -143,6 +143,17 @@ class FreeTimer: UIViewController {
         view.addSubview(percentageLabel)
         strokeIt.fromValue = 0
         strokeIt.toValue = 1
+        
+        let button = UIButton(type: .custom)
+        button.setImage(UIImage(named: "config"), for: UIControl.State.normal)
+        button.addTarget(self, action: #selector(setupTimerUnits), for: .touchUpInside)
+        button.frame=CGRect(x: 0, y: 0, width: 20, height: 20)
+        let barButton = UIBarButtonItem(customView: button)
+        self.navigationItem.rightBarButtonItems = [barButton]
+    }
+    
+    @objc func goBack() {
+        print(11111)
     }
     
     @objc func updateTime() {
@@ -168,7 +179,9 @@ class FreeTimer: UIViewController {
     private func startTimer() {
         if Int(durationSlider.value) > 0 {
             lblRepsCompleted.textColor = .white
-            lblCoolOff.text = ""
+            if trackerLayer.path == nil{
+                trackerLayer.path = initialPath.path
+            }
             let myPosition = getSpecificPosition()
             drawTimeLeftShape(myPosition: myPosition)
             if durationMinutesSelected {
@@ -179,7 +192,7 @@ class FreeTimer: UIViewController {
                 sliderValue = Int(durationSlider.value) / 60000
             }
             trackerTimer = Float(sliderValue)
-            lblRepsCompleted.text = "\(repCounter) of \(Int(repsSlider.value)) completed"
+            lblRepsCompleted.text = "\(repCounter) of \(Int(repsSlider.value)) reps completed"
             hasTimerStarted = true
            
             if self.repCounter < Int(self.repsSlider.value){
@@ -197,25 +210,19 @@ class FreeTimer: UIViewController {
                              strokeIt.duration = CFTimeInterval(Int(durationSlider.value))
                         }
                         trackerLayer.add(strokeIt, forKey: nil)
-    //                    if hasPaused == 0{
-    //                        currentTimer = Int(durationSlider.value) * 60
-    //                        sliderValue = Int(durationSlider.value) / 60000
-    //                        trackerTimer = Float(sliderValue)
-    //                       // hasPaused = 1
-    //                    }
                         setPauseButton()
                         if hasPaused == 0 {
                             timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true){ _ in
                                 if self.currentTimer > 0{
                                     if(Int(self.repsSlider.value) > 0) {
-                                        self.lblRepsCompleted.isHidden=false
-                                        self.lblRepsCompleted.text = "\(self.repCounter) of \(Int(self.repsSlider.value)) reps completed  "
+                                        self.showCompletedReps()
+                                        
                                         if self.repCounter == Int(self.repsSlider.value){
                                             self.hasTimerStarted = false
                                         }
                                     }
-                                    if Int(self.currentTimer) <= 5 && Int(self.currentTimer) != 0 {
-                                        self.playAlertSound(soundid: 1313)
+                                    if Int(self.currentTimer) <= 4 && Int(self.currentTimer) != 0 {
+                                        self.playAlertSound(soundid: 1052)
                                     } else {
                                         if Int(self.currentTimer) == 0  {
                                             self.timer.invalidate()
@@ -233,26 +240,16 @@ class FreeTimer: UIViewController {
                                     self.timer.invalidate()
                                     self.percentageLabel.text = "00:00"
                                     self.hasPaused = 0
-                //                        self.pulsingLayer.add(self.animation, forKey: "pulse")
-                                   // self.playAlertSound(soundid: 1005)
-                                    let when = DispatchTime.now() + 2.5
-                                    
                                     if Int(self.repsSlider.value) > 0{
                                         self.repCounter += 1
-                                        self.lblRepsCompleted.text = "\(self.repCounter) of \(Int(self.repsSlider.value)) reps completed  "
+                                        self.showCompletedReps()
                                         if self.repCounter < Int(self.repsSlider.value){
                                             self.showCoolOff()
-//                                            DispatchQueue.main.asyncAfter(deadline: when) {
-//                                                self.timer.invalidate()
-//                                                self.showCoolOff()
-//                                            }
                                         }
                                         else{
                                             if self.repCounter == Int(self.repsSlider.value){
                                                 self.hasTimerStarted = false
-                                                DispatchQueue.main.asyncAfter(deadline: when) {
-                                                    self.timer.invalidate()
-                                                }
+                                                self.timer.invalidate()
                                             }
                                         }
                                     }
@@ -270,23 +267,17 @@ class FreeTimer: UIViewController {
         }
     }
     
+    func showCompletedReps() {
+        self.lblRepsCompleted.text = "\(self.repCounter) of \(Int(self.repsSlider.value)) reps completed"
+    }
+    
     func showCoolOff(){
-        lblRepsCompleted.textColor =  UIColor(white: 0.5, alpha: 0.7)
-        lblCoolOff.textColor = .yellow
-        lblCoolOff.text = "Cooling Off"
+       
         btnStartTimer.backgroundColor = UIColor.gray
         btnStartTimer.setTitleColor(UIColor.darkGray, for: UIControl.State.normal)
         btnStartTimer.isEnabled = false
         //lblRepsCompleted.text = "Next rep starts in"
-        let collOffTime = Int(intervalSlider.value)
-//        if collOffTime == 0{
-//            self.currentTimer = 5
-//            strokeIt.duration = CFTimeInterval(Float(self.currentTimer))
-//        }
-//        else{
-//            self.currentTimer = collOffTime * 60
-//            strokeIt.duration = CFTimeInterval(Float(self.currentTimer))
-//        }
+       
         if intervalMinutesSelected {
             currentTimer = Int(intervalSlider.value) * 60
         } else {
@@ -299,6 +290,13 @@ class FreeTimer: UIViewController {
         
         collOffTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true){ _ in
             if self.currentTimer > 0{
+                if Int(self.currentTimer) <= 4 && Int(self.currentTimer) != 0 {
+                    self.playAlertSound(soundid: 1052)
+                } else {
+                    if Int(self.currentTimer) == 0  {
+                        self.timer.invalidate()
+                    }
+                }
                 self.currentTimer -= 1
                 let minutesPortion = String(format: "%02d", self.currentTimer / 60)
                 let secondsPortion = String(format: "%02d", self.currentTimer % 60)
@@ -309,17 +307,13 @@ class FreeTimer: UIViewController {
                
                 self.collOffTimer.invalidate()
                 self.percentageLabel.text = "00:00"
-                self.playAlertSound(soundid: 1016)
+                self.playAlertSound(soundid: 1052)
             
                 if Int(self.repsSlider.value) > 0{
-                    self.lblRepsCompleted.text = "\(self.repCounter) of \(Int(self.repsSlider.value)) reps completed"
-                    let when = DispatchTime.now() + 2.5
-                    DispatchQueue.main.asyncAfter(deadline: when) {
-                        self.collOffTimer.invalidate()
-                        self.timer.invalidate()
-                        self.btnStartTimer.isEnabled = true
-                        self.startTimer()
-                    }
+                    self.collOffTimer.invalidate()
+                    self.timer.invalidate()
+                    self.btnStartTimer.isEnabled = true
+                    self.startTimer()
                 }
             }
         }
@@ -375,13 +369,13 @@ class FreeTimer: UIViewController {
     @IBAction func stopTimer(_ sender: Any) {
         timer.invalidate()
         currentTimer = 0
-       // trackerLayer.path = nil
-        let pausedTime = trackerLayer.convertTime(CACurrentMediaTime(), from: nil)
-        trackerLayer.speed = 0.0
-        trackerLayer.timeOffset = pausedTime
+        self.view.layer.removeAllAnimations()
+        hasTimerStarted = false
+        lblNumberReps.text = "1"
+        trackerLayer.path = nil
     }
     
-    @IBAction func setupTimerUnits(_ sender: Any) {
+    @objc func setupTimerUnits() {
         let vc = storyboard?.instantiateViewController(withIdentifier: "timerunits") as! TimeUnits
         vc.unitDelegate = self
         
@@ -398,7 +392,25 @@ class FreeTimer: UIViewController {
         }
         self.present(vc,animated:true,completion: nil)
     }
-    
+//    
+//    @IBAction func setupTimerUnits(_ sender: Any) {
+//        let vc = storyboard?.instantiateViewController(withIdentifier: "timerunits") as! TimeUnits
+//        vc.unitDelegate = self
+//        
+//        if  durationMinutesSelected {
+//            vc.labelDuration = true
+//        } else {
+//            vc.labelDuration = false
+//        }
+//        
+//        if  intervalMinutesSelected {
+//            vc.labelInterval = true
+//        } else {
+//            vc.labelInterval = false
+//        }
+//        self.present(vc,animated:true,completion: nil)
+//    }
+//    
     @IBAction func resetTimer(_ sender: Any) {
         hasTimerStarted = false
         self.percentageLabel.textColor = UIColor.white
