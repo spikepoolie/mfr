@@ -150,6 +150,13 @@ class FreeTimer: UIViewController {
         button.frame=CGRect(x: 0, y: 0, width: 20, height: 20)
         let barButton = UIBarButtonItem(customView: button)
         self.navigationItem.rightBarButtonItems = [barButton]
+        
+        let leftButton = UIButton(type: .custom)
+        leftButton.setImage(UIImage(named: "config"), for: UIControl.State.normal)
+        leftButton.addTarget(self, action: #selector(setupTimerUnits), for: .touchUpInside)
+        leftButton.frame=CGRect(x: 0, y: 0, width: 20, height: 20)
+        let leftBarButton = UIBarButtonItem(customView: button)
+        self.navigationItem.leftBarButtonItems = [leftBarButton]
     }
     
     @objc func goBack() {

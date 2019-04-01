@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tCe-Nb-B50">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tCe-Nb-B50">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.47"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -3002,9 +3002,12 @@
                                                     <constraint firstAttribute="width" constant="74" id="d7D-Rp-txa"/>
                                                     <constraint firstAttribute="height" constant="75" id="iW7-N6-lt6"/>
                                                 </constraints>
-                                                <state key="normal" backgroundImage="straching.png"/>
+                                                <state key="normal" backgroundImage="timer.png"/>
+                                                <connections>
+                                                    <segue destination="gl0-Gs-1KD" kind="show" id="ux6-HO-hYw"/>
+                                                </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stretching" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Z3-th-us7">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Z3-th-us7">
                                                 <rect key="frame" x="0.0" y="83" width="107" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="dyk-sE-Zg1"/>
@@ -3615,6 +3618,7 @@
         <image name="signup.png" width="1200" height="1200"/>
         <image name="straching.png" width="720" height="720"/>
         <image name="threesides.png" width="255.60000610351562" height="230.63999938964844"/>
+        <image name="timer.png" width="51.200000762939453" height="57.599998474121094"/>
         <image name="twitter.png" width="1200" height="1200"/>
         <image name="userButtom.png" width="128" height="128"/>
         <image name="user_create_account.png" width="128" height="128"/>

@@ -11,7 +11,24 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "MuscleReport.goToRollerTracker(_:):MuscleReport.swift">
+         contextName = "FreeTimer.startTimer():FreeTimer.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "trackerTimer">
+            </PersistentString>
+            <PersistentString
+               value = "Int(durationSlider.value)">
+            </PersistentString>
+            <PersistentString
+               value = "durationSlider.value / 60">
+            </PersistentString>
+            <PersistentString
+               value = "timeLeft">
+            </PersistentString>
+            <PersistentString
+               value = "currentTimer">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "MyProfile.viewDidLoad():MyProfile.swift">
@@ -140,13 +157,13 @@
          contextName = "closure #1 in FreeTimer.startTimer():FreeTimer.swift">
          <PersistentStrings>
             <PersistentString
-               value = "trackerTimer">
+               value = "self.currentTimer * 10">
             </PersistentString>
             <PersistentString
                value = "String(format: &quot;%2d&quot;, self.currentTimer * 10)">
             </PersistentString>
             <PersistentString
-               value = "self.currentTimer * 10">
+               value = "trackerTimer">
             </PersistentString>
             <PersistentString
                value = "Int(self.repsSlider.value)">
@@ -177,6 +194,9 @@
             <PersistentString
                value = "myMinutes">
             </PersistentString>
+            <PersistentString
+               value = "imageName">
+            </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
@@ -186,6 +206,9 @@
                value = "UIDevice().userInterfaceIdiom">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MuscleReport.goToRollerTracker(_:):MuscleReport.swift">
       </ContextState>
       <ContextState
          contextName = "FreeTimer.updateTime():FreeTimer.swift">
@@ -199,7 +222,7 @@
          contextName = "RollerTracker.startTimers(_:):RollerTracker.swift">
          <PersistentStrings>
             <PersistentString
-               value = "Int(minuteSlider.value)">
+               value = "initialPath">
             </PersistentString>
             <PersistentString
                value = "trackerLayer">
@@ -208,27 +231,7 @@
                value = "strokeIt.duration">
             </PersistentString>
             <PersistentString
-               value = "initialPath">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "FreeTimer.startTimer():FreeTimer.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "trackerTimer">
-            </PersistentString>
-            <PersistentString
-               value = "Int(durationSlider.value)">
-            </PersistentString>
-            <PersistentString
-               value = "durationSlider.value / 60">
-            </PersistentString>
-            <PersistentString
-               value = "timeLeft">
-            </PersistentString>
-            <PersistentString
-               value = "currentTimer">
+               value = "Int(minuteSlider.value)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

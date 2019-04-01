@@ -84,7 +84,7 @@ class MyProfile: UIViewController{
 //            self.moveIcons(btn: self.btnChart)
 //        }) { (_) in
             
-        UIButton.animate(withDuration: duration, delay: 0.0, options: UIButton.AnimationOptions.curveEaseIn, animations: {
+        UIButton.animate(withDuration: duration, delay: 0.2, options: UIButton.AnimationOptions.curveEaseIn, animations: {
             self.lblExercise.alpha = 1.0
             self.btnExercise.alpha = 1.0
         }, completion: nil)
@@ -94,17 +94,17 @@ class MyProfile: UIViewController{
             self.lblRoller.alpha = 1.0
         }, completion: nil)
     
-        UIButton.animate(withDuration: duration, delay: 0.4, options: UIButton.AnimationOptions.curveEaseIn, animations: {
+        UIButton.animate(withDuration: duration, delay: 0.2, options: UIButton.AnimationOptions.curveEaseIn, animations: {
             self.btnStreching.alpha = 1.0
             self.lblStreching.alpha = 1.0
         }, completion: nil)
     
-        UIButton.animate(withDuration: duration, delay: 0.6, options: UIButton.AnimationOptions.curveEaseIn, animations: {
+        UIButton.animate(withDuration: duration, delay: 0.2, options: UIButton.AnimationOptions.curveEaseIn, animations: {
             self.lblTracker.alpha = 1.0
             self.btnChart.alpha = 1.0
         }, completion: nil)
     
-        UIButton.animate(withDuration: 0.5, delay: 0.8, options: UIButton.AnimationOptions.curveEaseIn, animations: {
+        UIButton.animate(withDuration: 0.5, delay: 0.2, options: UIButton.AnimationOptions.curveEaseIn, animations: {
             self.verticalLine.alpha = 1.0
             self.horizontalLine.alpha = 1.0
         }, completion: nil)
@@ -166,10 +166,14 @@ class MyProfile: UIViewController{
 
     @IBAction func myTracker(_ sender: Any) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "mysessionsoptions") as! MySessionsOptions
-        //vc.myImageData = self.mydata
         self.present(vc, animated: true, completion: nil)
     }
     
+    
+    @IBAction func goToTimer(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "freetimer") as! FreeTimer
+        self.present(vc, animated: true, completion: nil)
+    }
     
     @IBAction func btnFaceBook(_ sender: Any) {
         /*

@@ -87,13 +87,13 @@ class BackView: UIViewController {
     }
     
     @IBAction func btnLeftMidBack(_ sender: Any) {
-        self.bodyPartSelected = "Left Mid Back"
+        self.bodyPartSelected = "Middle Back"
         self.bodypartid = 38
         goToRollerView(bodypart: self.bodyPartSelected, bodypartid: self.bodypartid)
     }
     
     @IBAction func btnRightMidBack(_ sender: Any) {
-        self.bodyPartSelected = "Right Mid Back"
+        self.bodyPartSelected = "Mid Back"
         self.bodypartid = 26
         goToRollerView(bodypart: self.bodyPartSelected, bodypartid: self.bodypartid)
     }
@@ -129,13 +129,13 @@ class BackView: UIViewController {
     }
     
     @IBAction func btnLeftLowerBack(_ sender: Any) {
-        self.bodyPartSelected = "Left Lower Back"
+        self.bodyPartSelected = "Lower Back"
         self.bodypartid = 31
         goToRollerView(bodypart: self.bodyPartSelected, bodypartid: self.bodypartid)
     }
     
     @IBAction func btnRightLowerBack(_ sender: Any) {
-        self.bodyPartSelected = "Right Lower Back"
+        self.bodyPartSelected = "Lower Back"
         self.bodypartid = 43
         goToRollerView(bodypart: self.bodyPartSelected, bodypartid: self.bodypartid)
     }
@@ -226,7 +226,7 @@ class BackView: UIViewController {
     
     func goToRollerView(bodypart: String, bodypartid: Int){
         let vc = storyboard?.instantiateViewController(withIdentifier: "rollertracker") as? RollerTracker
-        vc?.pageFrom = "frontview"
+        vc?.pageFrom = "backview"
         vc?.bodypartname = self.bodyPartSelected
         vc?.bodypartid = self.bodypartid
         self.present(vc!, animated: true, completion: nil)
