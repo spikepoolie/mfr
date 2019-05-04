@@ -133,6 +133,7 @@
 		7C0EA7BE21C2D90100F3A4A5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C0EA7BD21C2D90100F3A4A5 /* GoogleService-Info.plist */; };
 		7C140FBE21C873D800D16F47 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C140FBD21C873D700D16F47 /* SpinnerViewController.swift */; };
 		7C140FC021C875F400D16F47 /* LogMeIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C140FBF21C875F400D16F47 /* LogMeIn.swift */; };
+		7C2561FF2278892000D5412B /* twosides.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C2561FE2278892000D5412B /* twosides.png */; };
 		7C6BE1D62233188200F81A16 /* RightHamstring.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C6BE1D52233188200F81A16 /* RightHamstring.png */; };
 		7C6BE1D8223318DA00F81A16 /* LeftHamstring.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C6BE1D7223318D900F81A16 /* LeftHamstring.png */; };
 		7C6BE1E02233237800F81A16 /* LeftBackShoulder.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C6BE1DF2233237800F81A16 /* LeftBackShoulder.png */; };
@@ -299,6 +300,7 @@
 		7C0EA7BD21C2D90100F3A4A5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7C140FBD21C873D700D16F47 /* SpinnerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		7C140FBF21C875F400D16F47 /* LogMeIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogMeIn.swift; sourceTree = "<group>"; };
+		7C2561FE2278892000D5412B /* twosides.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twosides.png; sourceTree = "<group>"; };
 		7C6BE1D52233188200F81A16 /* RightHamstring.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RightHamstring.png; sourceTree = "<group>"; };
 		7C6BE1D7223318D900F81A16 /* LeftHamstring.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LeftHamstring.png; sourceTree = "<group>"; };
 		7C6BE1DF2233237800F81A16 /* LeftBackShoulder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LeftBackShoulder.png; sourceTree = "<group>"; };
@@ -415,6 +417,7 @@
 		7C0EA6B521C071F300F3A4A5 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				7C2561FE2278892000D5412B /* twosides.png */,
 				7C6BE1D7223318D900F81A16 /* LeftHamstring.png */,
 				7C6BE1D52233188200F81A16 /* RightHamstring.png */,
 				7C0EA72C21C071F300F3A4A5 /* back.png */,
@@ -738,6 +741,7 @@
 				7C0EA77D21C071F300F3A4A5 /* left_abs.png in Resources */,
 				7C0EA77F21C071F300F3A4A5 /* logo.png in Resources */,
 				7C0EA77421C071F300F3A4A5 /* myPassword.png in Resources */,
+				7C2561FF2278892000D5412B /* twosides.png in Resources */,
 				7C0EA77821C071F300F3A4A5 /* stopPlayer.png in Resources */,
 				7C0EA73821C071F300F3A4A5 /* RightLatBack.png in Resources */,
 				7C0EA75A21C071F300F3A4A5 /* RightCalf.png in Resources */,
